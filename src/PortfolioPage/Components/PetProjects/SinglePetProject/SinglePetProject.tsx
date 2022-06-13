@@ -19,7 +19,7 @@ const SinglePetProject = (props: IPetProject) =>
             <p>{description}</p>
             <ImagesContainer>
                 <img src={mockup} style={{maxWidth:'100%'}}/>
-                <img src={img} style={{maxWidth:'100%'}}/>
+                <img src={img} style={{maxWidth:'100%', borderRadius:'0px 0px 3px 3px'}}/>
             </ImagesContainer>
             <ButtonRow>
                 {githubLink &&
@@ -72,7 +72,10 @@ const PetProjectHeader = styled.h4`
 const ImagesContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 100%`
+width: 100%;
+  pointer-events: none;
+  border-radius: 8px;
+`
 
 const Button = styled.button`
   font-size: 14px;
@@ -81,4 +84,12 @@ const Button = styled.button`
   background: #1A1B22;
   border-radius: 7px;
   text-decoration: 1px solid #4C4CFF underline;
-    `
+  -webkit-text-decoration-line: 1px #4C4CFF underline;
+  cursor: pointer;
+  animation: ease-in-out;
+  transition: 0.3s;
+  :hover {
+    background: #2c2c3f;
+    scale: 105%;
+  }
+`

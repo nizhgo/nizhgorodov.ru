@@ -18,8 +18,8 @@ const PetProjects = () =>
             </PetProjectHeader>
             <PetProjectsGrid>
             <SinglePetProject description={'Небольшая соцсеть с возможность смотреть случайных котов, авторизацией, лайками и общей лентой лайкнутых кошечек'} img={NizhgoCatsGif} mockup={NizhgoCatsMoc} title={'NIZHGOCATS'} siteLink={'https://cats.nizhgorodov.ru'} githubLink={'https://github.com/nizhgo/nizhgo-cats'}/>
-                <SinglePetProject description={'Вымышленный финтех стартап. Регистрация, выбор дизайна карта, переводы и пополенения.'} img={BebraBankGif} mockup={BebraBankMoc} title={'BEBRA BANK'} githubLink={'https://github.com/nizhgo/bebra-bank'}/>
-                <SinglePetProject description={'Большой интерактивный календарь. Авторизация. Добавление, редактирование и удаление тасков на кажый день.'} img={OrganizerPic} mockup={WhiteMockup} title={'ORGANIZER'} githubLink={'https://github.com/nizhgo/organizer'}/>
+                <SinglePetProject description={'Вымышленный финтех стартап. Регистрация, выбор дизайна карта, переводы и пополенения. Работа с формами через Formik'} img={BebraBankGif} mockup={BebraBankMoc} title={'BEBRA BANK'} githubLink={'https://github.com/nizhgo/bebra-bank'}/>
+                <SinglePetProject description={'Большой интерактивный календарь. Авторизация. Добавление, редактирование и удаление тасков на кажый день'} img={OrganizerPic} mockup={WhiteMockup} title={'ORGANIZER'} githubLink={'https://github.com/nizhgo/organizer'}/>
             </PetProjectsGrid>
         </PetProjectsContainer>
     )
