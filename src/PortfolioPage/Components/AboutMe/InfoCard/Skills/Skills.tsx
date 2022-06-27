@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {MainSkill, SecondSkill} from "./SingleSkillsCard/SingleSkill";
 
+
 const Skills = () =>
 {
     return(
@@ -13,10 +14,14 @@ const Skills = () =>
                 <MainSkill title={'HTML'}/>
                 <MainSkill title={'CSS'}/>
                 <MainSkill title={'Git'}/>
-            </SkillsRow>
-            <SkillsRow>
+                <SecondSkill title={'React Hooks'}/>
+                <SecondSkill title={'Router Dom'}/>
+                <SecondSkill title={'Styled-components'}/>
                 <SecondSkill title={'PHP'}/>
                 <SecondSkill title={'C#'}/>
+            </SkillsRow>
+            <SkillsRow>
+
             </SkillsRow>
         </SkillsBoxContainer>
     )

@@ -83,11 +83,13 @@ const Button = styled.button`
   gap: 10px;
   background: #1A1B22;
   border-radius: 7px;
+  border: solid 1px #252525;
+  -webkit-text-decoration: 1px solid #151515 underline;
   text-decoration: 1px solid #4C4CFF underline;
-  -webkit-text-decoration-line: 1px #4C4CFF underline;
   cursor: pointer;
   animation: ease-in-out;
   transition: 0.3s;
+
   :hover {
     background: #2c2c3f;
     scale: 105%;
