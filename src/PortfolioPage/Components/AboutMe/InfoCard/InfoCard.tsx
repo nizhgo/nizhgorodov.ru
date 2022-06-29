@@ -11,7 +11,7 @@ const InfoCard = () =>
 <InfoCardContainer>
 <div style={{display:'flex', flexDirection:'column'}}>
     <InfoCardHeader>Алексей Нижгородов</InfoCardHeader>
-    <InfoCardSubtitle>Intern Frontend Developer (React)</InfoCardSubtitle>
+    <InfoCardSubtitle>Junior Frontend Developer (React)</InfoCardSubtitle>
 </div>
     <Skills/>
     <Contacts/>

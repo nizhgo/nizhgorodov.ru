@@ -17,6 +17,7 @@ const Skills = () =>
                 <SecondSkill title={'React Hooks'}/>
                 <SecondSkill title={'Router Dom'}/>
                 <SecondSkill title={'Styled-components'}/>
+                <SecondSkill title={'Figma'}/>
                 <SecondSkill title={'PHP'}/>
                 <SecondSkill title={'C#'}/>
             </SkillsRow>
@@ -41,8 +42,9 @@ const SkillsTitle = styled.h5`
 const SkillsRow = styled.div`
   display: flex;
   flex-direction: row;
+  justify-items: center;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   padding: 0px;
   gap: 11px;
 `
