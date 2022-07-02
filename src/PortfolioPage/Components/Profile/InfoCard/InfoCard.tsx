@@ -4,6 +4,7 @@ import InfoCardSubtitle from "./Shared/InfoCardSubtitle";
 import Skills from "./Skills/Skills";
 import Contacts from "./Contacts/Contacts";
 import Education from "./Education/Education";
+import AboutMe from "./AboutMe/AboutMe";
 
 const InfoCard = () =>
 {
@@ -16,6 +17,7 @@ const InfoCard = () =>
     <Skills/>
     <Contacts/>
     <Education/>
+    <AboutMe/>
 </InfoCardContainer>
     )
 }
@@ -25,7 +27,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 0;
-gap: 39px;
+gap: 44px;
   max-width: 550px;
 `
 

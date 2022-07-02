@@ -3,17 +3,17 @@ import styled from "styled-components";
 import Avatar from "../../../Images/avatar.jpg"
 import InfoCard from "./InfoCard/InfoCard";
 
-const AboutMe = () =>
+const Profile = () =>
 {
     return(
-        <AboutMeGrid>
+        <ProfileGrid>
             <UserPic src={Avatar} alt={'userpic'}/>
             <InfoCard/>
-        </AboutMeGrid>
+        </ProfileGrid>
     )
 }
 
-const AboutMeGrid = styled.div`
+const ProfileGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 8fr;
@@ -36,4 +36,4 @@ const UserPic = styled.img`
 `
 
 
-export default AboutMe;
+export default Profile;

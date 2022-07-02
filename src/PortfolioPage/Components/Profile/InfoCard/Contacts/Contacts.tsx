@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import InfoCardSubtitle from "../Shared/InfoCardSubtitle";
+import InfoBlock from "../Shared/InfoBlock";
 
 const Contacts = () =>
 {
     return(
         <ContactsContainer>
             <InfoCardSubtitle>Контакты</InfoCardSubtitle>
-            <div style={{display:'flex', flexDirection:'column', gap:'0.2em'}}>
+            <InfoBlock>
                 <p>Telegram: <a href={'https://t.me/nizhgo'}>@nizhgo</a></p>
                 <p>GitHub:  <a href={'https://github.com/Nizhgo'}>https://github.com/Nizhgo</a></p>
                 <p>Email:  <a>alexey@nizhgorodov.ru</a></p>
-            </div>
+            </InfoBlock>
         </ContactsContainer>
     )
 }
