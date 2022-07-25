@@ -1,17 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import Avatar from "../../../Images/avatar.jpg"
-import InfoCard from "./InfoCard/InfoCard";
-
-const Profile = () =>
-{
-    return(
-        <ProfileGrid>
-            <UserPic src={Avatar} alt={'userpic'}/>
-            <InfoCard/>
-        </ProfileGrid>
-    )
-}
 
 const ProfileGrid = styled.div`
   width: 100%;
@@ -35,5 +22,7 @@ const UserPic = styled.img`
   width: 100%;
 `
 
-
-export default Profile;
+export {
+	UserPic,
+	ProfileGrid
+}

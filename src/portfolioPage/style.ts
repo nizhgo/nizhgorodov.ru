@@ -8,4 +8,4 @@ const PortfolioContainer = styled.div`
   gap: 5em;
 `
 
-export default PortfolioContainer;
+export {PortfolioContainer};

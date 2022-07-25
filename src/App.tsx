@@ -1,15 +1,15 @@
 import React from 'react';
-import AppContainer from "./AppContainer";
-import PortfolioPage from "./PortfolioPage/PortfolioPage";
-import Footer from "./Footer/Footer";
+import Footer from "./footer/Footer";
+import PortfolioPage from "./portfolioPage/PortfolioPage";
+import {AppWrapper} from './style';
 
 function App() {
-  return (
-    <AppContainer>
-      <PortfolioPage/>
-        <Footer/>
-    </AppContainer>
-  );
+	return (
+		<AppWrapper>
+			<PortfolioPage/>
+			<Footer/>
+		</AppWrapper>
+	);
 }
 
 

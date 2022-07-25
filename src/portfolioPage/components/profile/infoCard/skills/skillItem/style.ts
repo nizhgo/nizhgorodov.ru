@@ -1,36 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-
-interface ISkill
-{
-    title: string;
-}
-
-const MainSkill = (props: ISkill) =>
-{
-    const {title} = props;
-    return(
-        <MainSkillContainer>
-            <MainSkillTitle>
-                {title}
-            </MainSkillTitle>
-        </MainSkillContainer>
-    );
-}
-
-const SecondSkill = (props: ISkill) =>
-{
-    const {title} = props;
-    return(
-        <SecondSkillContainer>
-            <SecondSkillTitle>
-                {title}
-            </SecondSkillTitle>
-        </SecondSkillContainer>
-    );
-}
-
-
 
 const MainSkillContainer = styled.div`
   display: flex;
@@ -61,4 +29,9 @@ const SecondSkillTitle = styled(MainSkillTitle)`
   color: #787878;
 `
 
-export {MainSkill, SecondSkill};
+export {
+	MainSkillContainer,
+	MainSkillTitle,
+	SecondSkillTitle,
+	SecondSkillContainer
+}
