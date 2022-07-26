@@ -18,7 +18,7 @@ const AboutMe = () => {
 				</li>
 				<li>— Умею cтилизовать компоненты с использованем <Accent>StyledComponents</Accent></li>
 				<li>— Всегда верстаю через <Accent>flex и grid</Accent> адаптивно</li>
-				<li>— Имею опыт работы с формами через <Accent>Formik</Accent> и их валидацией
+				<li>— Имею опыт работы с формами через <Accent>React Hook Form</Accent> и их валидацией
 					через <Accent>Yup</Accent></li>
 				<li>— Для роутинга применяю <Accent>React Router Dom</Accent></li>
 				<li>— Умею работать с <Accent>Git (GitHub)</Accent></li>

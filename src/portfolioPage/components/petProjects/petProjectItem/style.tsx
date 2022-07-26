@@ -7,8 +7,8 @@ const PetProjectContainer = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 19px;
-  
-  p{
+
+  p {
     font-size: 14px;
     line-height: 139.02%;
     /* or 19px */
@@ -17,13 +17,22 @@ const PetProjectContainer = styled.div`
   }
 `
 
+const Gif = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 3px 3px;
+  max-height: 209px;
+  image-rendering: optimizeQuality;
+  object-fit: cover;
+`
+
 const ButtonRow = styled.div`
   width: 100%;
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
 `
 
 const PetProjectHeader = styled.h4`
@@ -36,11 +45,22 @@ const PetProjectHeader = styled.h4`
 `
 
 const ImagesContainer = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   border-radius: 8px;
+
+  animation: fadeIn 0.77s ease-in-out;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 
 const Button = styled.button`
@@ -62,10 +82,18 @@ const Button = styled.button`
   }
 `
 
+const Description = styled.p`
+  font-size: 14px;
+  line-height: 139.02%;
+  min-height: 77px;
+`
+
 export {
 	PetProjectContainer,
 	PetProjectHeader,
 	ImagesContainer,
 	Button,
-	ButtonRow
+	ButtonRow,
+	Description,
+	Gif,
 };

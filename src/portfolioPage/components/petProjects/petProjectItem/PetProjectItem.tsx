@@ -2,9 +2,11 @@ import React from "react";
 import {
 	Button,
 	ButtonRow,
+	Description,
+	Gif,
 	ImagesContainer,
 	PetProjectContainer,
-	PetProjectHeader
+	PetProjectHeader,
 } from './style';
 
 interface IPetProject {
@@ -22,10 +24,10 @@ const PetProjectItem = (props: IPetProject) => {
 	return (
 		<PetProjectContainer>
 			<PetProjectHeader>{title}</PetProjectHeader>
-			<p>{description}</p>
+			<Description>{description}</Description>
 			<ImagesContainer>
 				<img src={mockup} style={{maxWidth: '100%'}}/>
-				<img src={img} style={{maxWidth: '100%', borderRadius: '0px 0px 3px 3px'}}/>
+				<Gif src={img}/>
 			</ImagesContainer>
 			<ButtonRow>
 				{githubLink &&
