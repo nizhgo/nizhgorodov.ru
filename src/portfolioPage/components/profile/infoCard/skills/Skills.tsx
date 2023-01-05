@@ -18,9 +18,11 @@ const Skills = () => {
 				<Skill type={'main'}>CSS</Skill>
 				<Skill type={'main'}>Git</Skill>
 				<Skill type={'second'}>React Hooks</Skill>
+				<Skill type={'second'}>REST API</Skill>
 				<Skill type={'second'}>Router Dom</Skill>
 				<Skill type={'second'}>Styled-components</Skill>
 				<Skill type={'second'}>Figma</Skill>
+				<Skill type={'second'}>Адаптивная верстка</Skill>
 				<Skill type={'second'}>PHP</Skill>
 				<Skill type={'second'}>C#</Skill>
 			</SkillsRow>

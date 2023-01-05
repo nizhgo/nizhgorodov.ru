@@ -78,7 +78,6 @@ const Button = styled.button`
 
   :hover {
     background: #2c2c3f;
-    scale: 105%;
   }
 `
 

@@ -24,6 +24,8 @@ const AboutMe = () => {
 				<li>— Умею работать с <Accent>Git (GitHub)</Accent></li>
 				<li>— Чуть-чуть тестировал с <Accent>Jest</Accent>, но понимаю общие принципы тестирования фронта</li>
 				<li>— Пользуюсь <Accent>Figma</Accent></li>
+				<li>— Участавую в <Accent>хакатонах!</Accent></li>
+				<li>— Контрибьючу в <Accent>опен сорс</Accent> проекты</li>
 			</AboutMeList>
 			<p>(❁´◡`❁)</p>
 		</InfoBlock>
