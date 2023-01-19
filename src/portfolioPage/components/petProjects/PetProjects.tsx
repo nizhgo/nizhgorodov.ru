@@ -4,9 +4,9 @@ import BebraBankMoc from '../../../assets/images/bebraBankMoc.png'
 import DarkMockup from '../../../assets/images/darkMockup.png'
 import NizhgoCatsGif from '../../../assets/images/nizhgoCats.gif'
 import NizhgoCatsMoc from '../../../assets/images/nizhgoCatsMoc.png'
-import OrganizerGif from '../../../assets/images/organizer.gif'
+import OrganizerGif from '../../../assets/images/organizer.webp'
 import WhiteMockup from '../../../assets/images/whiteMockup.png'
-import CipherWebp from '../../../assets/videos/cipher.webp'
+import CipherWebp from '../../../assets/images/cipher.webp'
 import PetProjectItem from "./petProjectItem/PetProjectItem";
 import {
 	PetProjectHeader,
