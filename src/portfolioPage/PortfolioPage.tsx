@@ -7,7 +7,9 @@ import {PortfolioContainer} from "./style";
 const PortfolioPage = () => {
 	return (
 		<PortfolioContainer>
+			<header>
 			<Logo>ALEKSEY<br/>NIZHGORODOV</Logo>
+			</header>
 			<Profile/>
 			<PetProjects/>
 		</PortfolioContainer>
