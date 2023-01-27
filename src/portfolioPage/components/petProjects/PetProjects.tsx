@@ -2,12 +2,12 @@ import React from "react";
 import BebraBankGif from '../../../assets/images/bebraBank.gif'
 import BebraBankMoc from '../../../assets/images/bebraBankMoc.png'
 import DarkMockup from '../../../assets/images/darkMockup.png'
-import NizhgoCatsGif from '../../../assets/images/nizhgoCats.gif'
 import NizhgoCatsMoc from '../../../assets/images/nizhgoCatsMoc.png'
 import OrganizerGif from '../../../assets/images/organizer.webp'
 import WhiteMockup from '../../../assets/images/whiteMockup.png'
 import CipherWebp from '../../../assets/images/cipher.webp'
 import PetProjectItem from "./petProjectItem/PetProjectItem";
+import CatsScreencast from '../../../assets/images/cats.webp'
 import {
 	PetProjectHeader,
 	PetProjectsContainer,
@@ -27,7 +27,7 @@ const PetProjects = () => {
 					siteLink={'https://organizer.nizhgorodov.ru'} githubLink={'https://github.com/nizhgo/organizer'}/>
 				<PetProjectItem
 					description={'Небольшая соцсеть с возможность смотреть случайных котов, авторизацией, лайками и общей лентой лайкнутых кошечек. Самый первый пет-проджект. БД — firebase'}
-					visual={NizhgoCatsGif} mockup={NizhgoCatsMoc} title={'NIZHGOCATS'}
+					visual={CatsScreencast} mockup={NizhgoCatsMoc} title={'NIZHGOCATS'}
 					siteLink={'https://cats.nizhgorodov.ru'} githubLink={'https://github.com/nizhgo/nizhgo-cats'}/>
 				<PetProjectItem
 					description={'DES шифрование и дешифрование в формате переводчка. Выбор темы и локализации. Vite + React + Typescript'}
