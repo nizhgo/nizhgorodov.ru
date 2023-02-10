@@ -12,18 +12,18 @@ const Skills = () => {
 		<SkillsBoxContainer>
 			<SkillsTitle>Навыки:</SkillsTitle>
 			<SkillsRow>
-				<Skill type={'main'}>React</Skill>
-				<Skill type={'main'}>TypeScript</Skill>
-				<Skill type={'main'}>HTML</Skill>
-				<Skill type={'main'}>CSS</Skill>
-				<Skill type={'main'}>Git</Skill>
+				<Skill type={'main'}><abbr>React</abbr></Skill>
+				<Skill type={'main'}><abbr>TypeScript</abbr></Skill>
+				<Skill type={'main'}><abbr>HTML</abbr></Skill>
+				<Skill type={'main'}><abbr>CSS</abbr></Skill>
+				<Skill type={'main'}><abbr>Git</abbr></Skill>
 				<Skill type={'second'}>React Hooks</Skill>
-				<Skill type={'second'}>REST API</Skill>
+				<Skill type={'second'}><abbr>REST API</abbr></Skill>
 				<Skill type={'second'}>Router Dom</Skill>
 				<Skill type={'second'}>Styled-components</Skill>
 				<Skill type={'second'}>Figma</Skill>
 				<Skill type={'second'}>Адаптивная верстка</Skill>
-				<Skill type={'second'}>PHP</Skill>
+				<Skill type={'second'}><abbr>PHP</abbr></Skill>
 				<Skill type={'second'}>C#</Skill>
 			</SkillsRow>
 		</SkillsBoxContainer>

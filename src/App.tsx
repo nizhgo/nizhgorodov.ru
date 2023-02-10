@@ -5,7 +5,7 @@ import {AppWrapper} from './style';
 
 function App() {
 	return (
-		<AppWrapper>
+		<AppWrapper role={'main'}>
 			<PortfolioPage/>
 			<Footer/>
 		</AppWrapper>

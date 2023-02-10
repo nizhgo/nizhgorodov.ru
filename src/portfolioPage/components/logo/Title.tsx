@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Logo = styled.h1`
+const Title = styled.title`
   font-size: 24px;
   font-family: SovMod, sans-serif;
   color: #FFFFFF;
@@ -11,4 +11,4 @@ const Logo = styled.h1`
   }
 `
 
-export default Logo;
+export default Title;
