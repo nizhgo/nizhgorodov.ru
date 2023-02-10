@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Title = styled.title`
+const Title = styled.h1`
   font-size: 24px;
   font-family: SovMod, sans-serif;
   color: #FFFFFF;
