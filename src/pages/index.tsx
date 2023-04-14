@@ -3,8 +3,9 @@ import { Inter } from 'next/font/google'
 import styled from "styled-components";
 import Header from "@/components/header/Header";
 import Profile from "@/components/profile/Profile";
+import Projects from "@/components/petProjects/Projects";
+import Footer from "@/components/footer/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
       <main>
         <Header/>
           <Profile/>
+          <Projects/>
       </main>
+        <Footer/>
     </>
   )
 }

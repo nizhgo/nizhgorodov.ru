@@ -1,7 +1,7 @@
-import {createGlobalStyle} from "styled-components";
-import {theme} from "./themes/main.theme";
+// @ts-nocheck
 
-// @ts-ignore
+import {createGlobalStyle} from "styled-components";
+
 export const GlobalStyles = createGlobalStyle`
     html, body{
       font-family: 'Jost', sans-serif;
