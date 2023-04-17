@@ -42,8 +42,8 @@ const SecondSkillTitle = styled(MainSkillTitle)`
 `
 
 export {
-	MainSkillContainer,
-	MainSkillTitle,
-	SecondSkillTitle,
-	SecondSkillContainer
+    MainSkillContainer,
+    MainSkillTitle,
+    SecondSkillTitle,
+    SecondSkillContainer
 }

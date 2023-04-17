@@ -58,7 +58,7 @@ const Card = styled.section`
 `
 
 
-const ProjectType = styled.div<{color: string}>`
+const ProjectType = styled.div<{ color: string }>`
 box-sizing: border-box;
 
 /* Auto layout */
@@ -77,9 +77,9 @@ border-radius: 22px;
 
 
 export {
-	Title,
-	ProjectsContainer,
-	ProjectsGrid,
-	Card,
-	ProjectType,
+    Title,
+    ProjectsContainer,
+    ProjectsGrid,
+    Card,
+    ProjectType,
 };

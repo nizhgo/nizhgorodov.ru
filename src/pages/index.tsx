@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import styled from "styled-components";
 import Header from "@/components/header/Header";
 import Profile from "@/components/profile/Profile";
@@ -8,22 +7,22 @@ import Footer from "@/components/footer/Footer";
 
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Aleksey Nizhgorodov</title>
-        <meta name="description" content="Фpонтенд разрабочтик. React + Typescript" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <Header/>
-          <Profile/>
-          <Projects/>
-      </main>
-        <Footer/>
-    </>
-  )
+    return (
+        <>
+            <Head>
+                <title>Aleksey Nizhgorodov</title>
+                <meta name="description" content="Фpонтенд разрабочтик. React + Typescript"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
+            <main>
+                <Header/>
+                <Profile/>
+                <Projects/>
+            </main>
+            <Footer/>
+        </>
+    )
 }
 
 

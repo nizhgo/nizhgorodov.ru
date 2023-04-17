@@ -25,6 +25,8 @@
     "babel-plugin-styled-components": "^2.1.1"
   },
   "babel": {
-    "plugins": ["babel-plugin-styled-components"]
+    "plugins": [
+      "babel-plugin-styled-components"
+    ]
   }
 }

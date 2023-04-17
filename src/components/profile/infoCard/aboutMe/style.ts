@@ -13,6 +13,6 @@ const AboutMeList = styled.ul`
     `
 
 export {
-	Accent,
-	AboutMeList
+    Accent,
+    AboutMeList
 };

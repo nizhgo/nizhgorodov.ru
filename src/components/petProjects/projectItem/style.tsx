@@ -98,11 +98,11 @@ const Description = styled.p`
 `
 
 export {
-	PetProjectContainer,
-	Title,
-	ImagesContainer,
-	Button,
-	ButtonRow,
-	Description,
-	Gif,
+    PetProjectContainer,
+    Title,
+    ImagesContainer,
+    Button,
+    ButtonRow,
+    Description,
+    Gif,
 };

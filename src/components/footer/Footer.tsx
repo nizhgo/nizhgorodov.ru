@@ -1,5 +1,5 @@
 const Footer = () => {
-    return(
+    return (
         <footer style={{
             height: '55px',
             width: '100vw',

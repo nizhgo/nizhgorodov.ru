@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Header = () => {
-    return(
+    return (
         <HeaderWrapper>
             <img src={'images/nizhgo.svg'} alt={'logo'}/>
         </HeaderWrapper>

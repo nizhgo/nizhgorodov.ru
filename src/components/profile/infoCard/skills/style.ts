@@ -24,7 +24,7 @@ const SkillsBoxContainer = styled.div`
 `
 
 export {
-	SkillsBoxContainer,
-	SkillsRow,
-	SkillsTitle
+    SkillsBoxContainer,
+    SkillsRow,
+    SkillsTitle
 };
