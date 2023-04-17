@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import styled from "styled-components";
 import Header from "@/components/header/Header";
 import Profile from "@/components/profile/Profile";
 import Projects from "@/components/petProjects/Projects";
 import Footer from "@/components/footer/Footer";
+import Head from "next/head";
 
 
 export default function Home() {
@@ -11,9 +10,14 @@ export default function Home() {
         <>
             <Head>
                 <title>Aleksey Nizhgorodov</title>
-                <meta name="description" content="Фpонтенд разрабочтик. React + Typescript"/>
+                <meta name="description" content="Алексей Нижгородов - Frontend разработчик. Node.js, React, Next.js, TypeScript, JavaScript, HTML, CSS"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com"/>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800;900&family=Press+Start+2P&display=swap"
+                    rel="stylesheet"/>
             </Head>
             <main>
                 <Header/>
@@ -26,15 +30,4 @@ export default function Home() {
 }
 
 
-const Title = styled.h1`
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 166%;
-  /* or 33px */
 
-  text-align: center;
-
-  color: #CBFF00;
-`
