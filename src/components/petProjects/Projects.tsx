@@ -39,7 +39,13 @@ const Projects = () => {
                     title={'NIZHGO CATS'}
                     description={'Небольшая соцсеть с возможность смотреть случайных котов, авторизацией, лайками и общей лентой лайкнутых кошечек. Самый первый пет-проджект. БД — firebase'}
                     visual={'/video/nizhgoCatsScreencast.webp'} mockup={'/images/darkMockup.png'}
-                    siteLink={'cats.nzihgorodov.ru'} githubLink={'https://github.com/nizhgo/nizhgo-cats'}
+                    siteLink={'https://cats.nzihgorodov.ru'} githubLink={'https://github.com/nizhgo/nizhgo-cats'}
+                    type={{name: 'Пет проджект', color: '#C3EAF6'}}/>
+                <ProjectItem
+                	title={'BEBRABANK'}
+                	description={'Вымышленный финтех стартап. Красивый лэндинг. Регистрация, выбор дизайна карта, переводы и пополенения. Работа с формами через Formik + yup'}
+                	visual={'/video/bebraBankScreencast.webp'} mockup={'/images/darkMockup.png'}
+                	siteLink={'https://bebrabank.ru'} githubLink={'https://github.com/nizhgo/bebra-bank'}
                     type={{name: 'Пет проджект', color: '#C3EAF6'}}/>
                 {/*<projectItem*/}
                 {/*	title={''}*/}
