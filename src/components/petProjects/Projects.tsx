@@ -39,7 +39,7 @@ const Projects = () => {
                     title={'NIZHGO CATS'}
                     description={'Небольшая соцсеть с возможность смотреть случайных котов, авторизацией, лайками и общей лентой лайкнутых кошечек. Самый первый пет-проджект. БД — firebase'}
                     visual={'/video/nizhgoCatsScreencast.webp'} mockup={'/images/darkMockup.png'}
-                    siteLink={'https://cats.nzihgorodov.ru'} githubLink={'https://github.com/nizhgo/nizhgo-cats'}
+                    siteLink={'https://cats.nizhgorodov.ru'} githubLink={'https://github.com/nizhgo/nizhgo-cats'}
                     type={{name: 'Пет проджект', color: '#C3EAF6'}}/>
                 <ProjectItem
                 	title={'BEBRABANK'}
