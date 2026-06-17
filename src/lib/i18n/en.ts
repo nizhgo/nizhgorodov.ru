@@ -235,9 +235,14 @@ export const en: Translations = {
 				place: 'Perfema',
 				role: 'Frontend Developer',
 				period: '2023 — now',
-				summary: 'Led a 3-person frontend team: code review, mentoring, product architecture from scratch.'
+				summary: 'Built products from scratch: architecture, code, reviews, mentoring interns. Maps, dashboards, analytics, native apps, a custom PDF report generator. Sometimes leading the frontend team, sometimes the only frontend.'
 			},
-			{ place: 'Yandex', role: 'Assessor Developer', period: '2023' }
+			{
+				place: 'Yandex',
+				role: 'Assessor Developer',
+				period: '2023',
+				summary: 'Labelled programming and CS material, wrote and edited reference answers for YandexGPT on IT topics, did fact-checking.'
+			}
 		],
 		education: [
 			{
@@ -245,6 +250,7 @@ export const en: Translations = {
 				program: 'Master’s, Digital Urbanism',
 				period: '2024 — 2026',
 				logo: '/edu/hse.svg',
+				link: { label: 'Thesis', href: 'https://www.hse.ru/edu/vkr/1167123484' },
 				note: 'A deliberate choice: I’ve always been drawn to urbanism, and the program is tightly tied to data analytics (Python, geodata, QGIS) — essentially an IT track. It sharpened my cartography and geo-analytics, which I love in frontend too.'
 			},
 			{ place: 'MISIS', program: 'Bachelor’s, IS&T', period: '2020 — 2024', logo: '/edu/misis.png' }

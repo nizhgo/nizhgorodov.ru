@@ -73,7 +73,14 @@ export interface Translations {
 	background: {
 		title: string;
 		work: { place: string; role: string; period: string; summary?: string }[];
-		education: { place: string; program: string; period: string; note?: string; logo?: string }[];
+		education: {
+			place: string;
+			program: string;
+			period: string;
+			note?: string;
+			logo?: string;
+			link?: { label: string; href: string };
+		}[];
 	};
 	contacts: {
 		title: string;

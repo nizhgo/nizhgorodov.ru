@@ -47,6 +47,16 @@
 						{#if edu.note}
 							<p class="mt-2 text-sm leading-relaxed text-text-secondary">{edu.note}</p>
 						{/if}
+						{#if edu.link}
+							<a
+								href={edu.link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="mt-3 inline-flex items-center gap-1 font-mono text-xs text-text-primary underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent"
+							>
+								{edu.link.label} ↗
+							</a>
+						{/if}
 					</div>
 				{/each}
 			</div>
