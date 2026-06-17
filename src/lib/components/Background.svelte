@@ -14,7 +14,7 @@
 
 	<ScrollReveal class="grid gap-x-10 gap-y-10 pt-9 md:grid-cols-2">
 		<div>
-			<p class="label text-accent">/ {$t.ui.experience}</p>
+			<p class="label text-accent">{$t.ui.experience}</p>
 			<div class="mt-5 space-y-7">
 				{#each $t.background.work as job}
 					<div class="border-t border-border pt-4">
@@ -43,7 +43,7 @@
 		</div>
 
 		<div>
-			<p class="label text-accent">/ {$t.ui.education}</p>
+			<p class="label text-accent">{$t.ui.education}</p>
 			<div class="mt-5 space-y-7">
 				{#each $t.background.education as edu}
 					<div class="border-t border-border pt-4">

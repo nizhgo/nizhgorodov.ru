@@ -12,7 +12,7 @@
 <section id="contact" class="scroll-mt-20 border-t border-rule">
 	<div class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
 		<ScrollReveal>
-			<p class="label text-accent">/ {$t.contacts.title}</p>
+			<p class="label text-accent">{$t.contacts.title}</p>
 			<p
 				class="mt-5 font-display text-4xl leading-[1.0] tracking-wide text-text-primary uppercase sm:text-6xl"
 			>

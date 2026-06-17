@@ -250,7 +250,7 @@ export const ru: Translations = {
 				place: 'Яндекс',
 				role: 'Асессор-разработчик',
 				period: '2023',
-				logo: '/logo/yandex.ico',
+				logo: '/logo/yandex.svg',
 				summary: 'Размечал материалы по программированию и CS, писал и редактировал эталонные ответы YandexGPT по IT, занимался фактчекингом.'
 			}
 		],

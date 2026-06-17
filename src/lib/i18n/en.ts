@@ -250,7 +250,7 @@ export const en: Translations = {
 				place: 'Yandex',
 				role: 'Assessor Developer',
 				period: '2023',
-				logo: '/logo/yandex.ico',
+				logo: '/logo/yandex.svg',
 				summary: 'Labelled programming and CS material, wrote and edited reference answers for YandexGPT on IT topics, did fact-checking.'
 			}
 		],

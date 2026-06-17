@@ -28,7 +28,7 @@
 			<h1 class="font-display text-3xl leading-none tracking-tight text-text-primary uppercase sm:text-4xl md:text-5xl">
 				{$t.hero.name}
 			</h1>
-			<p class="label mt-3 text-accent">/ {$t.hero.role}</p>
+			<p class="label mt-3 text-accent">{$t.hero.role}</p>
 			<p class="mt-5 max-w-xl text-2xl leading-tight font-semibold tracking-tight text-text-primary sm:text-3xl">
 				{$t.hero.headline}
 			</p>
