@@ -9,7 +9,8 @@ export const en: Translations = {
 	hero: {
 		name: 'Aleksey Nizhgorodov',
 		role: 'Frontend Engineer',
-		headline: 'Hard frontend: maps, dashboards & custom engines',
+		big: ['Hard', 'frontend'],
+		headline: 'Maps, dashboards, visualizations. Custom engines when off-the-shelf falls short.',
 		bio: 'Frontend engineer, ~4 years in product. At Perfema I led a 3-person frontend team — code review, mentoring, architecture from scratch. I like the hard stuff: Leaflet maps, data-heavy dashboards, visualizations, WebGL. When off-the-shelf isn’t enough, I write my own.',
 		availability: 'Open to relocation & remote · hybrid / office · freelance',
 		location: 'Moscow → open to relocation',

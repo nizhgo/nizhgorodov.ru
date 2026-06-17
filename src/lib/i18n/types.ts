@@ -39,6 +39,7 @@ export interface Translations {
 	hero: {
 		name: string;
 		role: string;
+		big: string[];
 		headline: string;
 		bio: string;
 		availability: string;
