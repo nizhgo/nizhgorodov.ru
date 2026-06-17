@@ -4,14 +4,14 @@ export const en: Translations = {
 	meta: {
 		title: 'Aleksey Nizhgorodov | Frontend Engineer & Team Lead',
 		description:
-			'Frontend engineer and team lead. Leaflet maps, dashboards, data-viz, WebGL. I write my own libraries when off-the-shelf falls short. Open to relocation to Tbilisi and freelance.'
+			'Frontend engineer and team lead. Leaflet maps, dashboards, data-viz, WebGL. I write my own libraries when off-the-shelf falls short. Open to relocation and freelance.'
 	},
 	hero: {
 		name: 'Aleksey Nizhgorodov',
 		role: 'Frontend Engineer · Team Lead',
 		headline: 'Hard frontend: maps, dashboards & custom engines',
 		bio: 'Frontend engineer, ~4 years in product. At Perfema I led a 3-person frontend team — code review, mentoring, architecture from scratch. I like the hard stuff: Leaflet maps, data-heavy dashboards, visualizations, WebGL. When off-the-shelf isn’t enough, I write my own.',
-		availability: 'Open to relocation (Tbilisi) · hybrid / remote / office · freelance',
+		availability: 'Open to relocation & remote · hybrid / office · freelance',
 		cta: {
 			label: 'Download CV',
 			href: '/cv/aleksey-nizhgorodov-en.pdf'
@@ -216,7 +216,12 @@ export const en: Translations = {
 			{ place: 'Yandex', role: 'Assessor Developer', period: '2023' }
 		],
 		education: [
-			{ place: 'HSE', program: 'Master’s, Digital Urbanism', period: '2024 — now' },
+			{
+				place: 'HSE',
+				program: 'Master’s, Digital Urbanism',
+				period: '2024 — 2026',
+				note: 'A deliberate choice: I’ve always been drawn to urbanism, and the program is tightly tied to data analytics (Python, geodata, QGIS) — essentially an IT track. It sharpened my cartography and geo-analytics, which I love in frontend too.'
+			},
 			{ place: 'MISIS', program: 'Bachelor’s, IS&T', period: '2020 — 2024' }
 		]
 	},

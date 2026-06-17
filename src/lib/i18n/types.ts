@@ -58,7 +58,7 @@ export interface Translations {
 	background: {
 		title: string;
 		work: { place: string; role: string; period: string; summary?: string }[];
-		education: { place: string; program: string; period: string }[];
+		education: { place: string; program: string; period: string; note?: string }[];
 	};
 	contacts: {
 		title: string;

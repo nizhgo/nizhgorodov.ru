@@ -32,12 +32,17 @@
 			<div class="h-2"></div>
 
 			{#each $t.background.education as edu}
-				<p>
-					<span class="font-bold text-text-primary">{edu.place}</span>
-					<span class="text-text-muted"> → </span>
-					<span class="text-text-secondary">{edu.program}</span>
-					<span class="text-text-muted">, {edu.period}</span>
-				</p>
+				<div>
+					<p>
+						<span class="font-bold text-text-primary">{edu.place}</span>
+						<span class="text-text-muted"> → </span>
+						<span class="text-text-secondary">{edu.program}</span>
+						<span class="text-text-muted">, {edu.period}</span>
+					</p>
+					{#if edu.note}
+						<p class="mt-1 max-w-xl font-sans text-xs leading-relaxed text-text-muted">{edu.note}</p>
+					{/if}
+				</div>
 			{/each}
 		</div>
 	</ScrollReveal>

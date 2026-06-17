@@ -12,6 +12,14 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# IDE
+.idea
+.vscode
+
+# Other package managers (this project uses npm)
+pnpm-lock.yaml
+yarn.lock
+
 # Env
 .env
 .env.*

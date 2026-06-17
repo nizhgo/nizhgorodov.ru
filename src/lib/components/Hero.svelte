@@ -9,6 +9,13 @@
 	<PixelCanvas />
 
 	<div class="mt-10">
+		<img
+			src="/avatar.jpg"
+			alt={$t.hero.name}
+			width="96"
+			height="96"
+			class="mb-6 h-24 w-24 rounded-full object-cover ring-2 ring-accent/40"
+		/>
 		<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-text-muted">
 			{$t.hero.role}
 		</p>
