@@ -1,15 +1,20 @@
 <!doctype html>
-<html lang="ru" data-theme="dark">
+<html lang="ru" data-theme="light">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#0f0f0f" />
-		<meta name="description" content="Алексей Нижгородов — Frontend Developer" />
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f8fa" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1018" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 		<script>
 			(function () {
-				var t = localStorage.getItem('theme');
-				if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+				var t = localStorage.getItem('theme') || 'light';
 				document.documentElement.setAttribute('data-theme', t);
 			})();
 		</script>

@@ -3,18 +3,18 @@
 	import { theme } from '$lib/theme';
 </script>
 
-<header class="w-full">
-	<nav class="mx-auto flex max-w-3xl items-center justify-between px-6 py-6">
+<header class="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-md">
+	<nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
 		<a
 			href="/"
-			class="font-display text-xs tracking-wider text-accent transition-opacity hover:opacity-70"
-			>NIZHGO</a
+			class="font-display text-base font-extrabold tracking-tight text-accent transition-opacity hover:opacity-70"
+			>nizhgo</a
 		>
-		<div class="flex items-center gap-3">
+		<div class="flex items-center gap-2">
 			<button
 				onclick={theme.toggle}
-				class="flex h-8 w-8 items-center justify-center rounded-full text-text-muted transition-colors hover:text-accent"
-				aria-label="Toggle theme"
+				class="flex h-9 w-9 items-center justify-center rounded-full text-text-muted transition-colors hover:bg-surface-2 hover:text-accent"
+				aria-label={$theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
 			>
 				{#if $theme === 'dark'}
 					<svg
@@ -26,6 +26,7 @@
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
+						aria-hidden="true"
 					>
 						<circle cx="12" cy="12" r="5" />
 						<line x1="12" y1="1" x2="12" y2="3" />
@@ -47,6 +48,7 @@
 						stroke-width="2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
+						aria-hidden="true"
 					>
 						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
 					</svg>
@@ -54,9 +56,10 @@
 			</button>
 			<button
 				onclick={toggleLocale}
-				class="rounded-full border border-accent px-5 py-1.5 text-sm text-accent transition-all hover:bg-accent/10"
+				class="rounded-full border border-border px-4 py-1.5 font-mono text-xs text-text-secondary transition-all hover:border-accent hover:text-accent"
+				aria-label="Switch language"
 			>
-				EN / RU
+				{$locale === 'ru' ? 'EN' : 'RU'}
 			</button>
 		</div>
 	</nav>

@@ -12,10 +12,25 @@ export const en: Translations = {
 		headline: 'Hard frontend: maps, dashboards & custom engines',
 		bio: 'Frontend engineer, ~4 years in product. At Perfema I led a 3-person frontend team — code review, mentoring, architecture from scratch. I like the hard stuff: Leaflet maps, data-heavy dashboards, visualizations, WebGL. When off-the-shelf isn’t enough, I write my own.',
 		availability: 'Open to relocation & remote · hybrid / office · freelance',
+		location: 'Moscow → open to relocation',
+		stats: [
+			{ value: '4', label: 'years in frontend' },
+			{ value: '3', label: 'frontend devs led' },
+			{ value: '8', label: 'case studies' },
+			{ value: 'B2', label: 'English' }
+		],
 		cta: {
 			label: 'Download CV',
 			href: '/cv/aleksey-nizhgorodov-en.pdf'
 		}
+	},
+	ui: {
+		status: 'Status',
+		numbers: 'By the numbers',
+		featured: 'Featured',
+		allWork: 'All work',
+		experience: 'Experience',
+		education: 'Education'
 	},
 	projects: {
 		title: 'Projects',

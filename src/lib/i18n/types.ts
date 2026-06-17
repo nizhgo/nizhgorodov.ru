@@ -42,10 +42,20 @@ export interface Translations {
 		headline: string;
 		bio: string;
 		availability: string;
+		location: string;
+		stats: { value: string; label: string }[];
 		cta: {
 			label: string;
 			href: string;
 		};
+	};
+	ui: {
+		status: string;
+		numbers: string;
+		featured: string;
+		allWork: string;
+		experience: string;
+		education: string;
 	};
 	projects: {
 		title: string;

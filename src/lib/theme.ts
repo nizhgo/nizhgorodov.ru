@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export type Theme = 'dark' | 'light';
 
 function createThemeStore() {
-	const { subscribe, set, update } = writable<Theme>('dark');
+	const { subscribe, set, update } = writable<Theme>('light');
 
 	return {
 		subscribe,
@@ -16,10 +16,7 @@ function createThemeStore() {
 			}),
 		init: () => {
 			const stored = localStorage.getItem('theme') as Theme | null;
-			const preferred = window.matchMedia('(prefers-color-scheme: light)').matches
-				? 'light'
-				: 'dark';
-			const resolved = stored ?? preferred;
+			const resolved = stored ?? 'light';
 			document.documentElement.setAttribute('data-theme', resolved);
 			set(resolved);
 		}
