@@ -12,12 +12,24 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@eslint/js": "^10.0.1",
 		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-vercel": "^6.3.3",
 		"@sveltejs/kit": "^2.50.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@tailwindcss/vite": "^4.2.1",
+		"clsx": "^2.1.1",
+		"eslint": "^10.0.2",
+		"eslint-plugin-svelte": "^3.15.0",
+		"globals": "^17.3.0",
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.5.0",
+		"prettier-plugin-tailwindcss": "^0.7.2",
 		"svelte": "^5.51.0",
 		"svelte-check": "^4.3.6",
+		"tailwindcss": "^4.2.1",
 		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.56.1",
 		"vite": "^7.3.1"
 	}
 }
