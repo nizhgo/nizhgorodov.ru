@@ -7,10 +7,9 @@
 <!-- meta bar -->
 <div class="border-b border-rule">
 	<div
-		class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-5 py-2.5 font-mono text-[11px] tracking-[0.14em] text-text-muted uppercase sm:px-8"
+		class="mx-auto flex max-w-6xl flex-wrap items-center gap-2 px-5 py-2.5 font-mono text-[11px] tracking-[0.14em] text-text-muted uppercase sm:px-8"
 	>
 		<span>{$t.hero.role}</span>
-		<span>{$t.hero.location}</span>
 	</div>
 </div>
 
@@ -19,14 +18,11 @@
 	<div
 		class="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-[300px_1fr] md:items-start md:py-16"
 	>
-		<figure class="mx-auto w-full max-w-[300px] md:mx-0">
+		<div class="mx-auto w-full max-w-[300px] md:mx-0">
 			<div class="aspect-[4/5] overflow-hidden border border-rule">
 				<img src="/photo-1.jpg" alt={$t.hero.name} class="h-full w-full object-cover object-top" />
 			</div>
-			<figcaption class="mt-2 font-mono text-[10px] tracking-wider text-text-muted uppercase">
-				{$t.hero.location}
-			</figcaption>
-		</figure>
+		</div>
 
 		<div>
 			<h1 class="font-display text-3xl leading-none tracking-tight text-text-primary uppercase sm:text-4xl md:text-5xl">
@@ -37,17 +33,13 @@
 				{$t.hero.headline}
 			</p>
 			<p class="mt-4 max-w-xl text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
-			<div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+			<div class="mt-7">
 				<a
 					href={$t.hero.cta.href}
 					class="inline-block bg-text-primary px-5 py-3 font-mono text-xs tracking-[0.1em] text-background uppercase transition-colors hover:bg-accent"
 				>
 					{$t.hero.cta.label} →
 				</a>
-				<p class="flex items-center gap-2 font-mono text-[11px] text-text-muted">
-					<span class="inline-block h-2 w-2 shrink-0 rounded-full bg-accent"></span>
-					{$t.hero.availability}
-				</p>
 			</div>
 		</div>
 	</div>

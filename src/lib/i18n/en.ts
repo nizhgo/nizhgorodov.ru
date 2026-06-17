@@ -243,6 +243,7 @@ export const en: Translations = {
 				role: 'Frontend · part-time',
 				period: '2025 — now',
 				logo: '/logo/edya.svg',
+				logoBg: true,
 				summary: 'Part-time gig: a commercial VPN web cabinet (white-label across 8 brands, a custom failover layer for blocking) and an AI super-app in Telegram (real-time generation, payments).'
 			},
 			{

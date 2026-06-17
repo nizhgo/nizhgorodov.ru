@@ -72,7 +72,14 @@ export interface Translations {
 	};
 	background: {
 		title: string;
-		work: { place: string; role: string; period: string; summary?: string; logo?: string }[];
+		work: {
+			place: string;
+			role: string;
+			period: string;
+			summary?: string;
+			logo?: string;
+			logoBg?: boolean;
+		}[];
 		education: {
 			place: string;
 			program: string;

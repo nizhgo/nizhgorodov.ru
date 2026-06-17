@@ -19,7 +19,15 @@
 				{#each $t.background.work as job}
 					<div class="border-t border-border pt-4">
 						{#if job.logo}
-							<img src={job.logo} alt="" class="mb-3 h-6 w-auto max-w-[130px] object-contain" />
+							{#if job.logoBg}
+								<span
+									class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[#15171c] p-1.5"
+								>
+									<img src={job.logo} alt="" class="h-full w-full object-contain" />
+								</span>
+							{:else}
+								<img src={job.logo} alt="" class="mb-3 h-6 w-auto max-w-[130px] object-contain" />
+							{/if}
 						{/if}
 						<div class="flex items-baseline justify-between gap-3">
 							<p class="text-lg font-bold text-text-primary">{job.place}</p>

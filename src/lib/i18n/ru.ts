@@ -243,6 +243,7 @@ export const ru: Translations = {
 				role: 'Frontend · парттайм',
 				period: '2025 — н.в.',
 				logo: '/logo/edya.svg',
+				logoBg: true,
 				summary: 'Парттайм-подработка: веб-кабинет коммерческого VPN (white-label на 8 брендов, свой failover под блокировки) и AI-суперапп в Telegram (реалтайм-генерация, платежи).'
 			},
 			{
