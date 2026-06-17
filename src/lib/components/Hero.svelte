@@ -10,7 +10,7 @@
 
 	<div class="mt-10">
 		<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-text-muted">
-			Frontend Developer
+			{$t.hero.role}
 		</p>
 
 		<h1 class="mt-3 text-5xl font-extrabold leading-[0.9] tracking-tight sm:text-6xl md:text-7xl">
@@ -18,8 +18,26 @@
 			<span class="text-text-primary">{nameParts.slice(1).join(' ')}</span>
 		</h1>
 
-		<p class="mt-8 max-w-md text-base leading-relaxed text-text-secondary">
+		<p class="mt-5 max-w-md text-lg font-medium text-text-primary">
+			{$t.hero.headline}
+		</p>
+
+		<p class="mt-5 max-w-md text-base leading-relaxed text-text-secondary">
 			{$t.hero.bio}
 		</p>
+
+		<div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+			<a
+				href={$t.hero.cta.href}
+				class="inline-flex items-center gap-2 self-start rounded-full bg-accent px-5 py-2 text-sm font-bold text-background transition-opacity hover:opacity-90"
+			>
+				{$t.hero.cta.label}
+				<span aria-hidden="true">↓</span>
+			</a>
+			<p class="flex items-center gap-2 font-mono text-xs text-text-muted">
+				<span class="inline-block h-2 w-2 shrink-0 rounded-full bg-accent"></span>
+				{$t.hero.availability}
+			</p>
+		</div>
 	</div>
 </section>

@@ -2,7 +2,7 @@
 	import '../app.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { t } from '$lib/i18n';
+	import { t, locale } from '$lib/i18n';
 	import { theme } from '$lib/theme';
 	import { onMount } from 'svelte';
 
@@ -10,6 +10,10 @@
 
 	onMount(() => {
 		theme.init();
+	});
+
+	$effect(() => {
+		document.documentElement.lang = $locale;
 	});
 </script>
 

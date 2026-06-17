@@ -7,24 +7,29 @@
 	<ScrollReveal>
 		<div class="mb-8 flex items-baseline gap-4">
 			<span class="font-mono text-5xl font-bold leading-none text-accent/10">03</span>
-			<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
+			<h2 class="text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
 				{$t.background.title}
-			</h3>
+			</h2>
 		</div>
 	</ScrollReveal>
 
 	<ScrollReveal>
-		<div class="space-y-2 font-mono text-sm">
+		<div class="space-y-4 font-mono text-sm">
 			{#each $t.background.work as job}
-				<p>
-					<span class="font-bold text-text-primary">{job.place}</span>
-					<span class="text-text-muted"> → </span>
-					<span class="text-text-secondary">{job.role}</span>
-					<span class="text-text-muted">, {job.period}</span>
-				</p>
+				<div>
+					<p>
+						<span class="font-bold text-text-primary">{job.place}</span>
+						<span class="text-text-muted"> → </span>
+						<span class="text-text-secondary">{job.role}</span>
+						<span class="text-text-muted">, {job.period}</span>
+					</p>
+					{#if job.summary}
+						<p class="mt-1 font-sans text-xs leading-relaxed text-text-muted">{job.summary}</p>
+					{/if}
+				</div>
 			{/each}
 
-			<div class="h-4"></div>
+			<div class="h-2"></div>
 
 			{#each $t.background.education as edu}
 				<p>

@@ -11,6 +11,9 @@
 
 <section class="mx-auto max-w-3xl px-6 py-16">
 	<ScrollReveal>
+		<p class="mb-6 max-w-md text-sm leading-relaxed text-text-secondary">
+			{$t.contacts.note}
+		</p>
 		<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
 			{#each links as link}
 				<a

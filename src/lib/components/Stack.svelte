@@ -7,15 +7,32 @@
 	<ScrollReveal>
 		<div class="mb-8 flex items-baseline gap-4">
 			<span class="font-mono text-5xl font-bold leading-none text-accent/10">02</span>
-			<h3 class="text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
+			<h2 class="text-xs font-bold uppercase tracking-[0.2em] text-text-muted">
 				{$t.stack.title}
-			</h3>
+			</h2>
 		</div>
 	</ScrollReveal>
 
-	<ScrollReveal>
-		<p class="font-mono text-sm leading-loose text-text-secondary">
-			{$t.stack.items.join('  ·  ')}
-		</p>
+	<ScrollReveal stagger>
+		<div class="space-y-5">
+			{#each $t.stack.groups as group}
+				<div class="reveal flex flex-col gap-2 sm:flex-row sm:gap-6">
+					<p
+						class="shrink-0 pt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-text-muted sm:w-44"
+					>
+						{group.label}
+					</p>
+					<div class="flex flex-wrap gap-2">
+						{#each group.items as item}
+							<span
+								class="rounded border border-border px-2.5 py-1 font-mono text-xs text-text-secondary"
+							>
+								{item}
+							</span>
+						{/each}
+					</div>
+				</div>
+			{/each}
+		</div>
 	</ScrollReveal>
 </section>
