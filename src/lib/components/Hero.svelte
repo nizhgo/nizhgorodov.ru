@@ -19,7 +19,7 @@
 		class="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-[300px_1fr] md:items-start md:py-16"
 	>
 		<div class="mx-auto w-full max-w-[300px] md:mx-0">
-			<div class="aspect-[4/5] overflow-hidden border border-rule">
+			<div class="aspect-[4/5] overflow-hidden rounded-2xl border border-rule">
 				<img src="/photo-1.jpg" alt={$t.hero.name} class="h-full w-full object-cover object-top" />
 			</div>
 		</div>
