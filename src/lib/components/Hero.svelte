@@ -50,7 +50,6 @@
 			<p class="mt-3 text-3xl leading-[1.12] font-semibold tracking-tight text-text-primary sm:text-4xl md:text-[40px]">
 				{$t.hero.headline}
 			</p>
-			<p class="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
 			<div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
 				<a
 					href={$t.hero.cta.href}

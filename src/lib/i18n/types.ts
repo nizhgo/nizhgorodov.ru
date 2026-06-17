@@ -49,6 +49,10 @@ export interface Translations {
 			href: string;
 		};
 	};
+	about: {
+		title: string;
+		body: string[];
+	};
 	ui: {
 		status: string;
 		numbers: string;

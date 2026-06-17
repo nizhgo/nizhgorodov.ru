@@ -14,9 +14,9 @@
 		<ScrollReveal>
 			<p class="label text-accent">/ {$t.contacts.title}</p>
 			<p
-				class="mt-5 max-w-3xl font-display text-3xl leading-[1.05] tracking-wide text-text-primary uppercase sm:text-5xl"
+				class="mt-5 font-display text-4xl leading-[1.0] tracking-wide text-text-primary uppercase sm:text-6xl"
 			>
-				{$t.contacts.note}
+				{$t.hero.name}
 			</p>
 		</ScrollReveal>
 

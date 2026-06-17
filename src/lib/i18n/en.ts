@@ -2,13 +2,13 @@ import type { Translations } from './types';
 
 export const en: Translations = {
 	meta: {
-		title: 'Aleksey Nizhgorodov | Frontend Engineer & Team Lead',
+		title: 'Aleksey Nizhgorodov | Frontend Engineer',
 		description:
 			'Frontend engineer and team lead. Leaflet maps, dashboards, data-viz, WebGL. I write my own libraries when off-the-shelf falls short. Open to relocation and freelance.'
 	},
 	hero: {
 		name: 'Aleksey Nizhgorodov',
-		role: 'Frontend Engineer · Team Lead',
+		role: 'Frontend Engineer',
 		headline: 'Hard frontend: maps, dashboards & custom engines',
 		bio: 'Frontend engineer, ~4 years in product. At Perfema I led a 3-person frontend team — code review, mentoring, architecture from scratch. I like the hard stuff: Leaflet maps, data-heavy dashboards, visualizations, WebGL. When off-the-shelf isn’t enough, I write my own.',
 		availability: 'Open to relocation & remote · hybrid / office · freelance',
@@ -23,6 +23,14 @@ export const en: Translations = {
 			label: 'Download CV',
 			href: '/cv/aleksey-nizhgorodov-en.pdf'
 		}
+	},
+	about: {
+		title: 'About',
+		body: [
+			'Frontend engineer, ~4 years in product. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL. When off-the-shelf libraries aren’t enough, I write my own.',
+			'I’ve worked both ways: sometimes leading a frontend team — reviews, mentoring, architecture from scratch; sometimes being the only frontend and carrying a product end to end.',
+			'Finishing an HSE master’s in digital urbanism — lots of geodata, Python and QGIS. Open to relocation and remote, available for freelance.'
+		]
 	},
 	ui: {
 		status: 'Status',
@@ -224,7 +232,7 @@ export const en: Translations = {
 		work: [
 			{
 				place: 'Perfema',
-				role: 'Frontend Developer / team lead',
+				role: 'Frontend Developer',
 				period: '2023 — now',
 				summary: 'Led a 3-person frontend team: code review, mentoring, product architecture from scratch.'
 			},
