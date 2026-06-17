@@ -9,7 +9,7 @@
 	<div
 		class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-5 py-2.5 font-mono text-[11px] tracking-[0.14em] text-text-muted uppercase sm:px-8"
 	>
-		<span>{$t.hero.name} · {$t.hero.role}</span>
+		<span>{$t.hero.role}</span>
 		<span>{$t.hero.location}</span>
 	</div>
 </div>
@@ -29,11 +29,14 @@
 		</figure>
 
 		<div>
-			<p class="label text-accent">/ {$t.hero.role}</p>
-			<h1 class="mt-3 text-4xl leading-[1.08] font-bold tracking-tight text-text-primary sm:text-5xl md:text-[56px]">
-				{$t.hero.headline}
+			<h1 class="font-display text-3xl leading-none tracking-tight text-text-primary uppercase sm:text-4xl md:text-5xl">
+				{$t.hero.name}
 			</h1>
-			<p class="mt-5 max-w-xl text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
+			<p class="label mt-3 text-accent">/ {$t.hero.role}</p>
+			<p class="mt-5 max-w-xl text-2xl leading-tight font-semibold tracking-tight text-text-primary sm:text-3xl">
+				{$t.hero.headline}
+			</p>
+			<p class="mt-4 max-w-xl text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
 			<div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
 				<a
 					href={$t.hero.cta.href}

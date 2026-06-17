@@ -18,6 +18,9 @@
 			<div class="mt-5 space-y-7">
 				{#each $t.background.work as job}
 					<div class="border-t border-border pt-4">
+						{#if job.logo}
+							<img src={job.logo} alt="" class="mb-3 h-6 w-auto max-w-[130px] object-contain" />
+						{/if}
 						<div class="flex items-baseline justify-between gap-3">
 							<p class="text-lg font-bold text-text-primary">{job.place}</p>
 							<p class="shrink-0 font-mono text-[11px] text-text-muted">{job.period}</p>
