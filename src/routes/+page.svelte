@@ -1,9 +1,11 @@
 <script lang="ts">
-	import Bento from '$lib/components/Bento.svelte';
+	import Hero from '$lib/components/Hero.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import Background from '$lib/components/Background.svelte';
+	import Contacts from '$lib/components/Contacts.svelte';
 </script>
 
-<Bento />
+<Hero />
 <Projects />
 <Background />
+<Contacts />

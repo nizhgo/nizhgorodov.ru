@@ -3,45 +3,46 @@
 	import ScrollReveal from './ScrollReveal.svelte';
 </script>
 
-<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+<section class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
 	<ScrollReveal>
-		<div class="mb-8 flex items-baseline gap-4">
-			<span class="font-display text-5xl font-extrabold leading-none text-accent/15">02</span>
-			<h2 class="label">{$t.background.title}</h2>
+		<div class="flex items-end justify-between border-b border-rule pb-4">
+			<h2 class="font-display text-2xl tracking-wide text-text-primary uppercase sm:text-3xl">
+				{$t.background.title}
+			</h2>
 		</div>
 	</ScrollReveal>
 
-	<ScrollReveal stagger class="grid grid-cols-1 gap-3 md:grid-cols-2">
-		<div class="tile tile-ticks reveal p-6">
-			<p class="label">{$t.ui.experience}</p>
-			<div class="mt-4 space-y-5">
+	<ScrollReveal class="grid gap-x-10 gap-y-10 pt-9 md:grid-cols-2">
+		<div>
+			<p class="label text-accent">/ {$t.ui.experience}</p>
+			<div class="mt-5 space-y-7">
 				{#each $t.background.work as job}
-					<div>
+					<div class="border-t border-border pt-4">
 						<div class="flex items-baseline justify-between gap-3">
-							<p class="font-display text-base font-bold text-text-primary">{job.place}</p>
+							<p class="text-lg font-bold text-text-primary">{job.place}</p>
 							<p class="shrink-0 font-mono text-[11px] text-text-muted">{job.period}</p>
 						</div>
 						<p class="font-mono text-xs text-accent">{job.role}</p>
 						{#if job.summary}
-							<p class="mt-1.5 text-xs leading-relaxed text-text-muted">{job.summary}</p>
+							<p class="mt-2 text-sm leading-relaxed text-text-secondary">{job.summary}</p>
 						{/if}
 					</div>
 				{/each}
 			</div>
 		</div>
 
-		<div class="tile tile-ticks reveal p-6">
-			<p class="label">{$t.ui.education}</p>
-			<div class="mt-4 space-y-5">
+		<div>
+			<p class="label text-accent">/ {$t.ui.education}</p>
+			<div class="mt-5 space-y-7">
 				{#each $t.background.education as edu}
-					<div>
+					<div class="border-t border-border pt-4">
 						<div class="flex items-baseline justify-between gap-3">
-							<p class="font-display text-base font-bold text-text-primary">{edu.place}</p>
+							<p class="text-lg font-bold text-text-primary">{edu.place}</p>
 							<p class="shrink-0 font-mono text-[11px] text-text-muted">{edu.period}</p>
 						</div>
 						<p class="font-mono text-xs text-accent">{edu.program}</p>
 						{#if edu.note}
-							<p class="mt-1.5 text-xs leading-relaxed text-text-muted">{edu.note}</p>
+							<p class="mt-2 text-sm leading-relaxed text-text-secondary">{edu.note}</p>
 						{/if}
 					</div>
 				{/each}
