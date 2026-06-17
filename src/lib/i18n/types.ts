@@ -5,23 +5,16 @@ export interface ProjectLink {
 }
 
 export interface ProjectCard {
-	/** stable slug — MUST be identical across ru/en for index alignment */
 	id: string;
 	title: string;
-	/** 1–2 sentence hook */
 	tagline: string;
-	/** e.g. "Solo author", "Team Lead", "~53% of commits" */
 	role: string;
 	period?: string;
 	source: 'repo' | 'resume' | 'both';
-	/** true → render an NDA badge and hide links */
 	confidential?: boolean;
-	/** short label shown on the NDA badge, e.g. "NDA · Perfema" */
 	ndaLabel?: string;
 	stack: string[];
-	/** task → did → result, recruiter-readable */
 	bullets: string[];
-	/** only verified, code-backed numbers */
 	metrics?: string[];
 	links?: ProjectLink[];
 }

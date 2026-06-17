@@ -26,7 +26,7 @@
 									<img src={job.logo} alt="" class="h-full w-full object-contain" />
 								</span>
 							{:else}
-								<img src={job.logo} alt="" class="mb-3 h-6 w-auto max-w-[130px] object-contain" />
+								<img src={job.logo} alt="" class="mb-3 h-8 w-auto max-w-[150px] object-contain" />
 							{/if}
 						{/if}
 						<div class="flex items-baseline justify-between gap-3">
