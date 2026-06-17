@@ -68,7 +68,7 @@ export interface Translations {
 		work: {
 			place: string;
 			role: string;
-			period: string;
+			period?: string;
 			summary?: string;
 			logo?: string;
 			logoBg?: boolean;

@@ -31,7 +31,9 @@
 						{/if}
 						<div class="flex items-baseline justify-between gap-3">
 							<p class="text-lg font-bold text-text-primary">{job.place}</p>
-							<p class="shrink-0 font-mono text-[11px] text-text-muted">{job.period}</p>
+							{#if job.period}
+								<p class="shrink-0 font-mono text-[11px] text-text-muted">{job.period}</p>
+							{/if}
 						</div>
 						<p class="font-mono text-xs text-accent">{job.role}</p>
 						{#if job.summary}
