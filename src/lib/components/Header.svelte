@@ -7,7 +7,7 @@
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
 		<a
 			href="/"
-			class="rounded-lg bg-accent px-2.5 py-1 font-display text-lg tracking-wide text-background"
+			class="bg-accent px-2.5 py-1 font-display text-lg tracking-wide text-background"
 			>@nizhgo</a
 		>
 		<div class="flex items-center gap-2">
