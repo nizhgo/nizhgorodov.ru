@@ -42,7 +42,7 @@
 						{#if project.metrics && project.metrics.length}
 							<div class="mt-4 flex flex-wrap gap-2">
 								{#each project.metrics as metric}
-									<span class="bg-accent px-2 py-1 font-mono text-[10px] tracking-wide text-background">
+									<span class="rounded-full bg-accent px-3 py-1 font-mono text-[10px] tracking-wide text-background">
 										{metric}
 									</span>
 								{/each}

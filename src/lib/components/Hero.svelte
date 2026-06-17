@@ -14,22 +14,6 @@
 	</div>
 </div>
 
-<!-- giant name -->
-<section class="mx-auto max-w-6xl px-5 pt-8 pb-6 sm:px-8">
-	<h1 class="display text-[clamp(54px,14vw,200px)]">
-		<span class="text-text-primary">{$t.hero.big[0]}</span><br />
-		<span class="text-outline">{$t.hero.big[1]}</span>
-	</h1>
-</section>
-
-<!-- marquee -->
-<div class="marquee border-y border-rule bg-accent text-background">
-	<div class="track font-display py-2 text-lg tracking-wide uppercase sm:text-xl">
-		<span class="pr-6">{stackLine} ✲ </span>
-		<span class="pr-6">{stackLine} ✲ </span>
-	</div>
-</div>
-
 <!-- intro + photo -->
 <section class="border-b border-rule">
 	<div
@@ -46,9 +30,10 @@
 
 		<div>
 			<p class="label text-accent">/ {$t.hero.role}</p>
-			<p class="mt-3 text-3xl leading-[1.12] font-semibold tracking-tight text-text-primary sm:text-4xl md:text-[40px]">
+			<h1 class="mt-3 text-4xl leading-[1.08] font-bold tracking-tight text-text-primary sm:text-5xl md:text-[56px]">
 				{$t.hero.headline}
-			</p>
+			</h1>
+			<p class="mt-5 max-w-xl text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
 			<div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
 				<a
 					href={$t.hero.cta.href}
@@ -64,3 +49,11 @@
 		</div>
 	</div>
 </section>
+
+<!-- marquee -->
+<div class="marquee border-b border-rule bg-accent text-background">
+	<div class="track font-display py-2 text-lg tracking-wide uppercase sm:text-xl">
+		<span class="pr-6">{stackLine} ✲ </span>
+		<span class="pr-6">{stackLine} ✲ </span>
+	</div>
+</div>
