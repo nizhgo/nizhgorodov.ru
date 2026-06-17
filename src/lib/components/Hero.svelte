@@ -2,13 +2,7 @@
 	import { t } from '$lib/i18n';
 
 	const nameParts = $derived($t.hero.name.split(' '));
-	const stackLine = $derived($t.stack.groups.flatMap((g) => g.items).join(' ✲ '));
-
-	const photos = [
-		{ src: '/photo-1.jpg', cap: '01 · студия', pos: 'object-top' },
-		{ src: '/photo-2.jpg', cap: '02 · field', pos: 'object-top' },
-		{ src: '/photo-3.jpg', cap: '03 · field', pos: 'object-center' }
-	];
+	const stackLine = $derived($t.stack.groups.flatMap((g) => g.items).join(' ✲ '));
 </script>
 
 <!-- meta bar -->
@@ -32,48 +26,43 @@
 <!-- marquee -->
 <div class="marquee border-y border-rule bg-accent text-background">
 	<div class="track font-display py-2 text-lg tracking-wide uppercase sm:text-xl">
-		<span class="pr-6">{stackLine} ✲ </span>
-		<span class="pr-6">{stackLine} ✲ </span>
+		<span class="pr-6">{stackLine} ✲ </span>
+		<span class="pr-6">{stackLine} ✲ </span>
 	</div>
 </div>
 
-<!-- statement -->
+<!-- intro + photo -->
 <section class="border-b border-rule">
-	<div class="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-[1.4fr_1fr] md:py-16">
+	<div
+		class="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:px-8 md:grid-cols-[300px_1fr] md:items-start md:py-16"
+	>
+		<figure class="mx-auto w-full max-w-[300px] md:mx-0">
+			<div class="aspect-[4/5] overflow-hidden border border-rule">
+				<img src="/photo-1.jpg" alt={$t.hero.name} class="h-full w-full object-cover object-top" />
+			</div>
+			<figcaption class="mt-2 font-mono text-[10px] tracking-wider text-text-muted uppercase">
+				{$t.hero.location}
+			</figcaption>
+		</figure>
+
 		<div>
 			<p class="label text-accent">/ {$t.hero.role}</p>
-			<p class="mt-4 text-3xl leading-[1.12] font-semibold tracking-tight text-text-primary sm:text-4xl md:text-[42px]">
+			<p class="mt-3 text-3xl leading-[1.12] font-semibold tracking-tight text-text-primary sm:text-4xl md:text-[40px]">
 				{$t.hero.headline}
 			</p>
+			<p class="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
+			<div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+				<a
+					href={$t.hero.cta.href}
+					class="inline-block bg-text-primary px-5 py-3 font-mono text-xs tracking-[0.1em] text-background uppercase transition-colors hover:bg-accent"
+				>
+					{$t.hero.cta.label} →
+				</a>
+				<p class="flex items-center gap-2 font-mono text-[11px] text-text-muted">
+					<span class="inline-block h-2 w-2 shrink-0 rounded-full bg-accent"></span>
+					{$t.hero.availability}
+				</p>
+			</div>
 		</div>
-		<div>
-			<p class="text-base leading-relaxed text-text-secondary">{$t.hero.bio}</p>
-			<a
-				href={$t.hero.cta.href}
-				class="mt-6 inline-block bg-text-primary px-5 py-3 font-mono text-xs tracking-[0.1em] text-background uppercase transition-colors hover:bg-accent"
-			>
-				{$t.hero.cta.label} →
-			</a>
-			<p class="mt-5 flex items-center gap-2 font-mono text-[11px] text-text-muted">
-				<span class="inline-block h-2 w-2 shrink-0 rounded-full bg-accent"></span>
-				{$t.hero.availability}
-			</p>
-		</div>
-	</div>
-</section>
-
-<!-- photos -->
-<section class="border-b border-rule">
-	<div class="mx-auto grid max-w-6xl grid-cols-3 gap-3 px-5 py-8 sm:px-8 sm:gap-5">
-		{#each photos as photo}
-			<figure>
-				<div class="aspect-[3/4] overflow-hidden border border-rule">
-					<img src={photo.src} alt="" class="h-full w-full object-cover {photo.pos}" />
-				</div>
-				<figcaption class="mt-2 font-mono text-[10px] tracking-wider text-text-muted uppercase">
-					{photo.cap}
-				</figcaption>
-			</figure>
-		{/each}
 	</div>
 </section>

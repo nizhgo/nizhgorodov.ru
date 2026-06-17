@@ -36,11 +36,18 @@
 			<div class="mt-5 space-y-7">
 				{#each $t.background.education as edu}
 					<div class="border-t border-border pt-4">
-						<div class="flex items-baseline justify-between gap-3">
-							<p class="text-lg font-bold text-text-primary">{edu.place}</p>
+						<div class="flex items-center justify-between gap-3">
+							<div class="flex items-center gap-3">
+								{#if edu.logo}
+									<span class="inline-flex items-center rounded-sm bg-white px-2 py-1.5">
+										<img src={edu.logo} alt="" class="h-5 w-auto max-w-[120px] object-contain" />
+									</span>
+								{/if}
+								<p class="text-lg font-bold text-text-primary">{edu.place}</p>
+							</div>
 							<p class="shrink-0 font-mono text-[11px] text-text-muted">{edu.period}</p>
 						</div>
-						<p class="font-mono text-xs text-accent">{edu.program}</p>
+						<p class="mt-2 font-mono text-xs text-accent">{edu.program}</p>
 						{#if edu.note}
 							<p class="mt-2 text-sm leading-relaxed text-text-secondary">{edu.note}</p>
 						{/if}

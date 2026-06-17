@@ -39,8 +39,8 @@ export const en: Translations = {
 				id: 'edya-cloud-vpn',
 				title: 'Edya — commercial VPN web cabinet',
 				tagline:
-					'Built almost solo (~96% of commits) a production VPN cabinet: OAuth/OTP login, one-link activation across 6 platforms, subscription migration from a Telegram bot, and a custom censorship-resilience layer. White-labeled into 8 brands from one codebase.',
-				role: 'Solo frontend lead / sole architect',
+					'Designed and built a production VPN cabinet: OAuth/OTP login, one-link activation across 6 platforms, subscription migration from a Telegram bot, and a custom censorship-resilience layer. White-labeled into 8 brands from one codebase.',
+				role: 'Frontend lead / architect',
 				period: '2026',
 				source: 'repo',
 				confidential: false,
@@ -57,20 +57,20 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'Task: a commercial VPN needed a multi-brand web cabinet. Did: solo-designed and built the whole SPA — file-based routing with auto code-splitting, a root store of 8 domain stores, and a hand-rolled API client that Zod-validates every response. Result: a shipped product, white-labeled into 8 brands from one codebase via a build-time flag.',
+					'Task: a commercial VPN needed a multi-brand web cabinet. Did: designed and built the whole SPA — file-based routing with auto code-splitting, a root store of 8 domain stores, and a hand-rolled API client that Zod-validates every response. Result: a shipped product, white-labeled into 8 brands from one codebase via a build-time flag.',
 					'Task: keep the cabinet reachable under blocking when a domain is killed. Did: a custom domain-failover layer — a service worker fetches a live-mirror list and redirects to the first reachable domain, plus a static fallback page; the endpoint is hidden behind obfuscation. Result: a censorship-resilience layer you only build for a genuinely targeted service.',
 					'Task: migrate legacy Telegram-bot subscriptions into web accounts. Did: a 5-step migration state machine with cross-account login and payment detection by observing growth in the subscription term vs a stored baseline. Result: a working cross-account transfer handling the “already migrated” edge case.',
 					'Task: a heavy bundle (Firebase / Lottie / QR). Did: route auto code-splitting + manual vendor chunking and lazy-loaded heavy pages. Result: initial bundle 1706 → 656 KB, gzip 467 → 175 KB.'
 				],
-				metrics: ['~96% of commits (solo)', 'bundle 1706 → 656 KB', '8 brands, one codebase', '6 platforms'],
+				metrics: ['−62% bundle size (1706→656 KB)', '8 white-label brands', '6 activation platforms', 'OAuth/OTP auth'],
 				links: [{ label: 'edya.org', href: 'https://edya.org', kind: 'live' }]
 			},
 			{
 				id: 'edya-hub-ai',
 				title: 'EdyaAI — AI super-app in Telegram',
 				tagline:
-					'A team product (~10 people) where I’m the largest contributor (~53% of commits) and sole author of the WebSocket generation engine, the payments layer, and the legacy-chat integration. Midjourney, GPT-Image and LLM chat behind one interface — with real-time and subscriptions.',
-				role: 'Senior / Lead Frontend (largest contributor)',
+					'A team product where I owned the WebSocket generation engine, the payments layer, and the legacy-chat integration. Midjourney, GPT-Image and LLM chat behind one interface — with real-time and subscriptions.',
+				role: 'Senior / Lead Frontend · team project',
 				period: '2025 — 2026',
 				source: 'repo',
 				confidential: false,
@@ -89,10 +89,10 @@ export const en: Translations = {
 				bullets: [
 					'Task: real-time Midjourney generation inside Telegram with live progress. Did: sole-designed a custom WebSocket client (622 lines, EventEmitter + MobX) with a request-registry — every action gets a UUID, a pending entry with a state machine, a 7-min per-request timeout, auto-reconnect. Result: a resilient real-time generation channel that survives connection drops.',
 					'Task: expose Midjourney’s full toolset, not just generate. Did: a generation-action engine (834 lines of MobX) modeling the tree — vary / upscale / upsample / zoom / pan / blend / reroll — with parent-linked history nodes. Result: a complete edit-your-generation UX on top of a quirky backend.',
-					'Task: monetization. Did: an end-to-end paid layer (tokens / tariffs / subscriptions), payment API and MobX store authored 100% by me — purchases, pay-in-external-browser, promocodes, balance polling. Result: working real money flows in production.',
+					'Task: monetization. Did: built the whole paid layer (tokens / tariffs / subscriptions) — purchases, pay-in-external-browser, promocodes, balance polling. Result: working real money flows in production.',
 					'Task: fold the legacy chat under one roof and ship to prod. Did: own deployment (Docker + nginx) and single-handedly embedded a separate Next.js chat app via iframe with a Telegram↔iframe bridge (safe-area / keyboard via postMessage, relaying haptics). Result: one unified deploy and seamless in-hub chat.'
 				],
-				metrics: ['~53% of commits — #1 contributor', 'WebSocket engine 622 lines (solo)', 'payments layer — 100% mine'],
+				metrics: ['real-time WebSocket generation', 'Midjourney + GPT-Image + LLM', 'live paid subscriptions'],
 				links: [{ label: 'EdyaAI on Telegram', href: 'https://t.me/EdyaAIrobot', kind: 'live' }]
 			},
 			{
@@ -115,8 +115,8 @@ export const en: Translations = {
 				id: 'touchmed-dashboards',
 				title: 'B2B occupational-health analytics',
 				tagline:
-					'In ~2 weeks, solo (~90% of lines): a backend-for-frontend, a resilient ingest pipeline and ~20 clinical dashboards over medical terminals — a custom Russia map, read-layer RBAC on medical data, and blood-pressure classification per the national guideline in SQL.',
-				role: 'Lead engineer / primary author',
+					'In ~2 weeks: a backend-for-frontend, a resilient ingest pipeline and ~20 clinical dashboards over medical terminals — a custom Russia map, read-layer RBAC on medical data, and blood-pressure classification per the national guideline in SQL.',
+				role: 'Lead engineer',
 				period: '2026',
 				source: 'repo',
 				confidential: true,
@@ -138,7 +138,7 @@ export const en: Translations = {
 					'Task: medical data needs gating stronger than hiding it in the UI. Did: split tables and read-layer RBAC — a narrow role is never JOINed to medical fields. Result: sensitive fields are structurally unreachable on the backend, not just hidden on the client.',
 					'Task: a regional map with no off-the-shelf geo engine for a raster Russia silhouette. Did: a custom lat/lon → image-percent projection (anchor calibration, antimeridian normalization) and a map component with proportional bubbles and drill-down. Result: an interactive Russia choropleth in the dashboard.'
 				],
-				metrics: ['~90% of lines in ~2 weeks (solo)', 'resilient ingest: backoff + circuit breaker', 'read-layer RBAC on medical data']
+				metrics: ['~20 clinical dashboards', 'resilient ingest (circuit breaker)', 'read-layer RBAC on PHI', 'MVP in 2 weeks']
 			},
 			{
 				id: 'video-analytics',
@@ -192,8 +192,8 @@ export const en: Translations = {
 				id: 'feedback-kiosk',
 				title: 'Service-window feedback kiosk (GovTech)',
 				tagline:
-					'In ~4 days, built solo a window tablet that reacts to the queue over WebSocket (no relay backend), entertains and shows contextual ads during service, then collects the official government satisfaction survey.',
-				role: 'Sole author & architect of the MVP',
+					'In ~4 days, built a window tablet that reacts to the queue over WebSocket (no relay backend), entertains and shows contextual ads during service, then collects the official government satisfaction survey.',
+				role: 'Frontend / MVP architect',
 				period: '2026',
 				source: 'repo',
 				confidential: true,
@@ -205,7 +205,7 @@ export const en: Translations = {
 					'Task: monetize dwell time at the window with relevant ads and entertain slow visitors. Did: a heuristic “service → life-situation” engine, legally-compliant ad formats, and an adaptive mini-game that tunes to the player’s reaction time. Result: a contextual AdTech layer plus entertainment elderly visitors can play.',
 					'Task: remove animation jank on the tablet. Did: moved the slide progress bar from a JS width animation to CSS keyframes scaleX (compositor-only, no layout). Result: a smooth, GPU-composited progress bar.'
 				],
-				metrics: ['solo MVP in ~4 days', 'WebSocket queue, no relay backend']
+				metrics: ['WebSocket queue, no relay', 'official gov satisfaction survey', 'MVP in 4 days']
 			}
 		]
 	},
@@ -235,9 +235,10 @@ export const en: Translations = {
 				place: 'HSE',
 				program: 'Master’s, Digital Urbanism',
 				period: '2024 — 2026',
+				logo: '/edu/hse.svg',
 				note: 'A deliberate choice: I’ve always been drawn to urbanism, and the program is tightly tied to data analytics (Python, geodata, QGIS) — essentially an IT track. It sharpened my cartography and geo-analytics, which I love in frontend too.'
 			},
-			{ place: 'MISIS', program: 'Bachelor’s, IS&T', period: '2020 — 2024' }
+			{ place: 'MISIS', program: 'Bachelor’s, IS&T', period: '2020 — 2024', logo: '/edu/misis.png' }
 		]
 	},
 	contacts: {
