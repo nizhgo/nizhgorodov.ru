@@ -2,8 +2,12 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 
-	// /en is an alias of the default English page at "/".
-	onMount(() => goto('/', { replaceState: true }));
+	// /en is an alias of the default English page at "/". Record the choice so the
+	// "/" auto-detect doesn't forward back to /ru.
+	onMount(() => {
+		localStorage.setItem('lang', 'en');
+		goto('/', { replaceState: true });
+	});
 </script>
 
 <svelte:head>

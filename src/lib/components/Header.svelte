@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { locale } from '$lib/i18n';
 	import { theme } from '$lib/theme';
+	import { page } from '$app/stores';
+
+	let onRu = $derived($page.url.pathname.startsWith('/ru'));
 </script>
 
 <header class="sticky top-0 z-40 border-b border-rule bg-background/90 backdrop-blur-md">
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
 		<a
-			href={$locale === 'ru' ? '/ru' : '/'}
+			href={onRu ? '/ru' : '/'}
 			class="bg-accent px-2.5 py-1 font-display text-lg tracking-wide text-background"
 			>@nizhgo</a
 		>
@@ -31,12 +33,12 @@
 				{/if}
 			</button>
 			<a
-				href={$locale === 'ru' ? '/' : '/ru'}
-				onclick={() => sessionStorage.setItem('lang-choice', '1')}
+				href={onRu ? '/' : '/ru'}
+				onclick={() => localStorage.setItem('lang', onRu ? 'en' : 'ru')}
 				class="inline-flex h-8 items-center justify-center border border-rule px-3 font-mono text-xs tracking-wider text-text-primary transition-colors hover:bg-text-primary hover:text-background"
 				aria-label="Switch language"
 			>
-				{$locale === 'ru' ? 'EN' : 'RU'}
+				{onRu ? 'EN' : 'RU'}
 			</a>
 		</div>
 	</nav>

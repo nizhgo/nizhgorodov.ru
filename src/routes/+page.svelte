@@ -3,12 +3,13 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 
-	// "/" is the real English page (default). For a Russian-language browser we
-	// softly forward to /ru on the first visit, unless the visitor already made
-	// a manual choice this session.
+	// "/" is the real English page (default). A saved choice always wins; only on
+	// a first-ever visit do we fall back to the browser language. The toggle and
+	// /ru write this preference, so switching to English sticks and never bounces.
 	onMount(() => {
-		if (sessionStorage.getItem('lang-choice')) return;
-		if (navigator.language?.toLowerCase().startsWith('ru')) {
+		const pref = localStorage.getItem('lang');
+		if (pref === 'en') return;
+		if (pref === 'ru' || navigator.language?.toLowerCase().startsWith('ru')) {
 			goto('/ru', { replaceState: true });
 		}
 	});

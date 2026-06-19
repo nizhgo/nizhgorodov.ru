@@ -11,17 +11,22 @@
 
 	const SITE = 'https://nizhgorodov.ru';
 
-	let canonical = $derived($page.url.pathname.startsWith('/ru') ? `${SITE}/ru` : `${SITE}/`);
-	let ogImage = $derived($locale === 'ru' ? `${SITE}/og.png` : `${SITE}/og-en.png`);
-	let ogLocale = $derived($locale === 'ru' ? 'ru_RU' : 'en_US');
-	let ogLocaleAlt = $derived($locale === 'ru' ? 'en_US' : 'ru_RU');
+	let isRu = $derived($page.url.pathname.startsWith('/ru'));
+	let canonical = $derived(isRu ? `${SITE}/ru` : `${SITE}/`);
+	let ogImage = $derived(isRu ? `${SITE}/og.png` : `${SITE}/og-en.png`);
+	let ogLocale = $derived(isRu ? 'ru_RU' : 'en_US');
+	let ogLocaleAlt = $derived(isRu ? 'en_US' : 'ru_RU');
 
 	onMount(() => {
 		theme.init();
 	});
 
+	// Keep the active locale (and <html lang>) in sync with the URL on every
+	// client navigation — don't rely on load() re-running.
 	$effect(() => {
-		document.documentElement.lang = $locale;
+		const lang = isRu ? 'ru' : 'en';
+		locale.set(lang);
+		document.documentElement.lang = lang;
 	});
 </script>
 
