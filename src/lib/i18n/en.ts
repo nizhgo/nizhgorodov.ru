@@ -2,12 +2,12 @@ import type { Translations } from './types';
 
 export const en: Translations = {
 	meta: {
-		title: 'Aleksey Nizhgorodov | Frontend Engineer',
+		title: 'Aleksei Nizhgorodov | Frontend Engineer',
 		description:
 			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. I write my own libraries when off-the-shelf falls short. Open to relocation and freelance.'
 	},
 	hero: {
-		name: 'Aleksey Nizhgorodov',
+		name: 'Aleksei Nizhgorodov',
 		role: 'Frontend Engineer',
 		big: ['Maps,', 'dashboards,', 'data-viz'],
 		headline: 'Maps, dashboards, visualizations. Custom engines when off-the-shelf falls short.',
@@ -276,6 +276,6 @@ export const en: Translations = {
 		note: 'Open to roles with relocation and to freelance work.'
 	},
 	footer: {
-		copyright: 'Aleksey Nizhgorodov'
+		copyright: 'Aleksei Nizhgorodov'
 	}
 };

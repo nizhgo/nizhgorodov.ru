@@ -276,6 +276,6 @@ export const ru: Translations = {
 		note: 'Открыт к предложениям о работе с релокейтом и к фрилансу.'
 	},
 	footer: {
-		copyright: 'Aleksey Nizhgorodov'
+		copyright: 'Aleksei Nizhgorodov'
 	}
 };
