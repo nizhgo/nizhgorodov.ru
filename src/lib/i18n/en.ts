@@ -199,9 +199,9 @@ export const en: Translations = {
 			},
 			{
 				id: 'feedback-kiosk',
-				title: 'Service-window feedback kiosk (GovTech)',
+				title: 'Service-window feedback kiosk',
 				tagline:
-					'In ~4 days, built a window tablet that reacts to the queue over WebSocket (no relay backend), entertains and shows contextual ads during service, then collects the official government satisfaction survey.',
+					'In ~4 days, built a window tablet that reacts to the queue over WebSocket (no relay backend), entertains and shows contextual ads during service, then collects the official service-quality survey.',
 				role: 'Frontend · MVP architect',
 				period: '2026',
 				source: 'repo',
