@@ -4,13 +4,13 @@ export const en: Translations = {
 	meta: {
 		title: 'Aleksei Nizhgorodov | Frontend Engineer',
 		description:
-			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. I write my own libraries when off-the-shelf falls short. Open to relocation and freelance.'
+			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. Open to relocation and freelance.'
 	},
 	hero: {
 		name: 'Aleksei Nizhgorodov',
 		role: 'Frontend Engineer',
 		big: ['Maps,', 'dashboards,', 'data-viz'],
-		headline: 'Maps, dashboards, visualizations. Custom engines when off-the-shelf falls short.',
+		headline: 'Complex, data-heavy frontend.',
 		bio: 'Frontend engineer, four years in commercial development. I build maps, dashboards and visualizations — and ship them.',
 		availability: 'Open to relocation & remote · hybrid / office · freelance',
 		location: 'Moscow → open to relocation',
@@ -18,7 +18,7 @@ export const en: Translations = {
 			{ value: '4', label: 'years in frontend' },
 			{ value: '8', label: 'production projects' },
 			{ value: 'B2', label: 'English' },
-			{ value: '∞', label: 'custom engines' }
+			{ value: '∞', label: 'maps & charts' }
 		],
 		cta: {
 			label: 'Download CV',
@@ -28,7 +28,7 @@ export const en: Translations = {
 	about: {
 		title: 'About',
 		body: [
-			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL. When off-the-shelf libraries aren’t enough, I write my own.',
+			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL.',
 			'I’ve worked both ways: sometimes leading a frontend team — reviews, mentoring, architecture from scratch; sometimes the only frontend, owning a product end to end.',
 			'Finishing an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to relocation and remote, available for freelance.'
 		]
