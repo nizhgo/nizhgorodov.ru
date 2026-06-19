@@ -30,7 +30,7 @@ export const en: Translations = {
 		body: [
 			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL.',
 			'I’ve worked both ways: sometimes leading a frontend team — reviews, mentoring, architecture from scratch; sometimes the only frontend, owning a product end to end.',
-			'Finishing an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to relocation and remote, available for freelance.'
+			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to relocation and remote, available for freelance.'
 		]
 	},
 	ui: {
