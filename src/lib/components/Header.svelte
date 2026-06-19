@@ -33,7 +33,7 @@
 			<a
 				href={$locale === 'ru' ? '/' : '/ru'}
 				onclick={() => sessionStorage.setItem('lang-choice', '1')}
-				class="border border-rule px-3 py-1.5 font-mono text-xs tracking-wider text-text-primary transition-colors hover:bg-text-primary hover:text-background"
+				class="inline-flex h-8 items-center justify-center border border-rule px-3 font-mono text-xs tracking-wider text-text-primary transition-colors hover:bg-text-primary hover:text-background"
 				aria-label="Switch language"
 			>
 				{$locale === 'ru' ? 'EN' : 'RU'}
