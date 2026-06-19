@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { locale, toggleLocale } from '$lib/i18n';
+	import { locale } from '$lib/i18n';
 	import { theme } from '$lib/theme';
 </script>
 
 <header class="sticky top-0 z-40 border-b border-rule bg-background/90 backdrop-blur-md">
 	<nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
 		<a
-			href="/"
+			href={$locale === 'ru' ? '/ru' : '/'}
 			class="bg-accent px-2.5 py-1 font-display text-lg tracking-wide text-background"
 			>@nizhgo</a
 		>
@@ -30,13 +30,14 @@
 					</svg>
 				{/if}
 			</button>
-			<button
-				onclick={toggleLocale}
+			<a
+				href={$locale === 'ru' ? '/' : '/ru'}
+				onclick={() => sessionStorage.setItem('lang-choice', '1')}
 				class="border border-rule px-3 py-1.5 font-mono text-xs tracking-wider text-text-primary transition-colors hover:bg-text-primary hover:text-background"
 				aria-label="Switch language"
 			>
 				{$locale === 'ru' ? 'EN' : 'RU'}
-			</button>
+			</a>
 		</div>
 	</nav>
 </header>

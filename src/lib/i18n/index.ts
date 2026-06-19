@@ -7,10 +7,6 @@ export type Locale = 'ru' | 'en';
 
 const translations: Record<Locale, Translations> = { ru, en };
 
-export const locale = writable<Locale>('ru');
+export const locale = writable<Locale>('en');
 
 export const t = derived(locale, ($locale) => translations[$locale]);
-
-export function toggleLocale(): void {
-	locale.update((current) => (current === 'ru' ? 'en' : 'ru'));
-}
