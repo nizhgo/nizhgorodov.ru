@@ -214,7 +214,7 @@ export const en: Translations = {
 					'I wanted to fill the wait at the window with relevant ads and entertain slower visitors, so I built a “service → life-situation” heuristic, legally-compliant ad formats, and a mini-game that tunes its difficulty to the player’s reaction time — contextual ads plus a game even older visitors can play.',
 					'Animations on the tablet stuttered, so I moved the slide progress bar from a JS width animation to CSS keyframes scaleX — compositor-only, no layout. The bar runs smoothly, on the GPU.'
 				],
-				metrics: ['WebSocket queue, no relay', 'official gov satisfaction survey', 'MVP in 4 days']
+				metrics: ['WebSocket queue, no relay', 'official quality survey', 'MVP in 4 days']
 			}
 		]
 	},
