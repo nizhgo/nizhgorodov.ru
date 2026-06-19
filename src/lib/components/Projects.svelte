@@ -9,7 +9,6 @@
 			<h2 class="font-display text-2xl tracking-wide text-text-primary uppercase sm:text-3xl">
 				{$t.ui.allWork}
 			</h2>
-			<span class="label">{$t.projects.items.length} / 08</span>
 		</div>
 	</ScrollReveal>
 

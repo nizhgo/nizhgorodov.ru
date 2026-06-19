@@ -35,6 +35,7 @@
 			<a
 				href={onRu ? '/' : '/ru'}
 				onclick={() => localStorage.setItem('lang', onRu ? 'en' : 'ru')}
+				data-sveltekit-preload-data="off"
 				class="inline-flex h-8 items-center justify-center border border-rule px-3 font-mono text-xs tracking-wider text-text-primary transition-colors hover:bg-text-primary hover:text-background"
 				aria-label="Switch language"
 			>
