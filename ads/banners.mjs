@@ -23,8 +23,12 @@ const FONT_CSS = [
 
 // РСЯ standard sizes (good coverage: wide, feed, squares, verticals, strips/mobile)
 const sizes = [
+  // Big images for "текстово-графическое объявление" (slot requires >=450x450):
+  { w: 1080, h: 1080 }, // 1:1 standard
+  { w: 1080, h: 607 }, // 16:9 wide
+  { w: 1080, h: 1350 }, // 4:5 vertical (also >=450)
+  // Exact РСЯ sizes for the "Графические объявления" ad type:
   { w: 970, h: 250 },
-  { w: 1080, h: 607 },
   { w: 336, h: 280 },
   { w: 300, h: 250 },
   { w: 300, h: 600 },

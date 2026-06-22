@@ -6,7 +6,7 @@ OUT="$HERE/banners"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 mkdir -p "$OUT"
 node "$HERE/banners.mjs"
-sizes="970x250 1080x607 336x280 300x250 300x600 240x400 728x90 320x100"
+sizes="1080x1080 1080x607 1080x1350 970x250 336x280 300x250 300x600 240x400 728x90 320x100"
 for s in $sizes; do
   w="${s%x*}"; h="${s#*x}"
   "$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=2 \

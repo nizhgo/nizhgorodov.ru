@@ -4,7 +4,7 @@ export const en: Translations = {
 	meta: {
 		title: 'Aleksei Nizhgorodov | Frontend Engineer',
 		description:
-			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. Open to new opportunities.'
+			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. Open to relocation.'
 	},
 	hero: {
 		name: 'Aleksei Nizhgorodov',
@@ -30,7 +30,7 @@ export const en: Translations = {
 		body: [
 			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL.',
 			'Led a frontend team — reviews, mentoring, architecture from scratch. On other products, the sole frontend owning the whole frontend.',
-			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to new opportunities.'
+			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to new roles and relocation.'
 		]
 	},
 	ui: {
