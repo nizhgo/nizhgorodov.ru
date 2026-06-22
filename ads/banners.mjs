@@ -73,9 +73,9 @@ function render({ w, h }) {
       .url{font-family:'Onest';font-weight:700;font-size:${url}px;color:${ACCENT};}`;
     inner = `<div class="wrap"><div class="left"><span class="badge">@nizhgo</span><div class="hl">Frontend-<br>инженер</div><div class="sub">Карты · дашборды · визуализации</div></div><div class="right"><span class="cta">Портфолио →</span><span class="url">nizhgorodov.ru</span></div></div>`;
   } else {
-    const badge = Math.round(w * 0.085);
-    const hl = Math.round(w * 0.135);
-    const sub = Math.round(w * 0.05);
+    const badge = Math.round(w * 0.08);
+    const hl = Math.round(w * 0.113);
+    const sub = Math.round(w * 0.048);
     const cta = Math.round(w * 0.058);
     const url = Math.round(w * 0.05);
     const pad = Math.round(w * 0.08);
