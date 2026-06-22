@@ -1,5 +1,8 @@
-// ATS-safe bilingual CV generator → emits cv-en.html and cv-ru.html
-// Single column, self-hosted Inter (Latin+Cyrillic), ligatures off, plain-text links.
+// ATS-safe bilingual CV generator → emits 4 HTML files:
+//   cv-{en,ru}-{pretty,ats}.html
+// pretty = photo + accent, for humans / hh / portfolio.
+// ats    = no photo, plain, maximally parseable for job portals.
+// Both are single column, self-hosted Inter (Latin+Cyrillic), ligatures off, plain-text links.
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -29,23 +32,11 @@ const data = {
     name: 'Aleksei Nizhgorodov',
     title: 'Frontend Engineer',
     docTitle: 'Aleksei Nizhgorodov - Frontend Engineer - Resume',
-    contacts: [
-      'Moscow, Russia — open to relocation & remote',
-      'alexey@nizhgorodov.ru',
-      '+7 996 096-43-22',
-      'github.com/nizhgo',
-      'nizhgorodov.ru',
-      't.me/nizhgo'
-    ],
-    labels: {
-      summary: 'Summary',
-      skills: 'Skills',
-      experience: 'Experience',
-      education: 'Education',
-      languages: 'Languages'
-    },
+    metaLine: 'Moscow, Russia — open to relocation & remote',
+    contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
+    labels: { summary: 'Summary', skills: 'Skills', experience: 'Experience', education: 'Education', languages: 'Languages', links: 'Links' },
     summary:
-      'Frontend engineer with 4 years in commercial development, focused on the hard parts: Leaflet maps, data-heavy dashboards, visualizations and WebGL. Writes custom libraries when off-the-shelf ones fall short — a PDF report engine that renders WebGL maps from React components, a cartography layer that holds thousands of live markers. Has led a small frontend team and also been the sole frontend on a product. Russian native, English B2. Open to relocation, remote and freelance.',
+      'Frontend engineer with 4 years in commercial development, focused on the hard parts: Leaflet maps, data-heavy dashboards, visualizations and WebGL. Writes custom libraries when off-the-shelf ones fall short — a PDF report engine that renders WebGL maps from React, a cartography layer that holds thousands of live markers. Has led a small frontend team and also been the sole frontend on a product. Russian native, English B2. Open to relocation, remote and freelance.',
     skills: [
       ['Core', 'TypeScript, JavaScript (ES6+), HTML, CSS'],
       ['Frameworks', 'React, Svelte, Next.js, Node.js, Express'],
@@ -56,59 +47,36 @@ const data = {
     ],
     experience: [
       {
-        company: 'Perfema',
-        role: 'Frontend Developer',
-        period: 'Apr 2023 — Present',
-        place: 'Moscow (remote)',
-        summary:
-          'Build products from scratch: architecture, code, reviews, mentoring. Maps, dashboards, analytics, native apps, a custom PDF report generator. Sometimes leading the frontend team, sometimes the only frontend.',
+        company: 'Perfema', role: 'Frontend Developer', period: 'Apr 2023 — Present', place: 'Moscow',
+        summary: 'Build products from scratch: architecture, code, reviews, mentoring. Sometimes leading the frontend team, sometimes the only frontend.',
         bullets: [
-          'Built a B2B occupational-health analytics product in ~2 weeks: a pnpm monorepo (Vite + React + MobX, an Express BFF, shared Zod contracts), ~20 clinical dashboards, and an idempotent ingest with backoff and a circuit breaker that survives upstream outages. Read-layer RBAC blocks narrow roles from the medical fields on the backend, so sensitive data never reaches the client.',
-          'Wrote a cartography layer on Leaflet / Canvas / WebGL that holds thousands of live markers and long GPS tracks without lag — clustering, thinning, geozones, timeline scrubbing — reused as a shared base across several products.',
-          'Designed the frontend of a video-analytics platform from scratch (TypeScript / React / MobX), set the patterns, ran code reviews and mentored the team; real-time Recharts dashboards; virtualization and memory-leak fixes for large datasets.',
-          "Authored a custom PDF report library that renders WebGL maps and charts straight from React components, with automatic page numbering and running headers and footers — where jsPDF and react-pdf couldn't.",
-          'Shipped a gamified kids’ task tracker as two clients (a big-screen dashboard and a parent PWA) sharing real-time state, and led the team packaging it into native apps on Capacitor (iOS / Android / Android TV).',
-          'Across products: i18n (RU / EN plus RTL Arabic), CryptoPro document e-signing in the browser, Service Worker offline and auto-update, an SSR Svelte + Strapi site, CI/CD on GitLab, and tests in Vitest, React Testing Library and Playwright.'
+          { lead: 'B2B occupational-health analytics', text: 'built the MVP in ~2 weeks — a pnpm monorepo (React + MobX, an Express BFF, shared Zod contracts), ~20 clinical dashboards, and an idempotent ingest (backoff, circuit breaker) that survives upstream outages; read-layer RBAC keeps medical data off the client.' },
+          { lead: 'Cartography & real-time monitoring', text: 'wrote a Leaflet / Canvas / WebGL layer that holds thousands of live markers and long GPS tracks without lag — clustering, geozones, timeline scrubbing; reused across several products.' },
+          { lead: 'Video-analytics platform', text: 'designed the frontend from scratch (TypeScript / React / MobX), set the patterns, ran code reviews and mentored the team; real-time Recharts dashboards; virtualization for large datasets.' },
+          { lead: 'Custom PDF report library', text: 'renders WebGL maps and charts straight from React components, with automatic page numbering and running headers — where jsPDF and react-pdf couldn’t.' },
+          { lead: 'Gamified kids’ tracker', text: 'two clients (a big-screen dashboard and a parent PWA) sharing real-time state; led the team packaging it into native apps on Capacitor (iOS / Android / Android TV).' },
+          { lead: 'Across products', text: 'i18n (RU / EN + RTL Arabic), CryptoPro document e-signing in the browser, Service Worker offline/auto-update, an SSR Svelte + Strapi site, CI/CD on GitLab, tests in Vitest, React Testing Library and Playwright.' }
         ]
       },
       {
-        company: 'Edya',
-        role: 'Frontend Engineer (part-time)',
-        period: '2025 — Present',
-        place: 'Remote',
-        summary: 'A commercial VPN web cabinet and an AI super-app in Telegram.',
+        company: 'Edya', role: 'Frontend Engineer (part-time)', period: '2025 — Present', place: 'Remote',
+        links: 'edya.org · t.me/EdyaAIrobot',
         bullets: [
-          'Designed and built a production VPN web cabinet SPA (React 19, TanStack Router, MobX), white-labeled into 8 brands from one codebase; cut the initial bundle from 1706 to 656 KB (gzip 467 to 175) with route code-splitting and vendor chunking.',
-          'Built a multi-mirror failover (a service worker resolves live mirrors and redirects to the first reachable one, with a static fallback) so the cabinet stays reachable when the main domain is blocked.',
-          'On EdyaAI: owned the real-time WebSocket generation engine (request registry, per-request state machine, auto-reconnect), the payments layer (plans, subscriptions, promo codes) with live payments, and legacy-chat integration over a Telegram-to-iframe bridge.'
+          { lead: 'VPN web cabinet', text: 'designed and built the production SPA (React 19, TanStack Router, MobX), white-labeled into 8 brands from one codebase; cut the initial bundle from 1706 to 656 KB (gzip 467 to 175).' },
+          { lead: 'Censorship-resilient failover', text: 'a service worker resolves live mirrors and redirects to the first reachable one, with a static fallback — the cabinet opens even when the main domain is blocked.' },
+          { lead: 'EdyaAI — Telegram super-app', text: 'owned the real-time WebSocket generation engine (request registry, per-request state machine, auto-reconnect), the payments layer (plans, subscriptions, promo codes, live), and legacy-chat integration over a Telegram-to-iframe bridge.' }
         ]
       },
       {
-        company: 'Yandex',
-        role: 'Assessor-Developer',
-        period: 'Jan — Dec 2023',
-        place: 'Moscow',
-        summary: '',
+        company: 'Yandex', role: 'Assessor-Developer', period: 'Jan — Dec 2023', place: 'Moscow',
         bullets: [
-          'Labeled programming and CS material, wrote and edited reference answers for YandexGPT on IT topics, and did fact-checking.'
+          { lead: '', text: 'Labeled programming and CS material, wrote and edited reference answers for YandexGPT on IT topics, and did fact-checking.' }
         ]
       }
     ],
     education: [
-      {
-        school: 'HSE University',
-        program: 'MSc, Digital Urbanism & City Analytics',
-        period: '2024 — 2026',
-        place: 'Moscow',
-        note: 'Data analytics, Python, geodata, QGIS. Thesis: hse.ru/edu/vkr/1167123484'
-      },
-      {
-        school: 'NUST MISIS',
-        program: 'BSc, Information Systems & Technologies',
-        period: '2020 — 2024',
-        place: 'Moscow',
-        note: 'Algorithms, data structures, software engineering.'
-      }
+      { school: 'HSE University', program: 'MSc, Digital Urbanism & City Analytics', period: '2024 — 2026', place: 'Moscow', note: 'Data analytics, Python, geodata, QGIS. Thesis: hse.ru/edu/vkr/1167123484' },
+      { school: 'NUST MISIS', program: 'BSc, Information Systems & Technologies', period: '2020 — 2024', place: 'Moscow', note: 'Algorithms, data structures, software engineering.' }
     ],
     languages: 'Russian — Native · English — B2'
   },
@@ -118,23 +86,11 @@ const data = {
     name: 'Алексей Нижгородов',
     title: 'Frontend-разработчик',
     docTitle: 'Алексей Нижгородов - Frontend Developer - Резюме',
-    contacts: [
-      'Москва, Россия — готов к переезду и удалёнке',
-      'alexey@nizhgorodov.ru',
-      '+7 996 096-43-22',
-      'github.com/nizhgo',
-      'nizhgorodov.ru',
-      't.me/nizhgo'
-    ],
-    labels: {
-      summary: 'О себе',
-      skills: 'Ключевые навыки',
-      experience: 'Опыт работы',
-      education: 'Образование',
-      languages: 'Знание языков'
-    },
+    metaLine: 'Москва, Россия · 24 года · готов к переезду и удалёнке',
+    contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
+    labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Ссылки' },
     summary:
-      'Frontend-инженер, четвёртый год в коммерческой разработке. Больше всего работаю со сложным: карты на Leaflet, дашборды с большим объёмом данных, визуализации, WebGL. Когда готовых библиотек не хватает, пишу свои — например, библиотеку PDF-отчётов, которая рендерит WebGL-карты прямо из React-компонентов. Где-то вёл команду фронтендеров, где-то был единственным фронтом на продукте. Русский родной, английский B2. Открыт к релокейту, удалёнке и фрилансу.',
+      'Frontend-инженер, четвёртый год в коммерческой разработке. Больше всего работаю со сложным: карты на Leaflet, дашборды с большим объёмом данных, визуализации, WebGL. Когда готовых библиотек не хватает, пишу свои — например, библиотеку PDF-отчётов, которая рендерит WebGL-карты прямо из React. Где-то вёл команду фронтендеров, где-то был единственным фронтом. Русский родной, английский B2. Открыт к релокейту, удалёнке и фрилансу.',
     skills: [
       ['Основное', 'TypeScript, JavaScript (ES6+), HTML, CSS'],
       ['Фреймворки', 'React, Svelte, Next.js, Node.js, Express'],
@@ -145,78 +101,65 @@ const data = {
     ],
     experience: [
       {
-        company: 'Perfema',
-        role: 'Frontend-разработчик',
-        period: 'апр 2023 — наст. время',
-        place: 'Москва (удалённо)',
-        summary:
-          'Делаю продукты с нуля: архитектура, код, ревью, менторинг. Карты, дашборды, аналитика, нативные приложения, своя PDF-генерация отчётов. Где-то вёл команду фронтендеров, где-то был единственным фронтом.',
+        company: 'Perfema', role: 'Frontend-разработчик', period: 'апр 2023 — наст. время', place: 'Москва',
+        summary: 'Делаю продукты с нуля: архитектура, код, ревью, менторинг. Где-то вёл команду фронтендеров, где-то был единственным фронтом.',
         bullets: [
-          'За ~2 недели поднял B2B-аналитику предсменных медосмотров: pnpm-монорепо (Vite + React + MobX, Express-BFF, общие Zod-контракты), ~20 клинических дашбордов и идемпотентный ingest с backoff и circuit breaker, переживающий сбои внешнего API. RBAC на уровне чтения не подпускает урезанные роли к медданным на самом бэкенде, поэтому на клиент они не попадают.',
-          'Написал слой картографии на Leaflet / Canvas / WebGL, который держит тысячи живых маркеров и длинные GPS-треки без просадок — кластеризация, прореживание, геозоны, прокрутка истории по таймлайну. Вынес в общую основу для нескольких продуктов.',
-          'Спроектировал фронтенд платформы видеоаналитики с нуля (TypeScript / React / MobX), задал паттерны, вёл ревью и менторил команду; реалтайм-дашборды на Recharts; виртуализация и устранение утечек памяти на больших объёмах.',
-          'Написал свою библиотеку PDF-отчётов: рендерит WebGL-карты и графики прямо из React-компонентов, с автонумерацией страниц и сквозными хедерами и футерами — там, где jsPDF и react-pdf не справлялись.',
-          'Сделал геймифицированный трекер задач для детей как два клиента (дашборд на большом экране и PWA для родителей) с общим реалтайм-стейтом и вёл команду, упаковывавшую его в нативные приложения на Capacitor (iOS / Android / Android TV).',
-          'По продуктам: i18n (RU / EN и RTL-арабский), подпись документов через КриптоПро в браузере, Service Worker для офлайна и автообновления, SSR-сайт на Svelte + Strapi, CI/CD в GitLab и тесты на Vitest, React Testing Library и Playwright.'
+          { lead: 'B2B-аналитика медосмотров', text: 'за ~2 недели поднял MVP — pnpm-монорепо (React + MobX, Express-BFF, общие Zod-контракты), ~20 клинических дашбордов и идемпотентный ingest (backoff, circuit breaker), переживающий сбои внешнего API; RBAC на уровне чтения не пускает медданные на клиент.' },
+          { lead: 'Картография и реалтайм-мониторинг', text: 'написал слой на Leaflet / Canvas / WebGL, который держит тысячи живых маркеров и длинные GPS-треки без просадок — кластеризация, геозоны, прокрутка истории по таймлайну; вынес в общую основу для нескольких продуктов.' },
+          { lead: 'Платформа видеоаналитики', text: 'спроектировал фронтенд с нуля (TypeScript / React / MobX), задал паттерны, вёл ревью и менторил команду; реалтайм-дашборды на Recharts; виртуализация на больших объёмах.' },
+          { lead: 'Своя библиотека PDF-отчётов', text: 'рендерит WebGL-карты и графики прямо из React-компонентов, с автонумерацией и сквозными хедерами — там, где jsPDF и react-pdf не справлялись.' },
+          { lead: 'Трекер задач для детей', text: 'два клиента (дашборд на большом экране и PWA для родителей) с общим реалтайм-стейтом; вёл команду, упаковывавшую его в нативные приложения на Capacitor (iOS / Android / Android TV).' },
+          { lead: 'Помимо этого', text: 'i18n (RU / EN и RTL-арабский), подпись документов через КриптоПро в браузере, Service Worker для офлайна и автообновления, SSR-сайт на Svelte + Strapi, CI/CD в GitLab, тесты на Vitest, React Testing Library и Playwright.' }
         ]
       },
       {
-        company: 'Edya',
-        role: 'Frontend-разработчик (парттайм)',
-        period: '2025 — наст. время',
-        place: 'Удалённо',
-        summary: 'Веб-кабинет коммерческого VPN и AI-суперапп в Telegram.',
+        company: 'Edya', role: 'Frontend-разработчик (парттайм)', period: '2025 — наст. время', place: 'Удалённо',
+        links: 'edya.org · t.me/EdyaAIrobot',
         bullets: [
-          'Спроектировал и собрал продакшен-кабинет VPN (React 19, TanStack Router, MobX), white-label на 8 брендов из одного кода; ужал стартовый бандл с 1706 до 656 КБ (gzip 467 до 175) код-сплитом роутов и vendor-чанкингом.',
-          'Сделал failover на несколько зеркал (service worker находит живые зеркала и редиректит на первое доступное, плюс статичная fallback-страница) — кабинет открывается, даже когда основной домен заблокирован.',
-          'В EdyaAI: отвечал за реалтайм-движок генерации по WebSocket (реестр запросов, конечный автомат на запрос, авто-реконнект), слой платежей (тарифы, подписки, промокоды) с реальными оплатами и интеграцию legacy-чата через мост между Telegram и iframe.'
+          { lead: 'Веб-кабинет VPN', text: 'спроектировал и собрал продакшен-SPA (React 19, TanStack Router, MobX), white-label на 8 брендов из одного кода; ужал стартовый бандл с 1706 до 656 КБ (gzip 467 до 175).' },
+          { lead: 'Failover под блокировки', text: 'service worker находит живые зеркала и редиректит на первое доступное, плюс статичная fallback-страница — кабинет открывается, даже когда основной домен заблокирован.' },
+          { lead: 'EdyaAI — суперапп в Telegram', text: 'отвечал за реалтайм-движок генерации по WebSocket (реестр запросов, конечный автомат на запрос, авто-реконнект), слой платежей (тарифы, подписки, промокоды, в проде) и интеграцию legacy-чата через мост между Telegram и iframe.' }
         ]
       },
       {
-        company: 'Яндекс',
-        role: 'Асессор-разработчик',
-        period: 'январь — декабрь 2023',
-        place: 'Москва',
-        summary: '',
+        company: 'Яндекс', role: 'Асессор-разработчик', period: 'январь — декабрь 2023', place: 'Москва',
         bullets: [
-          'Размечал материалы по программированию и computer science, писал и редактировал эталонные ответы YandexGPT по IT, занимался фактчекингом.'
+          { lead: '', text: 'Размечал материалы по программированию и computer science, писал и редактировал эталонные ответы YandexGPT по IT, занимался фактчекингом.' }
         ]
       }
     ],
     education: [
-      {
-        school: 'НИУ ВШЭ',
-        program: 'Магистратура, Цифровая урбанистика и аналитика города',
-        period: '2024 — 2026',
-        place: 'Москва',
-        note: 'Аналитика данных, Python, геоданные, QGIS. ВКР: hse.ru/edu/vkr/1167123484'
-      },
-      {
-        school: 'НИТУ МИСиС',
-        program: 'Бакалавриат, Информационные системы и технологии',
-        period: '2020 — 2024',
-        place: 'Москва',
-        note: 'Алгоритмы, структуры данных, инженерия ПО.'
-      }
+      { school: 'НИУ ВШЭ', program: 'Магистратура, Цифровая урбанистика и аналитика города', period: '2024 — 2026', place: 'Москва', note: 'Аналитика данных, Python, геоданные, QGIS. ВКР: hse.ru/edu/vkr/1167123484' },
+      { school: 'НИТУ МИСиС', program: 'Бакалавриат, Информационные системы и технологии', period: '2020 — 2024', place: 'Москва', note: 'Алгоритмы, структуры данных, инженерия ПО.' }
     ],
     languages: 'Русский — родной · Английский — B2'
   }
 };
 
-function render(d) {
+function render(d, pretty) {
+  const accent = pretty ? '#0c6b34' : '#161616';
+  const hr = pretty ? '#c7d4c2' : '#cfcfcf';
+
   const section = (title, inner) => `<section><h2>${esc(title)}</h2>${inner}</section>`;
 
   const skills = d.skills
-    .map(([k, v]) => `<p class="skill"><span class="skill-k">${esc(k)}:</span> ${esc(v)}</p>`)
+    .map(([k, v]) => `<p class="skill"><span class="k">${esc(k)}:</span> ${esc(v)}</p>`)
     .join('');
+
+  const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+  const bullet = (b) =>
+    b.lead
+      ? `<li><span class="lead">${esc(b.lead)}.</span> ${esc(cap(b.text))}</li>`
+      : `<li>${esc(b.text)}</li>`;
 
   const experience = d.experience
     .map((j) => {
       const head = `<div class="job-head"><span class="job-company">${esc(j.company)}</span> &mdash; <span class="job-role">${esc(j.role)}</span></div>
       <div class="job-meta">${esc(j.period)}${j.place ? ' · ' + esc(j.place) : ''}</div>`;
       const sum = j.summary ? `<p class="job-sum">${esc(j.summary)}</p>` : '';
-      const bullets = `<ul>${j.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`;
-      return `<div class="job">${head}${sum}${bullets}</div>`;
+      const bullets = `<ul>${j.bullets.map(bullet).join('')}</ul>`;
+      const links = j.links ? `<p class="job-links">${esc(d.labels.links)}: ${esc(j.links)}</p>` : '';
+      return `<div class="job">${head}${sum}${bullets}${links}</div>`;
     })
     .join('');
 
@@ -230,6 +173,7 @@ function render(d) {
     .join('');
 
   const contacts = d.contacts.map((c) => esc(c)).join(' &nbsp;·&nbsp; ');
+  const photo = pretty ? `<img class="photo" src="./photo.jpg" alt="${esc(d.name)}">` : '';
 
   return `<!doctype html>
 <html lang="${d.lang}">
@@ -238,52 +182,57 @@ function render(d) {
 <title>${esc(d.docTitle)}</title>
 <style>
   ${FONT_FACE}
-  @page { size: A4; margin: 14mm 15mm; }
+  @page { size: A4; margin: 13mm 15mm; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
     font-family: 'Inter', Arial, sans-serif;
-    font-size: 10.2pt;
-    line-height: 1.4;
-    color: #1a1a1a;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-align: left;
+    font-size: 10.2pt; line-height: 1.42; color: #1a1a1a;
+    letter-spacing: normal; word-spacing: normal; text-align: left;
     font-feature-settings: 'liga' 0, 'clig' 0;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  h1 { font-size: 19pt; font-weight: 700; margin: 0 0 1pt; }
-  .title { font-size: 11.5pt; font-weight: 700; color: #0c6b34; margin: 0 0 5pt; }
-  .contacts { font-size: 9pt; color: #333; margin: 0 0 4pt; }
-  hr { border: 0; border-top: 1px solid #cfcfcf; margin: 7pt 0 8pt; }
-  section { margin: 0 0 9pt; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  .head-text { flex: 1; }
+  .photo { width: 84px; height: 104px; object-fit: cover; ${pretty ? 'border-radius: 6px;' : ''} flex-shrink: 0; }
+  h1 { font-size: 20pt; font-weight: 700; margin: 0 0 1pt; }
+  .title { font-size: 11.5pt; font-weight: 700; color: ${accent}; margin: 0 0 5pt; }
+  .meta { font-size: 9.2pt; color: #333; margin: 0 0 2pt; }
+  .contacts { font-size: 9.2pt; color: #333; margin: 0; }
+  hr { border: 0; border-top: 1px solid ${hr}; margin: 8pt 0 9pt; }
+  section { margin: 0 0 10pt; }
   h2 {
-    font-size: 10.5pt; font-weight: 700; text-transform: uppercase;
-    color: #0c6b34; margin: 0 0 4pt; padding-bottom: 2pt; border-bottom: 1px solid #d8d8d8;
+    font-size: 10.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2pt;
+    color: ${accent}; margin: 0 0 5pt; padding-bottom: 2.5pt; border-bottom: 1px solid ${hr};
   }
   p { margin: 0 0 4pt; }
   .summary { margin: 0; }
-  .skill { margin: 0 0 2pt; }
-  .skill-k { font-weight: 700; }
-  .job { margin: 0 0 7pt; page-break-inside: avoid; }
-  .edu { margin: 0 0 6pt; page-break-inside: avoid; }
+  .skill { margin: 0 0 2.5pt; }
+  .k { font-weight: 700; }
+  .job { margin: 0 0 8.5pt; page-break-inside: avoid; }
+  .edu { margin: 0 0 7pt; page-break-inside: avoid; }
   .job-head { font-size: 10.6pt; }
   .job-company { font-weight: 700; }
   .job-role { font-weight: 700; }
-  .job-meta { font-size: 9pt; color: #555; margin: 0 0 2pt; }
-  .job-sum { color: #2a2a2a; margin: 0 0 3pt; }
-  ul { margin: 2pt 0 0; padding-left: 14pt; }
-  li { margin: 0 0 2.5pt; padding-left: 1pt; }
+  .job-meta { font-size: 9pt; color: #555; margin: 0 0 3pt; }
+  .job-sum { color: #2a2a2a; margin: 0 0 4pt; }
+  ul { margin: 3pt 0 0; padding-left: 15pt; }
+  li { margin: 0 0 4pt; padding-left: 2pt; }
+  .lead { font-weight: 700; }
+  .job-links { font-size: 9pt; color: ${accent}; margin: 4pt 0 0; }
   .edu-note { font-size: 9.3pt; color: #444; margin: 1pt 0 0; }
 </style>
 </head>
 <body>
-  <header>
-    <h1>${esc(d.name)}</h1>
-    <p class="title">${esc(d.title)}</p>
-    <p class="contacts">${contacts}</p>
-  </header>
+  <div class="header">
+    <div class="head-text">
+      <h1>${esc(d.name)}</h1>
+      <p class="title">${esc(d.title)}</p>
+      <p class="meta">${esc(d.metaLine)}</p>
+      <p class="contacts">${contacts}</p>
+    </div>
+    ${photo}
+  </div>
   <hr>
   ${section(d.labels.summary, `<p class="summary">${esc(d.summary)}</p>`)}
   ${section(d.labels.skills, skills)}
@@ -294,6 +243,8 @@ function render(d) {
 </html>`;
 }
 
-writeFileSync(join(HERE, 'cv-en.html'), render(data.en));
-writeFileSync(join(HERE, 'cv-ru.html'), render(data.ru));
-console.log('wrote cv-en.html and cv-ru.html');
+for (const lang of ['en', 'ru']) {
+  writeFileSync(join(HERE, `cv-${lang}-pretty.html`), render(data[lang], true));
+  writeFileSync(join(HERE, `cv-${lang}-ats.html`), render(data[lang], false));
+}
+console.log('wrote cv-{en,ru}-{pretty,ats}.html');

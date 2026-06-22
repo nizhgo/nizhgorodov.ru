@@ -29,7 +29,7 @@ export const en: Translations = {
 		title: 'About',
 		body: [
 			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL.',
-			'I’ve worked both ways: sometimes leading a frontend team — reviews, mentoring, architecture from scratch; sometimes the only frontend, owning a product end to end.',
+			'I’ve worked both ways: sometimes leading a frontend team — reviews, mentoring, architecture from scratch; sometimes the only frontend, owning a whole product.',
 			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to relocation and remote, available for freelance.'
 		]
 	},
@@ -97,9 +97,9 @@ export const en: Translations = {
 				],
 				bullets: [
 					'Midjourney generation inside Telegram had to show live progress, so I designed a custom WebSocket client (EventEmitter + MobX) with a request registry: every action gets a UUID and an entry with its own state machine, a 7-minute per-request timeout, and auto-reconnect. The channel survives connection drops.',
-					'I wanted the full Midjourney toolset, not just generate, so I built a generation-action engine on MobX that models the history tree with parent-linked nodes — a complete set of operations (vary, upscale, zoom, pan, blend, reroll) on top of an unstable backend.',
-					'I owned monetization end to end: tokens, plans, subscriptions — purchases, pay-in-external-browser, promo codes, balance polling. Real payments in production.',
-					'The legacy chat had to fold under one roof and ship, so I set up the deploy (Docker + nginx) and embedded a separate Next.js chat app via iframe with a Telegram↔iframe bridge — safe-area and keyboard over postMessage, haptics relayed through. One deploy, seamless chat inside the hub.'
+					'Generate alone wasn’t enough — I wanted the full Midjourney toolset, so I built a generation-action engine on MobX that models the history tree with parent-linked nodes — a complete set of operations (vary, upscale, zoom, pan, blend, reroll) on top of an unstable backend.',
+					'I owned the whole monetization side: tokens, plans, subscriptions — purchases, pay-in-external-browser, promo codes, balance polling. Real payments in production.',
+					'The legacy chat had to fold under one roof and ship, so I set up the deploy (Docker + nginx) and embedded a separate Next.js chat app via iframe with a Telegram↔iframe bridge — safe-area and keyboard over postMessage, haptics relayed through. One deploy, with the chat running inside the hub.'
 				],
 				metrics: ['real-time WebSocket generation', 'Midjourney + GPT-Image + LLM', 'live paid subscriptions'],
 				links: [{ label: 'EdyaAI on Telegram', href: 'https://t.me/EdyaAIrobot', kind: 'live' }]
@@ -142,7 +142,7 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'A B2B medical-analytics product had to stand up from scratch in ~2 weeks, so I built a pnpm monorepo: a Vite + React + MobX frontend, an Express BFF, and a shared package of Zod schemas as the single source of truth. The browser never sees the upstream credentials, and types run end to end from DB to UI.',
+					'A B2B medical-analytics product had to stand up from scratch in ~2 weeks, so I built a pnpm monorepo: a Vite + React + MobX frontend, an Express BFF, and a shared package of Zod schemas that both sides import. The browser never sees the upstream credentials, and the same types run from DB to UI.',
 					'The medical-terminal API was unreliable and I couldn’t lose records, so I wrote my own client and an idempotent ingest: backoff over 6 attempts, a circuit breaker (8-failure threshold, 60s cooldown), 7-day windows with cursor pagination, and an incremental cron. Backfill and sync survive outages with no manual restarts.',
 					'Medical data needs more than hiding it in the UI, so I split it into separate tables and put RBAC at the read layer — a narrow role is never JOINed to the medical fields. Sensitive data is unreachable on the backend, not just hidden on the client.',
 					'There was no off-the-shelf geo engine for a raster Russia silhouette, so I wrote my own lat/lon → image-percent projection (two-corner calibration, antimeridian normalization) and a map component with proportional bubbles and drill-down — an interactive choropleth right in the dashboard.'
@@ -178,7 +178,7 @@ export const en: Translations = {
 				bullets: [
 					'We needed reports with maps and charts, but jsPDF and react-pdf can’t render WebGL maps or complex layout — so I wrote a library that assembles a PDF straight from React components and embeds the WebGL maps and charts. The reports look like the product UI, with no hand-built PDF layout.',
 					'For multi-page reports I added automatic page numbering and running headers and footers — print-ready documents with correct pagination.',
-					'To avoid duplicating layout, I made a single render layer: the same React components drive both screen and PDF — one source of truth for the UI and the reports.'
+					'To avoid duplicating layout, I made a single render layer: the same React components drive both screen and PDF — so the UI and the reports never drift apart.'
 				]
 			},
 			{
