@@ -12,6 +12,18 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const esc = (s) =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Make URLs/email/phone clickable while keeping the visible text as the plain
+// string (ATS reads the text; humans can click the annotation).
+const aTag = (href, text) => `<a href="${href}">${esc(text)}</a>`;
+const linkContact = (c) => {
+  if (/^[^@\s]+@[^@\s]+\.[^\s]+$/.test(c)) return aTag('mailto:' + c, c);
+  if (/^\+/.test(c)) return aTag('tel:' + c.replace(/[^\d+]/g, ''), c);
+  if (/\.[a-z]{2,}(\/|$)/i.test(c)) return aTag('https://' + c, c);
+  return esc(c);
+};
+const linkifyLinks = (s) => s.split(' · ').map((u) => aTag('https://' + u, u)).join(' · ');
+const linkifyNote = (s) => s.replace(/(hse\.ru\/edu\/vkr\/\d+)/, (m) => aTag('https://' + m, m));
+
 const FONT_FACE = `
 @font-face { font-family:'Inter'; font-style:normal; font-weight:400; font-display:block;
   src:url('./fonts/inter-latin-400-normal.woff2') format('woff2');
@@ -158,7 +170,7 @@ function render(d, pretty) {
       <div class="job-meta">${esc(j.period)}${j.place ? ' · ' + esc(j.place) : ''}</div>`;
       const sum = j.summary ? `<p class="job-sum">${esc(j.summary)}</p>` : '';
       const bullets = `<ul>${j.bullets.map(bullet).join('')}</ul>`;
-      const links = j.links ? `<p class="job-links">${esc(d.labels.links)}: ${esc(j.links)}</p>` : '';
+      const links = j.links ? `<p class="job-links">${esc(d.labels.links)}: ${linkifyLinks(j.links)}</p>` : '';
       return `<div class="job">${head}${sum}${bullets}${links}</div>`;
     })
     .join('');
@@ -168,11 +180,11 @@ function render(d, pretty) {
       (e) =>
         `<div class="edu"><div class="job-head"><span class="job-company">${esc(e.school)}</span> &mdash; <span class="job-role">${esc(e.program)}</span></div>
         <div class="job-meta">${esc(e.period)}${e.place ? ' · ' + esc(e.place) : ''}</div>
-        ${e.note ? `<p class="edu-note">${esc(e.note)}</p>` : ''}</div>`
+        ${e.note ? `<p class="edu-note">${linkifyNote(esc(e.note))}</p>` : ''}</div>`
     )
     .join('');
 
-  const contacts = d.contacts.map((c) => esc(c)).join(' &nbsp;·&nbsp; ');
+  const contacts = d.contacts.map(linkContact).join(' &nbsp;·&nbsp; ');
   const photo = pretty ? `<img class="photo" src="./photo.jpg" alt="${esc(d.name)}">` : '';
 
   return `<!doctype html>
@@ -221,6 +233,7 @@ function render(d, pretty) {
   .lead { font-weight: 700; }
   .job-links { font-size: 9pt; color: ${accent}; margin: 4pt 0 0; }
   .edu-note { font-size: 9.3pt; color: #444; margin: 1pt 0 0; }
+  a { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>

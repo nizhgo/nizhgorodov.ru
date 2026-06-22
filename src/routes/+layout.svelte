@@ -17,6 +17,32 @@
 	let ogLocale = $derived(isRu ? 'ru_RU' : 'en_US');
 	let ogLocaleAlt = $derived(isRu ? 'en_US' : 'ru_RU');
 
+	let jsonLd = $derived(
+		JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'ProfilePage',
+			dateModified: '2026-06-22',
+			inLanguage: isRu ? 'ru' : 'en',
+			mainEntity: {
+				'@type': 'Person',
+				name: isRu ? 'Алексей Нижгородов' : 'Aleksei Nizhgorodov',
+				alternateName: isRu ? 'Aleksei Nizhgorodov' : 'Алексей Нижгородов',
+				url: SITE,
+				image: ogImage,
+				jobTitle: 'Frontend Engineer',
+				email: 'alexey@nizhgorodov.ru',
+				knowsLanguage: ['Russian', 'English'],
+				address: { '@type': 'PostalAddress', addressLocality: 'Moscow', addressCountry: 'RU' },
+				alumniOf: [
+					{ '@type': 'CollegeOrUniversity', name: 'HSE University' },
+					{ '@type': 'CollegeOrUniversity', name: 'NUST MISIS' }
+				],
+				sameAs: ['https://github.com/nizhgo', 'https://t.me/nizhgo', 'https://career.habr.com/nizhgo'],
+				knowsAbout: ['Frontend', 'TypeScript', 'React', 'Svelte', 'Leaflet', 'WebGL', 'Data visualization', 'Dashboards']
+			}
+		})
+	);
+
 	onMount(() => {
 		theme.init();
 	});
@@ -55,6 +81,8 @@
 	<meta name="twitter:description" content={$t.meta.description} />
 	<meta name="twitter:image" content={ogImage} />
 	<meta name="twitter:image:alt" content={$t.meta.title} />
+
+	{@html `<script type="application/ld+json">${jsonLd}<\/script>`}
 </svelte:head>
 
 <div class="min-h-screen bg-background text-text-primary">

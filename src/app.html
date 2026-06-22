@@ -8,48 +8,19 @@
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1018" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Алексей Нижгородов",
-				"alternateName": "Aleksei Nizhgorodov",
-				"url": "https://nizhgorodov.ru",
-				"image": "https://nizhgorodov.ru/og-en.png",
-				"jobTitle": "Frontend Engineer",
-				"email": "alexey@nizhgorodov.ru",
-				"knowsLanguage": ["Russian", "English"],
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Moscow",
-					"addressCountry": "RU"
-				},
-				"alumniOf": [
-					{ "@type": "CollegeOrUniversity", "name": "HSE University" },
-					{ "@type": "CollegeOrUniversity", "name": "NUST MISIS" }
-				],
-				"sameAs": [
-					"https://github.com/nizhgo",
-					"https://t.me/nizhgo",
-					"https://career.habr.com/nizhgo"
-				],
-				"knowsAbout": [
-					"Frontend",
-					"TypeScript",
-					"React",
-					"Svelte",
-					"Leaflet",
-					"WebGL",
-					"Data visualization",
-					"Dashboards"
-				]
-			}
-		</script>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Onest:wght@400;500;600;700&family=Martian+Mono:wght@400;500&display=swap"
-			rel="stylesheet"
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/onest-latin-400-normal.woff2"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/onest-cyrillic-400-normal.woff2"
+			crossorigin
 		/>
 		<script>
 			(function () {
