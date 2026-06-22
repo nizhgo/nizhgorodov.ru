@@ -98,7 +98,7 @@ const data = {
     name: 'Алексей Нижгородов',
     title: 'Frontend-разработчик',
     docTitle: 'Алексей Нижгородов - Frontend Developer - Резюме',
-    metaLine: 'Москва, Россия · 24 года · готов к переезду и удалёнке',
+    metaLine: 'Москва, Россия · 24 года',
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
     labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Ссылки' },
     summary:
