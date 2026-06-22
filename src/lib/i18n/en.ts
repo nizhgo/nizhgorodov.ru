@@ -4,7 +4,7 @@ export const en: Translations = {
 	meta: {
 		title: 'Aleksei Nizhgorodov | Frontend Engineer',
 		description:
-			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. Open to relocation and freelance.'
+			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. Open to new opportunities.'
 	},
 	hero: {
 		name: 'Aleksei Nizhgorodov',
@@ -12,7 +12,7 @@ export const en: Translations = {
 		big: ['Maps,', 'dashboards,', 'data-viz'],
 		headline: 'Complex, data-heavy frontend.',
 		bio: 'Frontend engineer, four years in commercial development. I build maps, dashboards and visualizations — and ship them.',
-		availability: 'Open to relocation & remote · hybrid / office · freelance',
+		availability: 'Open to new opportunities',
 		location: 'Moscow → open to relocation',
 		stats: [
 			{ value: '4', label: 'years in frontend' },
@@ -29,8 +29,8 @@ export const en: Translations = {
 		title: 'About',
 		body: [
 			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL.',
-			'I’ve worked both ways: sometimes leading a frontend team — reviews, mentoring, architecture from scratch; sometimes the only frontend, owning a whole product.',
-			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to relocation and remote, available for freelance.'
+			'Led a frontend team — reviews, mentoring, architecture from scratch. On other products, the sole frontend owning the whole frontend.',
+			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to new opportunities.'
 		]
 	},
 	ui: {
@@ -236,7 +236,7 @@ export const en: Translations = {
 				role: 'Frontend Developer',
 				period: '2023 — now',
 				logo: '/logo/perfema.svg',
-				summary: 'Built products from scratch: architecture, code, reviews, mentoring interns. Maps, dashboards, analytics, native apps, a custom PDF report generator. Sometimes leading the frontend team, sometimes the only frontend.'
+				summary: 'Built products from scratch: architecture, code, reviews, mentoring interns. Maps, dashboards, analytics, native apps, a custom PDF report generator. Led the frontend team; on other products, the only frontend.'
 			},
 			{
 				place: 'Edya',
@@ -273,7 +273,7 @@ export const en: Translations = {
 	},
 	contacts: {
 		title: 'Contacts',
-		note: 'Open to roles with relocation and to freelance work.'
+		note: 'Open to new opportunities.'
 	},
 	footer: {
 		copyright: 'Aleksei Nizhgorodov'

@@ -12,7 +12,7 @@
 		</div>
 	</ScrollReveal>
 
-	<ScrollReveal class="grid gap-x-10 gap-y-10 pt-9 md:grid-cols-2">
+	<ScrollReveal class="grid gap-y-12 pt-9">
 		<div>
 			<p class="label text-accent">{$t.ui.experience}</p>
 			<div class="mt-5 space-y-7">

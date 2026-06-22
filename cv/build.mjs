@@ -48,7 +48,7 @@ const data = {
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
     labels: { summary: 'Summary', skills: 'Skills', experience: 'Experience', education: 'Education', languages: 'Languages', links: 'Links' },
     summary:
-      'Frontend engineer with 4 years in commercial development, focused on the hard parts: Leaflet maps, data-heavy dashboards, visualizations and WebGL. Writes custom libraries when off-the-shelf ones fall short — a PDF report engine that renders WebGL maps from React, a cartography layer that holds thousands of live markers. Has led a small frontend team and also been the sole frontend on a product. Russian native, English B2. Open to relocation, remote and freelance.',
+      'Frontend engineer with 4 years in commercial development, focused on the hard parts: Leaflet maps, data-heavy dashboards, visualizations and WebGL. Writes custom libraries when off-the-shelf ones fall short — a PDF report engine that renders WebGL maps from React, a cartography layer that holds thousands of live markers. Has led a small frontend team and also been the sole frontend on a product. Russian native, English B2. Open to new opportunities.',
     skills: [
       ['Core', 'TypeScript, JavaScript (ES6+), HTML, CSS'],
       ['Frameworks', 'React, Svelte, Next.js, Node.js, Express'],
@@ -60,7 +60,7 @@ const data = {
     experience: [
       {
         company: 'Perfema', role: 'Frontend Developer', period: 'Apr 2023 — Present', place: 'Moscow',
-        summary: 'Build products from scratch: architecture, code, reviews, mentoring. Sometimes leading the frontend team, sometimes the only frontend.',
+        summary: 'Build products from scratch: architecture, code, reviews, mentoring. Led the frontend team; on other products, the only frontend.',
         bullets: [
           { lead: 'B2B occupational-health analytics', text: 'built the MVP in ~2 weeks — a pnpm monorepo (React + MobX, an Express BFF, shared Zod contracts), ~20 clinical dashboards, and an idempotent ingest (backoff, circuit breaker) that survives upstream outages; read-layer RBAC keeps medical data off the client.' },
           { lead: 'Cartography & real-time monitoring', text: 'wrote a Leaflet / Canvas / WebGL layer that holds thousands of live markers and long GPS tracks without lag — clustering, geozones, timeline scrubbing; reused across several products.' },
@@ -102,7 +102,7 @@ const data = {
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
     labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Ссылки' },
     summary:
-      'Frontend-инженер, четвёртый год в коммерческой разработке. Больше всего работаю со сложным: карты на Leaflet, дашборды с большим объёмом данных, визуализации, WebGL. Когда готовых библиотек не хватает, пишу свои — например, библиотеку PDF-отчётов, которая рендерит WebGL-карты прямо из React. Где-то вёл команду фронтендеров, где-то был единственным фронтом. Русский родной, английский B2. Открыт к релокейту, удалёнке и фрилансу.',
+      'Frontend-инженер, четвёртый год в коммерческой разработке. Больше всего работаю со сложным: карты на Leaflet, дашборды с большим объёмом данных, визуализации, WebGL. Когда готовых библиотек не хватает, пишу свои — например, библиотеку PDF-отчётов, которая рендерит WebGL-карты прямо из React. Вёл команду фронтендеров; на других проектах был единственным фронтом. Русский родной, английский B2. Открыт к предложениям.',
     skills: [
       ['Основное', 'TypeScript, JavaScript (ES6+), HTML, CSS'],
       ['Фреймворки', 'React, Svelte, Next.js, Node.js, Express'],
@@ -114,7 +114,7 @@ const data = {
     experience: [
       {
         company: 'Perfema', role: 'Frontend-разработчик', period: 'апр 2023 — наст. время', place: 'Москва',
-        summary: 'Делаю продукты с нуля: архитектура, код, ревью, менторинг. Где-то вёл команду фронтендеров, где-то был единственным фронтом.',
+        summary: 'Делаю продукты с нуля: архитектура, код, ревью, менторинг. Вёл команду фронтендеров; на других проектах был единственным фронтом.',
         bullets: [
           { lead: 'B2B-аналитика медосмотров', text: 'за ~2 недели поднял MVP — pnpm-монорепо (React + MobX, Express-BFF, общие Zod-контракты), ~20 клинических дашбордов и идемпотентный ingest (backoff, circuit breaker), переживающий сбои внешнего API; RBAC на уровне чтения не пускает медданные на клиент.' },
           { lead: 'Картография и реалтайм-мониторинг', text: 'написал слой на Leaflet / Canvas / WebGL, который держит тысячи живых маркеров и длинные GPS-треки без просадок — кластеризация, геозоны, прокрутка истории по таймлайну; вынес в общую основу для нескольких продуктов.' },
