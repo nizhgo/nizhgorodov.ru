@@ -42,7 +42,7 @@ const INK = '#141414';
 const ACCENT = '#0c8a3e';
 const MUTE = '#3e3e38';
 
-function render({ w, h }) {
+function render(c, { w, h }) {
   const layout = h <= 120 ? 'strip' : w / h >= 1.7 ? 'wide' : 'stack';
   let css = '';
   let inner = '';
@@ -58,7 +58,7 @@ function render({ w, h }) {
       .hl{font-family:'Onest';font-weight:700;font-size:${hl}px;color:${INK};white-space:nowrap;}
       .spacer{flex:1;}
       .url{font-family:'Onest';font-weight:700;font-size:${url}px;color:${ACCENT};white-space:nowrap;}`;
-    inner = `<div class="wrap"><span class="badge">@nizhgo</span><span class="hl">Frontend-инженер</span><span class="spacer"></span><span class="url">nizhgorodov.ru&nbsp;→</span></div>`;
+    inner = `<div class="wrap"><span class="badge">@nizhgo</span><span class="hl">${c.hlStrip}</span><span class="spacer"></span><span class="url">${c.url}&nbsp;→</span></div>`;
   } else if (layout === 'wide') {
     const badge = Math.round(w * 0.032);
     const hl = Math.round(w * 0.055);
@@ -75,7 +75,7 @@ function render({ w, h }) {
       .right{display:flex;flex-direction:column;align-items:flex-end;gap:${Math.round(cta * 0.6)}px;flex-shrink:0;}
       .cta{background:${ACCENT};color:${BG};font-family:'Onest';font-weight:700;font-size:${cta}px;padding:${Math.round(cta * 0.6)}px ${Math.round(cta * 1.1)}px;border-radius:${Math.round(cta * 0.5)}px;white-space:nowrap;}
       .url{font-family:'Onest';font-weight:700;font-size:${url}px;color:${ACCENT};}`;
-    inner = `<div class="wrap"><div class="left"><span class="badge">@nizhgo</span><div class="hl">Frontend-<br>инженер</div><div class="sub">Карты · дашборды · визуализации</div></div><div class="right"><span class="cta">Портфолио →</span><span class="url">nizhgorodov.ru</span></div></div>`;
+    inner = `<div class="wrap"><div class="left"><span class="badge">@nizhgo</span><div class="hl">${c.hlWide}</div><div class="sub">${c.subWide}</div></div><div class="right"><span class="cta">${c.cta}</span><span class="url">${c.url}</span></div></div>`;
   } else {
     const badge = Math.round(w * 0.08);
     const hl = Math.round(w * 0.113);
@@ -92,7 +92,7 @@ function render({ w, h }) {
       .bot{display:flex;flex-direction:column;gap:${Math.round(url * 0.5)}px;}
       .cta{align-self:flex-start;background:${ACCENT};color:${BG};font-family:'Onest';font-weight:700;font-size:${cta}px;padding:${Math.round(cta * 0.55)}px ${Math.round(cta * 1)}px;border-radius:${Math.round(cta * 0.45)}px;}
       .url{font-family:'Onest';font-weight:700;font-size:${url}px;color:${ACCENT};}`;
-    inner = `<div class="wrap"><span class="badge">@nizhgo</span><div class="mid"><div class="hl">Frontend-инженер</div><div class="sub">Карты, дашборды,<br>визуализации</div></div><div class="bot"><span class="cta">Портфолио →</span><span class="url">nizhgorodov.ru</span></div></div>`;
+    inner = `<div class="wrap"><span class="badge">@nizhgo</span><div class="mid"><div class="hl">${c.hlStack}</div><div class="sub">${c.subStack}</div></div><div class="bot"><span class="cta">${c.cta}</span><span class="url">${c.url}</span></div></div>`;
   }
 
   return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
@@ -104,8 +104,31 @@ function render({ w, h }) {
   </style></head><body>${inner}</body></html>`;
 }
 
-for (const s of sizes) {
-  writeFileSync(join(HERE, 'html', `banner-${s.w}x${s.h}.html`), render(s));
-}
-console.log('wrote ' + sizes.length + ' banner HTML files');
-console.log(sizes.map((s) => `${s.w}x${s.h}`).join(' '));
+const campaigns = [
+  {
+    prefix: '',
+    hlWide: 'Frontend-<br>инженер',
+    subWide: 'Карты · дашборды · визуализации',
+    hlStack: 'Frontend-инженер',
+    subStack: 'Карты, дашборды,<br>визуализации',
+    hlStrip: 'Frontend-инженер',
+    cta: 'Портфолио →',
+    url: 'nizhgorodov.ru'
+  },
+  {
+    prefix: 'office-',
+    hlWide: 'Ищу<br>команду',
+    subWide: 'Frontend-инженер',
+    hlStack: 'Ищу команду',
+    subStack: 'Frontend-инженер,<br>карты и дашборды',
+    hlStrip: 'Ищу команду',
+    cta: 'Портфолио →',
+    url: 'nizhgorodov.ru'
+  }
+];
+
+for (const c of campaigns)
+  for (const s of sizes) {
+    writeFileSync(join(HERE, 'html', `banner-${c.prefix}${s.w}x${s.h}.html`), render(c, s));
+  }
+console.log('wrote ' + campaigns.length * sizes.length + ' banner HTML files');
