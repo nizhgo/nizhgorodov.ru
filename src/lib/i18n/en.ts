@@ -224,7 +224,7 @@ export const en: Translations = {
 			{ label: 'Frontend', items: ['TypeScript', 'React', 'Svelte', 'JavaScript', 'ES6+'] },
 			{ label: 'Maps & data-viz', items: ['Leaflet', 'WebGL', 'Canvas', 'ECharts', 'Recharts', 'QGIS'] },
 			{ label: 'State & data', items: ['MobX', 'Redux', 'Zod', 'REST', 'WebSocket', 'SSE'] },
-			{ label: 'Native & infra', items: ['Capacitor', 'PWA', 'Service Worker', 'Docker', 'Nginx', 'CI/CD'] },
+			{ label: 'Build & infra', items: ['Vite', 'Webpack', 'Capacitor', 'PWA', 'Service Worker', 'Docker', 'Nginx', 'CI/CD'] },
 			{ label: 'Testing', items: ['Vitest', 'React Testing Library', 'Playwright'] }
 		]
 	},

@@ -54,7 +54,7 @@ const data = {
       ['Frameworks', 'React, Svelte, Next.js, Node.js, Express'],
       ['Maps & data-viz', 'Leaflet, WebGL, Canvas, ECharts, Recharts, QGIS'],
       ['State & data', 'MobX, Redux, Zod, REST, WebSocket, SSE, PostgreSQL, Drizzle ORM'],
-      ['Native & infra', 'Capacitor, PWA, Service Worker, Docker, Nginx, CI/CD (GitLab)'],
+      ['Build & infra', 'Vite, Webpack, Capacitor, PWA, Service Worker, Docker, Nginx, CI/CD (GitLab)'],
       ['Testing', 'Vitest, React Testing Library, Playwright']
     ],
     experience: [
@@ -108,7 +108,7 @@ const data = {
       ['Фреймворки', 'React, Svelte, Next.js, Node.js, Express'],
       ['Карты и визуализация', 'Leaflet, WebGL, Canvas, ECharts, Recharts, QGIS'],
       ['Состояние и данные', 'MobX, Redux, Zod, REST, WebSocket, SSE, PostgreSQL, Drizzle ORM'],
-      ['Нативное и инфра', 'Capacitor, PWA, Service Worker, Docker, Nginx, CI/CD (GitLab)'],
+      ['Сборка и инфра', 'Vite, Webpack, Capacitor, PWA, Service Worker, Docker, Nginx, CI/CD (GitLab)'],
       ['Тестирование', 'Vitest, React Testing Library, Playwright']
     ],
     experience: [

@@ -224,7 +224,7 @@ export const ru: Translations = {
 			{ label: 'Frontend', items: ['TypeScript', 'React', 'Svelte', 'JavaScript', 'ES6+'] },
 			{ label: 'Карты и визуализация', items: ['Leaflet', 'WebGL', 'Canvas', 'ECharts', 'Recharts', 'QGIS'] },
 			{ label: 'Состояние и данные', items: ['MobX', 'Redux', 'Zod', 'REST', 'WebSocket', 'SSE'] },
-			{ label: 'Нативное и инфра', items: ['Capacitor', 'PWA', 'Service Worker', 'Docker', 'Nginx', 'CI/CD'] },
+			{ label: 'Сборка и инфра', items: ['Vite', 'Webpack', 'Capacitor', 'PWA', 'Service Worker', 'Docker', 'Nginx', 'CI/CD'] },
 			{ label: 'Тестирование', items: ['Vitest', 'React Testing Library', 'Playwright'] }
 		]
 	},
