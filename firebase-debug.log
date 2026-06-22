@@ -2809,3 +2809,259 @@
     at process.processTimers (node:internal/timers:541:7)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2026-06-22T12:00:23.130Z] ----------------------------------------------------------------------
+[debug] [2026-06-22T12:00:23.131Z] Command:       /opt/homebrew/Cellar/node/25.2.1/bin/node /opt/homebrew/bin/firebase deploy --only hosting --project nizhgorodov-980e3 --non-interactive
+[debug] [2026-06-22T12:00:23.131Z] CLI Version:   15.7.0
+[debug] [2026-06-22T12:00:23.131Z] Platform:      darwin
+[debug] [2026-06-22T12:00:23.131Z] Node Version:  v25.2.1
+[debug] [2026-06-22T12:00:23.131Z] Time:          Mon Jun 22 2026 15:00:23 GMT+0300 (Moscow Standard Time)
+[debug] [2026-06-22T12:00:23.131Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-22T12:00:23.689Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-22T12:00:23.690Z] > authorizing via signed-in user (8900800700a@gmail.com)
+[debug] [2026-06-22T12:00:23.690Z] [iam] checking project nizhgorodov-980e3 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-22T12:00:23.690Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:00:23.690Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:00:23.690Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nizhgorodov-980e3:testIamPermissions [none]
+[debug] [2026-06-22T12:00:23.690Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nizhgorodov-980e3:testIamPermissions  x-goog-user-project=nizhgorodov-980e3
+[debug] [2026-06-22T12:00:23.690Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nizhgorodov-980e3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-22T12:00:24.024Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nizhgorodov-980e3:testIamPermissions 200
+[debug] [2026-06-22T12:00:24.024Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nizhgorodov-980e3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-22T12:00:24.025Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:00:24.025Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:00:24.025Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nizhgorodov-980e3 [none]
+[debug] [2026-06-22T12:00:25.119Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nizhgorodov-980e3 200
+[debug] [2026-06-22T12:00:25.119Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nizhgorodov-980e3 {"projectId":"nizhgorodov-980e3","projectNumber":"249283010080","displayName":"nizhgorodov","name":"projects/nizhgorodov-980e3","resources":{"hostingSite":"nizhgorodov-980e3"},"state":"ACTIVE","etag":"1_bac89f22-5c13-4f38-9160-2f12bc9431ec"}
+[info] 
+[info] === Deploying to 'nizhgorodov-980e3'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-06-22T12:00:25.123Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:00:25.123Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:00:25.123Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions [none]
+[debug] [2026-06-22T12:00:25.123Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-06-22T12:00:26.902Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions 200
+[debug] [2026-06-22T12:00:26.903Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions {"name":"projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[nizhgorodov-980e3]: beginning deploy... 
+[info] i  hosting[nizhgorodov-980e3]: found 41 files in build 
+[debug] [2026-06-22T12:01:26.259Z] [hosting] uploading with 200 concurrency
+[debug] [2026-06-22T12:01:26.273Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:26.273Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:26.273Z] [hosting] hash cache [YnVpbGQ] stored for 41 files
+[debug] [2026-06-22T12:01:26.273Z] [hosting][hash queue][FINAL] {"max":12,"min":6,"avg":7.585365853658536,"active":0,"complete":41,"success":41,"errored":0,"retried":0,"total":41,"elapsed":13}
+[debug] [2026-06-22T12:01:26.273Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf:populateFiles [none]
+[debug] [2026-06-22T12:01:26.273Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf:populateFiles {"files":{"/sitemap.xml":"f0a957a7fa1d37bc39f58098f8471787ba219d45dbf5f8b1c09bb9598fab7b72","/robots.txt":"15ebd5eee987a7f1469e112cc57715051a3f94fb368fd1deb3fdde37dbead0db","/logo/yandex.svg":"73b2a6d464bff5f562a81d068acd5fec30a5894baf4ff5f018166494e3348780","/favicon.svg":"5d87b9a98aa1af4b6e0142691fb92d2134b02308438d571624b77dd291ad5ba8","/en.html":"cf50688effc49926a980bf71bcdec3955c566cfb2e3ed6c4a2dc19abdce771e5","/logo/edya.svg":"b4d0b1000530f2062b459e4b9a6e114ca84095166ac4d5bc59dfff4a71ecf5b6","/logo/perfema.svg":"c70e76bf36b5a6b7916a091635477bce98665ab0c3041f8ac7fe9ea4525ce3b7","/ru.html":"ebf0f69d07ad72e0ee8699e7c0b8b191ad592450e97a09723d078f3f1e56b3f1","/_app/version.json":"f1d642fd4916332eec2d272587e48dda5c4d4f90479075c8f9700090c6e02e3c","/index.html":"af316eec3b88f5d31df97c7ebf5a8012e3f4b694e997a1fd520937833b7a8546","/edu/hse.svg":"3616db159c4297adf63984895acf0b8d6c7de0e23dcbb61e9342d5643c55c1d2","/_app/env.js":"b6422bbd2a0c5c86bc11dd510c32c124689f1abbb2498ede068c8222cf6cf07b","/_app/immutable/nodes/4.B5rENXzv.js":"1f186676570ecf427d61869081eec568b48d5496078134b2badf3f3e06f1374a","/_app/immutable/nodes/3.C3JhJbMn.js":"dc30d5a55ec97d3c90a3e940f89506fcfe10d32e4465500966d6a0aad4ac9602","/_app/immutable/nodes/2.1ADt98qM.js":"583c5d492aae62f18b12ea91126cce1cc1554021ebb5192665ee4d0a4f311e72","/_app/immutable/nodes/1.CF1G2VrC.js":"8f0c37ad1a0f5499f0446ef103a0db788c06d765dffc736623345e886b1ceabc","/_app/immutable/entry/start.eiCVZ1sk.js":"ae55300bb646241892144357cb9b2a065c236dc40ed8247795e9ab23bf1af531","/_app/immutable/nodes/0.NKZjROic.js":"83f591ad2d2d94b7a28b10b22a4dbcb0f293d28a4b27f8021b26a9d906deb906","/_app/immutable/entry/app.BagPr3Fy.js":"0ce65f6ed61a720061dab17988dc36e9d0be4863fe5e18c6ae91e1d2ed7d2e42","/_app/immutable/chunks/DzIjh6CF.js":"8df83c25a56e89e2065a07b0a02e4838ce157628c0151c3c1ee1903cb3fa862d","/_app/immutable/chunks/D31jWU0K.js":"c52d8e97fbe488ef8b9c758152b7967b210083361c1419f5e9089298ab63bc64","/_app/immutable/chunks/Cr_JRmJ-.js":"2f2d49e99d9528e0155202a55cc465914c131ae3da7f90c933f497d09e3f5b9e","/_app/immutable/chunks/DoVFcgDS.js":"54d13af47e9697f1beca30ea85bc060ca2d514a4b41ef15764885eec9ee52acf","/_app/immutable/chunks/BH-39wmD.js":"5624597365bc43e78c601f328a0fda93982f6a2b4adefe3c1d89d7b66ef3d0c2","/_app/immutable/chunks/4VZVIoee.js":"55207c8910ace0cc8c74b046953979a1650ed776ad41cd735fbfa524be822cd2","/_app/immutable/chunks/xecbjBSF.js":"98886f76f49ad1923fc199fab0133c0175df62228985637929d929efc232366e","/_app/immutable/chunks/V6oCG0uH.js":"dc1513f008f9cfc7130db0a8c5f4cc2b45eab5949248098341a77caa7d52e8eb","/_app/immutable/chunks/Cajj6GH7.js":"0b31cc1fb13edef02300df95256900b018549570a5f4dfbc65a3996bd6bda2d2","/_app/immutable/assets/0.B64kcrlO.css":"1705dda5b86b853020cff9fa2620754a0f7e10f6f3847d7d094483c0c0e9206a","/_app/immutable/chunks/Tktjgvsr.js":"212b44a7563764892f91a7c4761705cbbe0a8e9d0116b754516956884d854720","/og.png":"20e3ff7d7b9a62cb4e8a5b759f9de9c1aa9fc28d889aedfefe566a5e619a57da","/cv/Aleksei-Nizhgorodov-Frontend-Engineer-ATS.pdf":"c53e0426afe9cd5e3834b474b4493d725039922ad812a12fa79d4922af99ba20","/edu/misis.png":"8dfbf865cc6f44ce3230afd34298d033edaea63c0b81e9cf9db4807607b75e03","/og-en.png":"96030b98dec44474932ec3f2025104bc0be993d9c5c4cd5bf42bffbd4b3f6171","/cv/Aleksei-Nizhgorodov-Frontend-Developer-RU-ATS.pdf":"835a4be5e0dc17f4cfcd1367f3dac217492b0c7b9b227a8b26b027c7a202c14f","/cv/Aleksei-Nizhgorodov-Frontend-Engineer.pdf":"123566c078cda241bba9f262e77c05a5de8b8d4e4dd6884c740514f3c9c553f9","/cv/Aleksei-Nizhgorodov-Frontend-Developer-RU.pdf":"ddd2a61a82f6e04aaf7db3f987325dd5eaac0c0bcf8ce10bd7d6212d2a74d7c5","/photo-2.jpg":"6c09a7dd27f85dcd21c883643a87186fd0ad7004bc2e0c1ff78d61c345ad6e3e","/photo-3.jpg":"128adaa4e24a4ef6f1aee4f0c7c177a04142290d7ed5b4fbb3fbd1ac290205c1","/photo-1.jpg":"98bec2a7adc2cb497cee250b2264cd0675e5ffaad135d3cf3bf62a6d19f0730d","/avatar.jpg":"98bec2a7adc2cb497cee250b2264cd0675e5ffaad135d3cf3bf62a6d19f0730d"}}
+[debug] [2026-06-22T12:01:27.646Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf:populateFiles 200
+[debug] [2026-06-22T12:01:27.646Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf:populateFiles {"uploadRequiredHashes":["f1d642fd4916332eec2d272587e48dda5c4d4f90479075c8f9700090c6e02e3c","dc1513f008f9cfc7130db0a8c5f4cc2b45eab5949248098341a77caa7d52e8eb","835a4be5e0dc17f4cfcd1367f3dac217492b0c7b9b227a8b26b027c7a202c14f","0ce65f6ed61a720061dab17988dc36e9d0be4863fe5e18c6ae91e1d2ed7d2e42","c53e0426afe9cd5e3834b474b4493d725039922ad812a12fa79d4922af99ba20","ebf0f69d07ad72e0ee8699e7c0b8b191ad592450e97a09723d078f3f1e56b3f1","83f591ad2d2d94b7a28b10b22a4dbcb0f293d28a4b27f8021b26a9d906deb906","54d13af47e9697f1beca30ea85bc060ca2d514a4b41ef15764885eec9ee52acf","dc30d5a55ec97d3c90a3e940f89506fcfe10d32e4465500966d6a0aad4ac9602","1705dda5b86b853020cff9fa2620754a0f7e10f6f3847d7d094483c0c0e9206a","af316eec3b88f5d31df97c7ebf5a8012e3f4b694e997a1fd520937833b7a8546","ae55300bb646241892144357cb9b2a065c236dc40ed8247795e9ab23bf1af531","ddd2a61a82f6e04aaf7db3f987325dd5eaac0c0bcf8ce10bd7d6212d2a74d7c5","1f186676570ecf427d61869081eec568b48d5496078134b2badf3f3e06f1374a","123566c078cda241bba9f262e77c05a5de8b8d4e4dd6884c740514f3c9c553f9","583c5d492aae62f18b12ea91126cce1cc1554021ebb5192665ee4d0a4f311e72","212b44a7563764892f91a7c4761705cbbe0a8e9d0116b754516956884d854720","cf50688effc49926a980bf71bcdec3955c566cfb2e3ed6c4a2dc19abdce771e5","8f0c37ad1a0f5499f0446ef103a0db788c06d765dffc736623345e886b1ceabc"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files"}
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.647Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.648Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.649Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.649Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.649Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.649Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:27.649Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/f1d642fd4916332eec2d272587e48dda5c4d4f90479075c8f9700090c6e02e3c [none]
+[debug] [2026-06-22T12:01:27.649Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/f1d642fd4916332eec2d272587e48dda5c4d4f90479075c8f9700090c6e02e3c [stream]
+[debug] [2026-06-22T12:01:27.650Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc1513f008f9cfc7130db0a8c5f4cc2b45eab5949248098341a77caa7d52e8eb [none]
+[debug] [2026-06-22T12:01:27.650Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc1513f008f9cfc7130db0a8c5f4cc2b45eab5949248098341a77caa7d52e8eb [stream]
+[debug] [2026-06-22T12:01:27.651Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/835a4be5e0dc17f4cfcd1367f3dac217492b0c7b9b227a8b26b027c7a202c14f [none]
+[debug] [2026-06-22T12:01:27.651Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/835a4be5e0dc17f4cfcd1367f3dac217492b0c7b9b227a8b26b027c7a202c14f [stream]
+[debug] [2026-06-22T12:01:27.652Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/0ce65f6ed61a720061dab17988dc36e9d0be4863fe5e18c6ae91e1d2ed7d2e42 [none]
+[debug] [2026-06-22T12:01:27.652Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/0ce65f6ed61a720061dab17988dc36e9d0be4863fe5e18c6ae91e1d2ed7d2e42 [stream]
+[debug] [2026-06-22T12:01:27.653Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/c53e0426afe9cd5e3834b474b4493d725039922ad812a12fa79d4922af99ba20 [none]
+[debug] [2026-06-22T12:01:27.653Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/c53e0426afe9cd5e3834b474b4493d725039922ad812a12fa79d4922af99ba20 [stream]
+[debug] [2026-06-22T12:01:27.654Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ebf0f69d07ad72e0ee8699e7c0b8b191ad592450e97a09723d078f3f1e56b3f1 [none]
+[debug] [2026-06-22T12:01:27.654Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ebf0f69d07ad72e0ee8699e7c0b8b191ad592450e97a09723d078f3f1e56b3f1 [stream]
+[debug] [2026-06-22T12:01:27.654Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/83f591ad2d2d94b7a28b10b22a4dbcb0f293d28a4b27f8021b26a9d906deb906 [none]
+[debug] [2026-06-22T12:01:27.654Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/83f591ad2d2d94b7a28b10b22a4dbcb0f293d28a4b27f8021b26a9d906deb906 [stream]
+[debug] [2026-06-22T12:01:27.655Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/54d13af47e9697f1beca30ea85bc060ca2d514a4b41ef15764885eec9ee52acf [none]
+[debug] [2026-06-22T12:01:27.655Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/54d13af47e9697f1beca30ea85bc060ca2d514a4b41ef15764885eec9ee52acf [stream]
+[debug] [2026-06-22T12:01:27.655Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc30d5a55ec97d3c90a3e940f89506fcfe10d32e4465500966d6a0aad4ac9602 [none]
+[debug] [2026-06-22T12:01:27.655Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc30d5a55ec97d3c90a3e940f89506fcfe10d32e4465500966d6a0aad4ac9602 [stream]
+[debug] [2026-06-22T12:01:27.656Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1705dda5b86b853020cff9fa2620754a0f7e10f6f3847d7d094483c0c0e9206a [none]
+[debug] [2026-06-22T12:01:27.656Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1705dda5b86b853020cff9fa2620754a0f7e10f6f3847d7d094483c0c0e9206a [stream]
+[debug] [2026-06-22T12:01:27.656Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/af316eec3b88f5d31df97c7ebf5a8012e3f4b694e997a1fd520937833b7a8546 [none]
+[debug] [2026-06-22T12:01:27.656Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/af316eec3b88f5d31df97c7ebf5a8012e3f4b694e997a1fd520937833b7a8546 [stream]
+[debug] [2026-06-22T12:01:27.656Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ae55300bb646241892144357cb9b2a065c236dc40ed8247795e9ab23bf1af531 [none]
+[debug] [2026-06-22T12:01:27.656Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ae55300bb646241892144357cb9b2a065c236dc40ed8247795e9ab23bf1af531 [stream]
+[debug] [2026-06-22T12:01:27.657Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ddd2a61a82f6e04aaf7db3f987325dd5eaac0c0bcf8ce10bd7d6212d2a74d7c5 [none]
+[debug] [2026-06-22T12:01:27.657Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ddd2a61a82f6e04aaf7db3f987325dd5eaac0c0bcf8ce10bd7d6212d2a74d7c5 [stream]
+[debug] [2026-06-22T12:01:27.657Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1f186676570ecf427d61869081eec568b48d5496078134b2badf3f3e06f1374a [none]
+[debug] [2026-06-22T12:01:27.657Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1f186676570ecf427d61869081eec568b48d5496078134b2badf3f3e06f1374a [stream]
+[debug] [2026-06-22T12:01:27.658Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/123566c078cda241bba9f262e77c05a5de8b8d4e4dd6884c740514f3c9c553f9 [none]
+[debug] [2026-06-22T12:01:27.658Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/123566c078cda241bba9f262e77c05a5de8b8d4e4dd6884c740514f3c9c553f9 [stream]
+[debug] [2026-06-22T12:01:27.658Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/583c5d492aae62f18b12ea91126cce1cc1554021ebb5192665ee4d0a4f311e72 [none]
+[debug] [2026-06-22T12:01:27.658Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/583c5d492aae62f18b12ea91126cce1cc1554021ebb5192665ee4d0a4f311e72 [stream]
+[debug] [2026-06-22T12:01:27.658Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/212b44a7563764892f91a7c4761705cbbe0a8e9d0116b754516956884d854720 [none]
+[debug] [2026-06-22T12:01:27.659Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/212b44a7563764892f91a7c4761705cbbe0a8e9d0116b754516956884d854720 [stream]
+[debug] [2026-06-22T12:01:27.659Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/cf50688effc49926a980bf71bcdec3955c566cfb2e3ed6c4a2dc19abdce771e5 [none]
+[debug] [2026-06-22T12:01:27.659Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/cf50688effc49926a980bf71bcdec3955c566cfb2e3ed6c4a2dc19abdce771e5 [stream]
+[debug] [2026-06-22T12:01:27.659Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/8f0c37ad1a0f5499f0446ef103a0db788c06d765dffc736623345e886b1ceabc [none]
+[debug] [2026-06-22T12:01:27.659Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/8f0c37ad1a0f5499f0446ef103a0db788c06d765dffc736623345e886b1ceabc [stream]
+[debug] [2026-06-22T12:01:27.660Z] [hosting][populate queue][FINAL] {"max":1376,"min":1376,"avg":1376,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1387}
+[debug] [2026-06-22T12:01:27.660Z] [hosting] uploads queued: 19
+[info] i  hosting: uploading new files [0/19] (0%) 
+[debug] [2026-06-22T12:01:29.004Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/f1d642fd4916332eec2d272587e48dda5c4d4f90479075c8f9700090c6e02e3c 200
+[debug] [2026-06-22T12:01:29.004Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/f1d642fd4916332eec2d272587e48dda5c4d4f90479075c8f9700090c6e02e3c [stream]
+[debug] [2026-06-22T12:01:29.029Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc30d5a55ec97d3c90a3e940f89506fcfe10d32e4465500966d6a0aad4ac9602 200
+[debug] [2026-06-22T12:01:29.029Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc30d5a55ec97d3c90a3e940f89506fcfe10d32e4465500966d6a0aad4ac9602 [stream]
+[debug] [2026-06-22T12:01:29.067Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ebf0f69d07ad72e0ee8699e7c0b8b191ad592450e97a09723d078f3f1e56b3f1 200
+[debug] [2026-06-22T12:01:29.068Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ebf0f69d07ad72e0ee8699e7c0b8b191ad592450e97a09723d078f3f1e56b3f1 [stream]
+[debug] [2026-06-22T12:01:29.075Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ae55300bb646241892144357cb9b2a065c236dc40ed8247795e9ab23bf1af531 200
+[debug] [2026-06-22T12:01:29.075Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ae55300bb646241892144357cb9b2a065c236dc40ed8247795e9ab23bf1af531 [stream]
+[debug] [2026-06-22T12:01:29.085Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/54d13af47e9697f1beca30ea85bc060ca2d514a4b41ef15764885eec9ee52acf 200
+[debug] [2026-06-22T12:01:29.085Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/54d13af47e9697f1beca30ea85bc060ca2d514a4b41ef15764885eec9ee52acf [stream]
+[debug] [2026-06-22T12:01:29.090Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/c53e0426afe9cd5e3834b474b4493d725039922ad812a12fa79d4922af99ba20 200
+[debug] [2026-06-22T12:01:29.091Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/c53e0426afe9cd5e3834b474b4493d725039922ad812a12fa79d4922af99ba20 [stream]
+[debug] [2026-06-22T12:01:29.099Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/835a4be5e0dc17f4cfcd1367f3dac217492b0c7b9b227a8b26b027c7a202c14f 200
+[debug] [2026-06-22T12:01:29.099Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/835a4be5e0dc17f4cfcd1367f3dac217492b0c7b9b227a8b26b027c7a202c14f [stream]
+[debug] [2026-06-22T12:01:29.110Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/af316eec3b88f5d31df97c7ebf5a8012e3f4b694e997a1fd520937833b7a8546 200
+[debug] [2026-06-22T12:01:29.110Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/af316eec3b88f5d31df97c7ebf5a8012e3f4b694e997a1fd520937833b7a8546 [stream]
+[debug] [2026-06-22T12:01:29.115Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ddd2a61a82f6e04aaf7db3f987325dd5eaac0c0bcf8ce10bd7d6212d2a74d7c5 200
+[debug] [2026-06-22T12:01:29.115Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/ddd2a61a82f6e04aaf7db3f987325dd5eaac0c0bcf8ce10bd7d6212d2a74d7c5 [stream]
+[debug] [2026-06-22T12:01:29.129Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/8f0c37ad1a0f5499f0446ef103a0db788c06d765dffc736623345e886b1ceabc 200
+[debug] [2026-06-22T12:01:29.129Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/8f0c37ad1a0f5499f0446ef103a0db788c06d765dffc736623345e886b1ceabc [stream]
+[debug] [2026-06-22T12:01:29.146Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/123566c078cda241bba9f262e77c05a5de8b8d4e4dd6884c740514f3c9c553f9 200
+[debug] [2026-06-22T12:01:29.146Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/123566c078cda241bba9f262e77c05a5de8b8d4e4dd6884c740514f3c9c553f9 [stream]
+[debug] [2026-06-22T12:01:29.183Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/212b44a7563764892f91a7c4761705cbbe0a8e9d0116b754516956884d854720 200
+[debug] [2026-06-22T12:01:29.183Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/212b44a7563764892f91a7c4761705cbbe0a8e9d0116b754516956884d854720 [stream]
+[debug] [2026-06-22T12:01:29.195Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/0ce65f6ed61a720061dab17988dc36e9d0be4863fe5e18c6ae91e1d2ed7d2e42 200
+[debug] [2026-06-22T12:01:29.195Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/0ce65f6ed61a720061dab17988dc36e9d0be4863fe5e18c6ae91e1d2ed7d2e42 [stream]
+[debug] [2026-06-22T12:01:29.195Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1705dda5b86b853020cff9fa2620754a0f7e10f6f3847d7d094483c0c0e9206a 200
+[debug] [2026-06-22T12:01:29.195Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1705dda5b86b853020cff9fa2620754a0f7e10f6f3847d7d094483c0c0e9206a [stream]
+[debug] [2026-06-22T12:01:29.196Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/83f591ad2d2d94b7a28b10b22a4dbcb0f293d28a4b27f8021b26a9d906deb906 200
+[debug] [2026-06-22T12:01:29.196Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/83f591ad2d2d94b7a28b10b22a4dbcb0f293d28a4b27f8021b26a9d906deb906 [stream]
+[debug] [2026-06-22T12:01:29.202Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc1513f008f9cfc7130db0a8c5f4cc2b45eab5949248098341a77caa7d52e8eb 200
+[debug] [2026-06-22T12:01:29.202Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/dc1513f008f9cfc7130db0a8c5f4cc2b45eab5949248098341a77caa7d52e8eb [stream]
+[debug] [2026-06-22T12:01:29.282Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1f186676570ecf427d61869081eec568b48d5496078134b2badf3f3e06f1374a 200
+[debug] [2026-06-22T12:01:29.282Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/1f186676570ecf427d61869081eec568b48d5496078134b2badf3f3e06f1374a [stream]
+[debug] [2026-06-22T12:01:29.314Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/cf50688effc49926a980bf71bcdec3955c566cfb2e3ed6c4a2dc19abdce771e5 200
+[debug] [2026-06-22T12:01:29.314Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/cf50688effc49926a980bf71bcdec3955c566cfb2e3ed6c4a2dc19abdce771e5 [stream]
+[debug] [2026-06-22T12:01:29.315Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/583c5d492aae62f18b12ea91126cce1cc1554021ebb5192665ee4d0a4f311e72 200
+[debug] [2026-06-22T12:01:29.315Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf/files/583c5d492aae62f18b12ea91126cce1cc1554021ebb5192665ee4d0a4f311e72 [stream]
+[debug] [2026-06-22T12:01:29.315Z] [hosting][upload queue][FINAL] {"max":1667,"min":1358,"avg":1501.421052631579,"active":0,"complete":19,"success":19,"errored":0,"retried":0,"total":19,"elapsed":1669}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[nizhgorodov-980e3]: file upload complete 
+[debug] [2026-06-22T12:01:29.315Z] [hosting] deploy completed after 3064ms
+[debug] [2026-06-22T12:01:29.316Z] [
+  {
+    "config": {
+      "public": "build",
+      "cleanUrls": true,
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "/_app/immutable/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "/",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        },
+        {
+          "source": "/ru",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        },
+        {
+          "source": "/en",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        },
+        {
+          "source": "**/*.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        }
+      ],
+      "site": "nizhgorodov-980e3"
+    },
+    "version": "projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf"
+  }
+]
+[info] i  hosting[nizhgorodov-980e3]: finalizing version... 
+[debug] [2026-06-22T12:01:29.317Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:29.317Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:29.318Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf updateMask=status%2Cconfig
+[debug] [2026-06-22T12:01:29.318Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf {"status":"FINALIZED","config":{"headers":[{"glob":"/_app/immutable/**","headers":{"Cache-Control":"public, max-age=31536000, immutable"}},{"glob":"/","headers":{"Cache-Control":"no-cache"}},{"glob":"/ru","headers":{"Cache-Control":"no-cache"}},{"glob":"/en","headers":{"Cache-Control":"no-cache"}},{"glob":"**/*.html","headers":{"Cache-Control":"no-cache"}}],"cleanUrls":true}}
+[debug] [2026-06-22T12:01:30.732Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf 200
+[debug] [2026-06-22T12:01:30.732Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf {"name":"projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public, max-age=31536000, immutable"},"glob":"/_app/immutable/**"},{"headers":{"Cache-Control":"no-cache"},"glob":"/"},{"headers":{"Cache-Control":"no-cache"},"glob":"/ru"},{"headers":{"Cache-Control":"no-cache"},"glob":"/en"},{"headers":{"Cache-Control":"no-cache"},"glob":"**/*.html"}],"cleanUrls":true},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-22T12:00:25.871127Z","createUser":{"email":"8900800700a@gmail.com"},"finalizeTime":"2026-06-22T12:01:30.558199Z","finalizeUser":{"email":"8900800700a@gmail.com"}}
+[debug] [2026-06-22T12:01:30.732Z] [hosting] finalized version for nizhgorodov-980e3:[object Object]
+[info] ✔  hosting[nizhgorodov-980e3]: version finalized 
+[info] i  hosting[nizhgorodov-980e3]: releasing new version... 
+[debug] [2026-06-22T12:01:30.733Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:30.733Z] Checked if tokens are valid: true, expires at: 1782131521050
+[debug] [2026-06-22T12:01:30.733Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/channels/live/releases versionName=projects%2F249283010080%2Fsites%2Fnizhgorodov-980e3%2Fversions%2F6c8f526d29ce6dbf
+[debug] [2026-06-22T12:01:30.733Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/channels/live/releases {}
+[debug] [2026-06-22T12:01:32.706Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/channels/live/releases 200
+[debug] [2026-06-22T12:01:32.706Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/nizhgorodov-980e3/channels/live/releases {"name":"projects/249283010080/sites/nizhgorodov-980e3/channels/live/releases/1782129691586000","version":{"name":"projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public, max-age=31536000, immutable"},"glob":"/_app/immutable/**"},{"headers":{"Cache-Control":"no-cache"},"glob":"/"},{"headers":{"Cache-Control":"no-cache"},"glob":"/ru"},{"headers":{"Cache-Control":"no-cache"},"glob":"/en"},{"headers":{"Cache-Control":"no-cache"},"glob":"**/*.html"}],"cleanUrls":true},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-22T12:00:25.871127Z","createUser":{"email":"8900800700a@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocL_atsCL6wFE296dBchzV5cZaKTqVlSDOvpAgDzQ1bDpEjiudRv"},"finalizeTime":"2026-06-22T12:01:30.558199Z","finalizeUser":{"email":"8900800700a@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocL_atsCL6wFE296dBchzV5cZaKTqVlSDOvpAgDzQ1bDpEjiudRv"}},"type":"DEPLOY","releaseTime":"2026-06-22T12:01:31.586Z","releaseUser":{"email":"8900800700a@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocL_atsCL6wFE296dBchzV5cZaKTqVlSDOvpAgDzQ1bDpEjiudRv"}}
+[debug] [2026-06-22T12:01:32.706Z] [hosting] release: {"name":"projects/249283010080/sites/nizhgorodov-980e3/channels/live/releases/1782129691586000","version":{"name":"projects/249283010080/sites/nizhgorodov-980e3/versions/6c8f526d29ce6dbf","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"public, max-age=31536000, immutable"},"glob":"/_app/immutable/**"},{"headers":{"Cache-Control":"no-cache"},"glob":"/"},{"headers":{"Cache-Control":"no-cache"},"glob":"/ru"},{"headers":{"Cache-Control":"no-cache"},"glob":"/en"},{"headers":{"Cache-Control":"no-cache"},"glob":"**/*.html"}],"cleanUrls":true},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-06-22T12:00:25.871127Z","createUser":{"email":"8900800700a@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocL_atsCL6wFE296dBchzV5cZaKTqVlSDOvpAgDzQ1bDpEjiudRv"},"finalizeTime":"2026-06-22T12:01:30.558199Z","finalizeUser":{"email":"8900800700a@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocL_atsCL6wFE296dBchzV5cZaKTqVlSDOvpAgDzQ1bDpEjiudRv"}},"type":"DEPLOY","releaseTime":"2026-06-22T12:01:31.586Z","releaseUser":{"email":"8900800700a@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocL_atsCL6wFE296dBchzV5cZaKTqVlSDOvpAgDzQ1bDpEjiudRv"}}
+[info] ✔  hosting[nizhgorodov-980e3]: release complete 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/nizhgorodov-980e3/overview
+[info] Hosting URL: https://nizhgorodov-980e3.web.app
+[debug] [2026-06-22T12:01:42.719Z] Error: Timed out.
+    at Timeout._onTimeout (/opt/homebrew/lib/node_modules/firebase-tools/lib/utils.js:308:49)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -2,7 +2,9 @@
 	"hosting": {
 		"public": "build",
 		"cleanUrls": true,
+		"trailingSlash": false,
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+		"redirects": [{ "source": "/en", "type": 301, "destination": "/" }],
 		"headers": [
 			{
 				"source": "/_app/immutable/**",
@@ -10,7 +12,6 @@
 			},
 			{ "source": "/", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
 			{ "source": "/ru", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
-			{ "source": "/en", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
 			{ "source": "**/*.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
 		]
 	}

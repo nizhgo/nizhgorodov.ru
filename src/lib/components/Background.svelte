@@ -23,10 +23,10 @@
 								<span
 									class="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[#15171c] p-1.5"
 								>
-									<img src={job.logo} alt="" class="h-full w-full object-contain" />
+									<img src={job.logo} alt={job.place} class="h-full w-full object-contain" />
 								</span>
 							{:else}
-								<img src={job.logo} alt="" class="mb-3 h-8 w-auto max-w-[150px] object-contain" />
+								<img src={job.logo} alt={job.place} class="mb-3 h-8 w-auto max-w-[150px] object-contain" />
 							{/if}
 						{/if}
 						<div class="flex items-baseline justify-between gap-3">
@@ -50,7 +50,7 @@
 				{#each $t.background.education as edu}
 					<div class="border-t border-border pt-4">
 						{#if edu.logo}
-							<img src={edu.logo} alt="" class="mb-3 h-9 w-auto max-w-[150px] object-contain" />
+							<img src={edu.logo} alt={edu.place} class="mb-3 h-9 w-auto max-w-[150px] object-contain" />
 						{/if}
 						<div class="flex items-baseline justify-between gap-3">
 							<p class="text-lg font-bold text-text-primary">{edu.place}</p>
