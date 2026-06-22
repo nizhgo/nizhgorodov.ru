@@ -34,6 +34,8 @@
 			<div class="mt-7">
 				<a
 					href={$t.hero.cta.href}
+					target="_blank"
+					rel="noopener"
 					class="inline-block bg-text-primary px-5 py-3 font-mono text-xs tracking-[0.1em] text-background uppercase transition-colors hover:bg-accent"
 				>
 					{$t.hero.cta.label} →

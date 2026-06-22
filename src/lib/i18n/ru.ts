@@ -22,7 +22,7 @@ export const ru: Translations = {
 		],
 		cta: {
 			label: 'Скачать CV',
-			href: '/cv/aleksey-nizhgorodov-ru.pdf'
+			href: '/cv/Aleksei-Nizhgorodov-Frontend-Developer-RU.pdf'
 		}
 	},
 	about: {
