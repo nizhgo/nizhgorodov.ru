@@ -242,6 +242,7 @@ export const ru: Translations = {
 			{
 				place: 'Edya',
 				role: 'Frontend · парттайм',
+				period: 'март 2025 — июль 2026',
 				logo: '/logo/edya.svg',
 				logoBg: true,
 				summary: 'Парттайм: кабинет веб-сервиса на ≈20 тыс. MAU (white-label на восемь брендов, своя отказоустойчивость) и AI-суперапп в Telegram (живые генерации, платежи).'

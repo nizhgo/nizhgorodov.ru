@@ -73,7 +73,7 @@ const data = {
         ]
       },
       {
-        company: 'Edya', role: 'Frontend Engineer (part-time)', period: '2025 — Present', place: 'Remote',
+        company: 'Edya', role: 'Frontend Engineer (part-time)', period: 'Mar 2025 - Jul 2026', place: 'Remote',
         links: 'edya.org',
         bullets: [
           { lead: 'VPN customer portal', text: 'designed and shipped the production SPA on React 19, TanStack Router and MobX, now at about 20k MAU. White-label: eight brands ship from one codebase, adding a brand is a config change. Cut the initial bundle from 1706 to 656 KB, gzip from 467 to 175.' },
@@ -132,7 +132,7 @@ const data = {
         ]
       },
       {
-        company: 'Edya', role: 'Frontend-разработчик (парттайм)', period: '2025 — наст. время', place: 'Удалённо',
+        company: 'Edya', role: 'Frontend-разработчик (парттайм)', period: 'март 2025 - июль 2026', place: 'Удалённо',
         links: 'edya.org',
         bullets: [
           { lead: 'Кабинет веб-сервиса', text: 'спроектировал и написал SPA на React 19, TanStack Router и MobX, в проде, около 20 тысяч MAU. White-label: восемь брендов собираются из одной кодовой базы, новый добавляется конфигом. Стартовый бандл ужал с 1706 до 656 КБ, по gzip с 467 до 175.' },

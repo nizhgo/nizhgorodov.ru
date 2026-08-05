@@ -242,6 +242,7 @@ export const en: Translations = {
 			{
 				place: 'Edya',
 				role: 'Frontend · part-time',
+				period: 'Mar 2025 — Jul 2026',
 				logo: '/logo/edya.svg',
 				logoBg: true,
 				summary: 'Part-time: a VPN customer portal at ~20k MAU (white-label across eight brands, a custom censorship-failover layer) and an AI super-app in Telegram (real-time generation, payments).'
