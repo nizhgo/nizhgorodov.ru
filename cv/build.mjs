@@ -92,7 +92,7 @@ const data = {
       }
     ],
     education: [
-      { school: 'HSE University', program: 'MSc, Digital Urbanism & City Analytics', period: '2024 — 2026', place: 'Moscow', note: 'Data analytics, Python, geodata, QGIS. Thesis: hse.ru/edu/vkr/1167123484' },
+      { school: 'HSE University', program: 'MSc, Digital Urbanism & City Analytics', period: '2024 — 2026', place: 'Moscow', note: 'Geo-analytics (Python, geodata, QGIS), urban project management, planning law. Thesis: hse.ru/edu/vkr/1167123484. If you ever need a good-looking map, or a factory legally demolished under an urban-renewal scheme, I’m your guy!' },
       { school: 'NUST MISIS', program: 'BSc, Information Systems & Technologies', period: '2020 — 2024', place: 'Moscow', note: 'Algorithms, data structures, software engineering. Hackathon prizes: 2nd place at the LCT 2023 hackathon (misis.ru/news/8829), MTS True Tech Hack, Tsifra Fest, X-MAS Hack.' }
     ],
     languages: 'Russian — Native · English — B2',
@@ -151,7 +151,7 @@ const data = {
       }
     ],
     education: [
-      { school: 'НИУ ВШЭ', program: 'Магистратура, Цифровая урбанистика и аналитика города', period: '2024 — 2026', place: 'Москва', note: 'Аналитика данных, Python, геоданные, QGIS. ВКР: hse.ru/edu/vkr/1167123484' },
+      { school: 'НИУ ВШЭ', program: 'Магистратура, Цифровая урбанистика и аналитика города', period: '2024 — 2026', place: 'Москва', note: 'Геоаналитика (Python, геоданные, QGIS), управление проектами в городской сфере, градостроительное законодательство. ВКР: hse.ru/edu/vkr/1167123484. Если нужно сделать красивую картосхему или снести завод по механизму КРТ, обращайтесь!' },
       { school: 'НИТУ МИСиС', program: 'Бакалавриат, Информационные системы и технологии', period: '2020 — 2024', place: 'Москва', note: 'Алгоритмы, структуры данных, инженерия ПО. Призовые места на хакатонах: 2-е место на ЛЦТ 2023 (misis.ru/news/8829), МТС True Tech Hack, Цифра Fest, X-MAS Hack.' }
     ],
     languages: 'Русский — родной · Английский — B2',
