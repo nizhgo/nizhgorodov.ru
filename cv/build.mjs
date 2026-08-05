@@ -64,7 +64,7 @@ const data = {
         summary: 'Full-time job. I build products here from scratch.',
         bullets: [
           { lead: 'Team lead', text: 'ran frontend teams of 2–4, did code review, mentored and onboarded newcomers. Held technical meetings and demos with clients.' },
-          { lead: 'Occupational-health analytics (B2B)', text: 'built the MVP in about two weeks, then grew it to ~20 clinical dashboards. A pnpm monorepo: React with MobX, an Express BFF, shared Zod contracts. Ingest survives upstream outages and duplicate deliveries (backoff, circuit breaker), and read-layer RBAC keeps medical data out of the browser.' },
+          { lead: 'Occupational-health analytics (B2B)', text: 'built the MVP in about two weeks, then grew it to ~20 clinical dashboards. A pnpm monorepo: React with MobX, an Express BFF, shared Zod contracts. The data pipeline rides out upstream outages without losing records, and medical data never reaches the browser.' },
           { lead: 'Mapping & real-time monitoring', text: 'wrote a rendering layer on top of Leaflet with Canvas and WebGL. It holds thousands of live markers and long GPS tracks without dropping frames; clustering, geofences and a history timeline are built in. Several company products run on it now.' },
           { lead: 'Video-analytics platform', text: 'designed the frontend from scratch (TypeScript, React, MobX) and set the patterns for the team. Live dashboards on Recharts, virtualized tables for large datasets.' },
           { lead: 'PDF reports', text: 'wrote our own library after jsPDF and react-pdf choked on WebGL maps. It prints maps and charts from plain React components and handles page numbers and running headers by itself.' },
@@ -77,11 +77,11 @@ const data = {
         links: 'edya.org',
         bullets: [
           { lead: 'VPN customer portal', text: 'designed and shipped the production SPA on React 19, TanStack Router and MobX, now at about 20k MAU. White-label: eight brands ship from one codebase, adding a brand is a config change. Cut the initial bundle from 1706 to 656 KB, gzip from 467 to 175.' },
-          { lead: 'Censorship circumvention', text: 'on every navigation a service worker revalidates the mirror list and moves the user off a dead domain to a live one, keeping the path and query. A static gate page on GCS picks up visits from bot links and bookmarks once a domain is blocked. Both the app bundle and the gate are obfuscated.' },
+          { lead: 'Censorship circumvention', text: 'on every navigation a service worker revalidates the mirror list and moves the user off a dead domain to a live one, keeping the path. Visits from bot links and bookmarks land on a separate static page. The build is obfuscated.' },
           { lead: 'Also in the portal', text: 'sign-in via Google, email or Telegram, subscription transfer from the legacy Telegram bot, referrals, guest key activation with per-platform setup guides up to Android TV.' },
           { lead: 'Metrics', text: 'product events, exceptions and API failures go to PostHog, sliced by brand, platform and release.' },
           { lead: 'EdyaAI, a Telegram super-app', text: 'a Mini App with ChatGPT, Grok and DeepSeek chat plus Midjourney image generation in one place. I owned the generation engine, payments and the legacy-chat integration. Payments are live: plans, subscriptions, promo codes. The legacy Next.js part is embedded in an iframe with a full event bridge, haptics included, so users never notice the seam.' },
-          { lead: 'Generation engine', text: 'WebSocket-based, a state machine per request, automatic reconnects. Live generation progress, upscales and variations, image references, merging two pictures, rate limits with a countdown to reset.' }
+          { lead: 'Generation engine', text: 'WebSocket-based: live progress, automatic reconnects, a dropped connection doesn’t lose a generation. Upscales and variations, image references, merging two pictures, a visible countdown when the rate limit hits.' }
         ]
       },
       {
@@ -123,7 +123,7 @@ const data = {
         summary: 'Основное место работы. Продукты делаю с нуля.',
         bullets: [
           { lead: 'Лид фронтенда', text: 'вёл команды из 2–4 человек, ревьюил фронтенд, менторил и вводил новичков. Проводил технические встречи с заказчиками, показывал демо.' },
-          { lead: 'B2B-аналитика медосмотров', text: 'поднял MVP за две недели, потом довёл до ~20 клинических дашбордов. Внутри pnpm-монорепо: React с MobX, BFF на Express, общие Zod-контракты. Загрузка из внешнего API переживает его сбои и дубли (backoff, circuit breaker), медданные режутся по RBAC ещё на чтении и до браузера не доезжают.' },
+          { lead: 'B2B-аналитика медосмотров', text: 'поднял MVP за две недели, потом довёл до ~20 клинических дашбордов. Внутри pnpm-монорепо: React с MobX, BFF на Express, общие Zod-контракты. Загрузка из нестабильного внешнего API не теряет записи, а медданные вообще не попадают в браузер.' },
           { lead: 'Картография и мониторинг', text: 'написал слой поверх Leaflet на Canvas и WebGL. Тысячи живых маркеров и длинные GPS-треки без просадок, кластеризация, геозоны, историю можно мотать по таймлайну. Сейчас на нём работает несколько продуктов компании.' },
           { lead: 'Платформа видеоаналитики', text: 'спроектировал фронтенд с нуля (TypeScript, React, MobX) и задал паттерны для команды. Дашборды обновляются вживую, графики на Recharts, длинные таблицы виртуализированы.' },
           { lead: 'Библиотека PDF-отчётов', text: 'написал свою, когда jsPDF и react-pdf не потянули WebGL-карты. Печатает карты и графики из обычных React-компонентов, сама нумерует страницы и ставит колонтитулы.' },
@@ -136,11 +136,11 @@ const data = {
         links: 'edya.org',
         bullets: [
           { lead: 'Кабинет веб-сервиса', text: 'спроектировал и написал SPA на React 19, TanStack Router и MobX, в проде, около 20 тысяч MAU. White-label: восемь брендов собираются из одной кодовой базы, новый добавляется конфигом. Стартовый бандл ужал с 1706 до 656 КБ, по gzip с 467 до 175.' },
-          { lead: 'Отказоустойчивость', text: 'service worker на каждом переходе сверяется со списком зеркал и уводит с недоступного домена на живой, не теряя путь и параметры. Отдельный статичный гейт на GCS подхватывает переходы из бота и закладок. И бандл, и гейт обфусцированы.' },
+          { lead: 'Отказоустойчивость', text: 'service worker на каждом переходе сверяется со списком зеркал и уводит с недоступного домена на живой, не теряя путь. Переходы из бота и закладок подхватывает отдельная статичная страница. Сборка обфусцирована.' },
           { lead: 'Ещё в кабинете', text: 'вход через Google, почту или Telegram, перенос подписок из старого Telegram-бота, рефералка, гостевая активация по ключу с инструкциями под каждую платформу вплоть до Android TV.' },
           { lead: 'Метрики', text: 'продуктовые события, исключения и падения API собираются в PostHog, срезы по бренду, платформе и релизу.' },
           { lead: 'EdyaAI, суперапп в Telegram', text: 'Mini App, где в одном окне чат с ChatGPT, Grok и DeepSeek и генерация картинок в Midjourney. Отвечал за движок генераций, платежи и интеграцию легаси-чата. Платежи в проде: тарифы, подписки, промокоды. Легаси-часть на Next.js встроена через iframe с полным прокидыванием событий Telegram вплоть до вибраций, шов для пользователя незаметен.' },
-          { lead: 'Движок генераций', text: 'поверх WebSocket, у каждого запроса свой конечный автомат и авто-реконнект. Живой прогресс генерации, апскейлы и вариации, картинки-референсы, склейка двух изображений, rate-limit с обратным отсчётом до сброса.' }
+          { lead: 'Движок генераций', text: 'поверх WebSocket: живой прогресс, автопереподключение, обрыв связи не теряет генерации. Апскейлы и вариации, картинки-референсы, склейка двух изображений, при лимите виден отсчёт до сброса.' }
         ]
       },
       {
