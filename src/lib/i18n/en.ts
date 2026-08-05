@@ -261,7 +261,7 @@ export const en: Translations = {
 				period: '2024 — 2026',
 				logo: '/edu/hse.svg',
 				link: { label: 'Thesis', href: 'https://www.hse.ru/edu/vkr/1167123484' },
-				note: 'A deliberate choice: urbanism always pulled me. The program turned out to be data analytics at its core (Python, geodata, QGIS), plus urban project management and planning law. So if you ever need a good-looking map, or a factory legally demolished under an urban-renewal scheme, I’m your guy.'
+				note: 'A deliberate choice: urbanism always pulled me. The program turned out to be geo-analytics at its core (Python, geodata, QGIS), plus urban project management and planning law. So if you ever need a good-looking map, or a factory legally demolished under an urban-renewal scheme, I’m your guy!'
 			},
 			{
 				place: 'MISIS',
