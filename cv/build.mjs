@@ -47,7 +47,7 @@ const data = {
     docTitle: 'Aleksei Nizhgorodov - Frontend Engineer - Resume',
     metaLine: 'Moscow, Russia · open to relocation & remote',
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
-    labels: { summary: 'Summary', skills: 'Skills', experience: 'Experience', education: 'Education', languages: 'Languages', links: 'Links', funfact: 'Fun fact' },
+    labels: { summary: 'Summary', skills: 'Skills', experience: 'Experience', education: 'Education', languages: 'Languages', links: 'Website', funfact: 'Fun fact' },
     summary:
       'Four years in commercial development. I go for the hard parts: WebSocket real-time, data-heavy dashboards, maps, WebGL. When no library does the job I write my own; the latest prints WebGL maps into PDF reports straight from React components. I’ve led small frontend teams, and on some products I was the only frontend engineer. English B2. Open to new opportunities.',
     skills: [
@@ -81,7 +81,7 @@ const data = {
           { lead: 'Also in the portal', text: 'sign-in via Google, email or Telegram, subscription transfer from the legacy Telegram bot, referrals, guest key activation with per-platform setup guides up to Android TV.' },
           { lead: 'Metrics', text: 'product events, exceptions and API failures go to PostHog, sliced by brand, platform and release.' },
           { lead: 'EdyaAI, a Telegram super-app', text: 'a Mini App with ChatGPT, Grok and DeepSeek chat plus Midjourney image generation in one place. I owned the generation engine, payments and the legacy-chat integration. Payments are live: plans, subscriptions, promo codes. The legacy Next.js part is embedded in an iframe with a full event bridge, haptics included, so users never notice the seam.' },
-          { lead: 'Generation engine', text: 'WebSocket-based: live progress, automatic reconnects, a dropped connection doesn’t lose a generation. Upscales and variations, image references, merging two pictures, a visible countdown when the rate limit hits.' }
+          { lead: 'Generation engine', text: 'WebSocket-based. Live progress, automatic reconnects, a dropped connection doesn’t lose a generation. Upscales and variations, image references, merging two pictures, a visible countdown when the rate limit hits.' }
         ]
       },
       {
@@ -106,7 +106,7 @@ const data = {
     docTitle: 'Алексей Нижгородов - Frontend Developer - Резюме',
     metaLine: 'Москва, Россия · 24 года',
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
-    labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Ссылки', funfact: 'Фан-факт' },
+    labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Сайт', funfact: 'Фан-факт' },
     summary:
       'Четвёртый год в коммерческой разработке. Берусь за сложное: реалтайм по WebSocket, дашборды с большим объёмом данных, карты, WebGL. Если готовой библиотеки нет, пишу свою. Последняя печатает WebGL-карты в PDF-отчёты прямо из React-компонентов. Вёл фронтенд-команды, на части продуктов был единственным фронтом. Английский B2. Открыт к предложениям.',
     skills: [
@@ -140,7 +140,7 @@ const data = {
           { lead: 'Ещё в кабинете', text: 'вход через Google, почту или Telegram, перенос подписок из старого Telegram-бота, рефералка, гостевая активация по ключу с инструкциями под каждую платформу вплоть до Android TV.' },
           { lead: 'Метрики', text: 'продуктовые события, исключения и падения API собираются в PostHog, срезы по бренду, платформе и релизу.' },
           { lead: 'EdyaAI, суперапп в Telegram', text: 'Mini App, где в одном окне чат с ChatGPT, Grok и DeepSeek и генерация картинок в Midjourney. Отвечал за движок генераций, платежи и интеграцию легаси-чата. Платежи в проде: тарифы, подписки, промокоды. Легаси-часть на Next.js встроена через iframe с полным прокидыванием событий Telegram вплоть до вибраций, шов для пользователя незаметен.' },
-          { lead: 'Движок генераций', text: 'поверх WebSocket: живой прогресс, автопереподключение, обрыв связи не теряет генерации. Апскейлы и вариации, картинки-референсы, склейка двух изображений, при лимите виден отсчёт до сброса.' }
+          { lead: 'Движок генераций', text: 'поверх WebSocket. Живой прогресс, автопереподключение, обрыв связи не теряет генерации. Апскейлы и вариации, картинки-референсы, склейка двух изображений, при лимите виден отсчёт до сброса.' }
         ]
       },
       {
