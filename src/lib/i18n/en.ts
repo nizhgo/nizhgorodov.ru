@@ -66,11 +66,11 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'The service needed a portal for several brands at once. I built the whole SPA: file-based routing with auto code-splitting, a root store of eight domain stores, a hand-rolled API client that Zod-validates every response. White-label builds come from a build-time flag; a new brand is a config change.',
-					'The portal has to open even when the main domain is blocked. On every navigation a service worker revalidates the mirror list and moves the user to a live domain, keeping the path; visits from bot links and bookmarks land on a static gate page on GCS. Both the bundle and the gate are obfuscated.',
-					'Subscriptions migrate from the legacy Telegram bot in a five-step flow: cross-account login, payment detected by watching the subscription term grow against a stored baseline, the “already migrated” case handled.',
-					'Firebase, Lottie and QR had bloated the bundle. Route auto-splitting, manual vendor chunks and lazy heavy pages brought the initial load from 1706 down to 656 KB, gzip from 467 to 175.',
-					'Product events, exceptions and API failures flow into PostHog, sliced by brand, platform and release.'
+					'The service needed a portal for several brands at once. I built the whole SPA: eight brands ship from one codebase, a new one is a couple of config files, every API response is schema-checked.',
+					'The portal has to open even when the main domain goes dark. On every navigation a service worker checks the mirror list and quietly moves the user to a live domain; old links from bookmarks and the bot still land in the portal. The build is obfuscated.',
+					'Subscriptions move from the legacy Telegram bot to a web account in five steps, payments and remaining days included. Repeat transfers and wrong accounts are caught by the flow itself.',
+					'Firebase, Lottie and QR had bloated the bundle. I split it by page and pushed the heavy parts into lazy chunks: the initial load went from 1706 to 656 KB, gzip from 467 to 175.',
+					'Product events, errors and API failures flow into PostHog, sliced by brand, platform and release.'
 				],
 				metrics: ['~20k MAU', '−62% bundle (1706→656 KB)', '8 white-label brands', '6 activation platforms'],
 				links: [{ label: 'edya.org', href: 'https://edya.org', kind: 'live' }]
@@ -97,10 +97,10 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'Generation had to show live progress, so I wrote a custom WebSocket client on EventEmitter and MobX. Every request gets a UUID, a registry entry and its own state machine, with per-action timeouts and auto-reconnect. The channel survives connection drops.',
-					'Generate alone wasn’t enough, I wanted the full Midjourney toolset. The action engine models history as a tree with parent-linked nodes: vary, upscale, zoom, pan, blend, reroll, all on top of a not-so-stable backend API.',
-					'Monetization was all mine: tokens, plans, subscriptions, external-browser payments, promo codes, balance polling. Live in production.',
-					'The legacy Next.js chat is embedded in the hub through an iframe with a full bridge to Telegram: safe-area and keyboard over postMessage, haptics relayed through. I set up the deploy myself, Docker and nginx. Users never notice the seam.'
+					'Generation shows live progress: a custom WebSocket client tracks every request separately and reconnects on its own. A dropped connection doesn’t lose a single generation.',
+					'Beyond plain generate, users get the full Midjourney toolset: variations, upscale, zoom, pan, blending images. History is stored as a tree, you can branch from any step.',
+					'Monetization was all mine: plans, subscriptions, promo codes, payments. Real money in production.',
+					'The legacy chat is embedded into the new app through an iframe with full integration, down to haptics and the keyboard. I set up the deploy myself. Users never notice the seam.'
 				],
 				metrics: ['real-time WebSocket generation', 'Midjourney + GPT-Image + LLM', 'live paid subscriptions'],
 				links: [{ label: 'edya.org', href: 'https://edya.org', kind: 'live' }]
@@ -143,12 +143,12 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'The product had to stand up from scratch in about two weeks. I set up a pnpm monorepo: a Vite + React + MobX frontend, an Express BFF and a shared package of Zod schemas both sides import. Upstream credentials never reach the browser; the same types run from DB to UI.',
-					'The medical-terminal API was unreliable and records couldn’t be lost. Ingest is safe to re-run: backoff over six attempts, a circuit breaker with an 8-failure threshold and a 60-second cooldown, 7-day windows with cursor pagination, an incremental cron. Upstream outages need no manual restarts.',
-					'Hiding medical data in the UI isn’t enough. I split it into separate tables with RBAC at the read layer: a narrow role is simply never JOINed to the medical fields, so they never reach the client.',
-					'There was no ready geo engine for a raster Russia silhouette. I wrote a lat/lon to image-percent projection, calibrated by two corners with antimeridian normalization, and a map component with proportional bubbles and drill-down.'
+					'From zero to MVP in two weeks. The frontend and the BFF live in one monorepo with shared data schemas: the same types run from the DB to the UI, upstream credentials never reach the browser.',
+					'The medical-terminal API was flaky and records could not be lost. The pipeline retries failures, waits out outage streaks and resumes where it stopped. Nothing gets lost and nothing needs a manual restart.',
+					'Hiding medical data in the UI is not enough. I separated it at the database and read level: a role without clearance never even reads the medical fields, so they never reach the client.',
+					'There was no ready map engine for a raster Russia silhouette. I wrote my own coordinate mapping onto the image and a map component with bubbles and region drill-down.'
 				],
-				metrics: ['~20 clinical dashboards', 'ingest with a circuit breaker', 'read-layer RBAC on PHI', 'MVP in 2 weeks']
+				metrics: ['~20 clinical dashboards', 'outage-proof data pipeline', 'RBAC on medical data', 'MVP in 2 weeks']
 			},
 			{
 				id: 'video-analytics',
@@ -163,7 +163,7 @@ export const en: Translations = {
 				bullets: [
 					'I started the frontend from scratch: architecture on TypeScript, React and MobX, the patterns set. The team keeps building features on that base; I reviewed and mentored.',
 					'Dashboards on Recharts update live, no reloads.',
-					'Large lists were sluggish. I virtualized them, memoized the heavy work, profiled in DevTools and cleaned out the memory leaks.'
+					'Large lists were sluggish: I virtualized them, cached the heavy work and cleaned out the memory leaks.'
 				]
 			},
 			{
@@ -210,10 +210,10 @@ export const en: Translations = {
 				ndaLabel: 'NDA',
 				stack: ['React 18', 'TypeScript', 'Vite', 'WebSocket', 'Emotion', 'Framer Motion', 'Feature-Sliced'],
 				bullets: [
-					'Each tablet has to notice on its own that a ticket was called to its window, and there is no relay backend. A self-reconnecting WebSocket client diffs queue snapshots and derives call, recall and finish events by its own window id.',
-					'A fallback timer raced the operator’s real finish event and doubled the survey. A state machine (idle → called → serving → rating → thanks) with stale-event guards fixed it.',
+					'Each tablet has to notice on its own that a ticket was called to its window, and there is no relay backend. The client listens to the shared queue over WebSocket, diffs its states and works out call, repeat and finish for its own window.',
+					'The survey sometimes fired twice: a fallback timer raced the operator’s real finish. A state machine with stale-event guards fixed it.',
 					'The wait is filled with contextual ads picked by a “service → life situation” heuristic and a mini-game that tunes difficulty to the player’s reaction time. Even older visitors play it.',
-					'Animations stuttered, so the slide progress bar moved from a JS width animation to CSS keyframes with scaleX: compositor-only, no layout, smooth on the GPU.'
+					'Animations stuttered. I rewrote the progress bar so the GPU draws it with no layout work: it runs smooth.'
 				],
 				metrics: ['WebSocket queue, no relay', 'official quality survey', 'MVP in 4 days']
 			}
