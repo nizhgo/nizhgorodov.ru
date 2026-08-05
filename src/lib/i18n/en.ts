@@ -103,7 +103,7 @@ export const en: Translations = {
 					'The legacy Next.js chat is embedded in the hub through an iframe with a full bridge to Telegram: safe-area and keyboard over postMessage, haptics relayed through. I set up the deploy myself, Docker and nginx. Users never notice the seam.'
 				],
 				metrics: ['real-time WebSocket generation', 'Midjourney + GPT-Image + LLM', 'live paid subscriptions'],
-				links: [{ label: 'EdyaAI on Telegram', href: 'https://t.me/EdyaAIrobot', kind: 'live' }]
+				links: [{ label: 'edya.org', href: 'https://edya.org', kind: 'live' }]
 			},
 			{
 				id: 'cartography',

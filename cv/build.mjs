@@ -74,7 +74,7 @@ const data = {
       },
       {
         company: 'Edya', role: 'Frontend Engineer (part-time)', period: '2025 — Present', place: 'Remote',
-        links: 'edya.org · t.me/EdyaAIrobot',
+        links: 'edya.org',
         bullets: [
           { lead: 'VPN customer portal', text: 'designed and shipped the production SPA on React 19, TanStack Router and MobX, now at about 20k MAU. White-label: eight brands ship from one codebase, adding a brand is a config change. Cut the initial bundle from 1706 to 656 KB, gzip from 467 to 175.' },
           { lead: 'Censorship circumvention', text: 'on every navigation a service worker revalidates the mirror list and moves the user off a dead domain to a live one, keeping the path and query. A static gate page on GCS picks up visits from bot links and bookmarks once a domain is blocked. Both the app bundle and the gate are obfuscated.' },
@@ -133,7 +133,7 @@ const data = {
       },
       {
         company: 'Edya', role: 'Frontend-разработчик (парттайм)', period: '2025 — наст. время', place: 'Удалённо',
-        links: 'edya.org · t.me/EdyaAIrobot',
+        links: 'edya.org',
         bullets: [
           { lead: 'Кабинет веб-сервиса', text: 'спроектировал и написал SPA на React 19, TanStack Router и MobX, в проде, около 20 тысяч MAU. White-label: восемь брендов собираются из одной кодовой базы, новый добавляется конфигом. Стартовый бандл ужал с 1706 до 656 КБ, по gzip с 467 до 175.' },
           { lead: 'Отказоустойчивость', text: 'service worker на каждом переходе сверяется со списком зеркал и уводит с недоступного домена на живой, не теряя путь и параметры. Отдельный статичный гейт на GCS подхватывает переходы из бота и закладок. И бандл, и гейт обфусцированы.' },

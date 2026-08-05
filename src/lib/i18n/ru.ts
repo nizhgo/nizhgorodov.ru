@@ -103,7 +103,7 @@ export const ru: Translations = {
 					'Легаси-чат на Next.js встроил в хаб через iframe с полным мостом до Telegram: safe-area и клавиатура через postMessage, проброс вибраций. Деплой поднял сам, Docker и nginx. Для пользователя шов незаметен.'
 				],
 				metrics: ['реалтайм-генерация по WebSocket', 'Midjourney + GPT-Image + LLM', 'платная подписка в проде'],
-				links: [{ label: 'EdyaAI в Telegram', href: 'https://t.me/EdyaAIrobot', kind: 'live' }]
+				links: [{ label: 'edya.org', href: 'https://edya.org', kind: 'live' }]
 			},
 			{
 				id: 'cartography',
