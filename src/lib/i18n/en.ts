@@ -4,14 +4,14 @@ export const en: Translations = {
 	meta: {
 		title: 'Aleksei Nizhgorodov | Frontend Engineer',
 		description:
-			'Frontend engineer. Leaflet maps, dashboards, data-viz, WebGL. Open to relocation.'
+			'Frontend engineer. Real-time, dashboards, maps, WebGL. Open to relocation.'
 	},
 	hero: {
 		name: 'Aleksei Nizhgorodov',
 		role: 'Frontend Engineer',
-		big: ['Maps,', 'dashboards,', 'data-viz'],
-		headline: 'Complex, data-heavy frontend.',
-		bio: 'Frontend engineer, four years in commercial development. I build maps, dashboards and visualizations — and ship them.',
+		big: ['Real-time,', 'dashboards,', 'data-viz'],
+		headline: 'Data-heavy, real-time frontend.',
+		bio: 'Frontend engineer, four years in commercial development. Real-time, dashboards, maps: anywhere the data gets heavy.',
 		availability: 'Open to new opportunities',
 		location: 'Moscow → open to relocation',
 		stats: [
@@ -28,9 +28,9 @@ export const en: Translations = {
 	about: {
 		title: 'About',
 		body: [
-			'Frontend engineer, four years in commercial development. I love the hard stuff most: Leaflet maps, data-heavy dashboards, visualizations, WebGL.',
-			'Led a frontend team — reviews, mentoring, architecture from scratch. On other products, the sole frontend owning the whole frontend.',
-			'Completed an HSE master’s in digital urbanism — geodata, Python, QGIS. Open to new roles and relocation.'
+			'Frontend engineer, four years in commercial development. I like the hard stuff: WebSocket real-time, data-heavy dashboards, maps, WebGL.',
+			'I’ve run frontend teams of 2–4: reviews, mentoring, onboarding, technical calls with clients. On other products I was the only frontend engineer.',
+			'Finished an HSE master’s in digital urbanism: data analytics, geodata, urban project management. Open to new roles and relocation.'
 		]
 	},
 	ui: {
@@ -46,10 +46,10 @@ export const en: Translations = {
 		items: [
 			{
 				id: 'edya-cloud-vpn',
-				title: 'Edya — commercial VPN web cabinet',
+				title: 'Edya — commercial VPN customer portal',
 				tagline:
-					'Designed and built a production VPN cabinet: OAuth/OTP login, one-link activation across 6 platforms, subscription migration from a Telegram bot, and a custom censorship-resilience layer. White-labeled into 8 brands from one codebase.',
-				role: 'Frontend & architecture, led the team',
+					'A production VPN customer portal at about 20k MAU: OAuth/OTP login, one-link activation across six platforms, subscription migration from a Telegram bot, a custom censorship-resilience layer. Eight white-label brands from one codebase.',
+				role: 'Frontend & architecture',
 				period: '2026',
 				source: 'repo',
 				confidential: false,
@@ -66,19 +66,20 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'A commercial VPN needed a multi-brand web cabinet, so I built the whole SPA: file-based routing with auto code-splitting, a root store of 8 domain stores, and a hand-rolled API client that Zod-validates every response. One codebase compiles into white-label builds for 8 brands via a build-time flag.',
-					'Under blocking, the cabinet has to stay reachable even when the main domain is killed. I built a failover layer — a service worker pulls a list of live mirrors and redirects to the first reachable one, with a static fallback page, and the mirror-list endpoint is hidden behind obfuscation. The cabinet still opens when the main domain is blocked.',
-					'Legacy subscriptions from the old Telegram bot had to move into new web accounts. I wrote a 5-step migration with cross-account login and payment detection by watching the subscription term grow against a stored baseline — it works across accounts and handles the “already migrated” case.',
-					'Firebase, Lottie and QR had bloated the bundle. I added route auto code-splitting, manual vendor chunking and lazy-loaded the heavy pages — the initial bundle dropped from 1706 to 656 KB, gzip from 467 to 175 KB.'
+					'The service needed a portal for several brands at once. I built the whole SPA: file-based routing with auto code-splitting, a root store of eight domain stores, a hand-rolled API client that Zod-validates every response. White-label builds come from a build-time flag; a new brand is a config change.',
+					'The portal has to open even when the main domain is blocked. On every navigation a service worker revalidates the mirror list and moves the user to a live domain, keeping the path; visits from bot links and bookmarks land on a static gate page on GCS. Both the bundle and the gate are obfuscated.',
+					'Subscriptions migrate from the legacy Telegram bot in a five-step flow: cross-account login, payment detected by watching the subscription term grow against a stored baseline, the “already migrated” case handled.',
+					'Firebase, Lottie and QR had bloated the bundle. Route auto-splitting, manual vendor chunks and lazy heavy pages brought the initial load from 1706 down to 656 KB, gzip from 467 to 175.',
+					'Product events, exceptions and API failures flow into PostHog, sliced by brand, platform and release.'
 				],
-				metrics: ['−62% bundle size (1706→656 KB)', '8 white-label brands', '6 activation platforms', 'OAuth/OTP auth'],
+				metrics: ['~20k MAU', '−62% bundle (1706→656 KB)', '8 white-label brands', '6 activation platforms'],
 				links: [{ label: 'edya.org', href: 'https://edya.org', kind: 'live' }]
 			},
 			{
 				id: 'edya-hub-ai',
 				title: 'EdyaAI — AI super-app in Telegram',
 				tagline:
-					'A team product where I owned the WebSocket generation engine, the payments layer, and the legacy-chat integration. Midjourney, GPT-Image and LLM chat behind one interface — with real-time and subscriptions.',
+					'Midjourney, GPT-Image and LLM chat in one Telegram Mini App. I owned the WebSocket generation engine, the payments layer and the legacy-chat integration.',
 				role: 'Frontend: real-time, payments, chat · team project',
 				period: '2025 — 2026',
 				source: 'repo',
@@ -96,10 +97,10 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'Midjourney generation inside Telegram had to show live progress, so I designed a custom WebSocket client (EventEmitter + MobX) with a request registry: every action gets a UUID and an entry with its own state machine, a 7-minute per-request timeout, and auto-reconnect. The channel survives connection drops.',
-					'Generate alone wasn’t enough — I wanted the full Midjourney toolset, so I built a generation-action engine on MobX that models the history tree with parent-linked nodes — a complete set of operations (vary, upscale, zoom, pan, blend, reroll) on top of an unstable backend.',
-					'I owned the whole monetization side: tokens, plans, subscriptions — purchases, pay-in-external-browser, promo codes, balance polling. Real payments in production.',
-					'The legacy chat had to fold under one roof and ship, so I set up the deploy (Docker + nginx) and embedded a separate Next.js chat app via iframe with a Telegram↔iframe bridge — safe-area and keyboard over postMessage, haptics relayed through. One deploy, with the chat running inside the hub.'
+					'Generation had to show live progress, so I wrote a custom WebSocket client on EventEmitter and MobX. Every request gets a UUID, a registry entry and its own state machine, with per-action timeouts and auto-reconnect. The channel survives connection drops.',
+					'Generate alone wasn’t enough, I wanted the full Midjourney toolset. The action engine models history as a tree with parent-linked nodes: vary, upscale, zoom, pan, blend, reroll, all on top of a not-so-stable backend API.',
+					'Monetization was all mine: tokens, plans, subscriptions, external-browser payments, promo codes, balance polling. Live in production.',
+					'The legacy Next.js chat is embedded in the hub through an iframe with a full bridge to Telegram: safe-area and keyboard over postMessage, haptics relayed through. I set up the deploy myself, Docker and nginx. Users never notice the seam.'
 				],
 				metrics: ['real-time WebSocket generation', 'Midjourney + GPT-Image + LLM', 'live paid subscriptions'],
 				links: [{ label: 'EdyaAI on Telegram', href: 'https://t.me/EdyaAIrobot', kind: 'live' }]
@@ -108,23 +109,23 @@ export const en: Translations = {
 				id: 'cartography',
 				title: 'Cartography & real-time monitoring',
 				tagline:
-					'Several large Leaflet projects: geozones, real-time markers and long tracks with timelines — with custom layer logic and rendering optimized for thousands of objects.',
+					'Several large Leaflet projects: geozones, real-time markers and long tracks with timelines, with custom layer logic that keeps thousands of objects smooth.',
 				role: 'Frontend · map layer & rendering',
 				source: 'resume',
 				confidential: true,
 				ndaLabel: 'NDA',
 				stack: ['TypeScript', 'React', 'Leaflet', 'WebGL', 'Canvas', 'MobX'],
 				bullets: [
-					'The map had to hold thousands of markers and long tracks without lag, so I wrote my own layer logic and tuned the render — clustering, thinning, drawing on Canvas and WebGL. It stays smooth on large datasets.',
-					'For real-time monitoring I added live marker updates, geozones, and tracks with timelines — an operator can scrub through movement history by time.',
-					'The map had to be reused across several products, so I pulled it into a set of components with one API — a shared cartographic base for several team projects.'
+					'The map has to hold thousands of markers and long tracks. I wrote the layer logic and the Canvas/WebGL rendering myself: clustering, thinning. It doesn’t drop frames on large datasets.',
+					'For monitoring I added live marker updates, geozones and tracks with a timeline: operators scrub movement history by time.',
+					'The map became a component set with a single API. Several team products run on it now.'
 				]
 			},
 			{
 				id: 'touchmed-dashboards',
 				title: 'B2B occupational-health analytics',
 				tagline:
-					'In ~2 weeks: a backend-for-frontend, a resilient ingest pipeline and ~20 clinical dashboards over medical terminals — a custom Russia map, read-layer RBAC on medical data, and blood-pressure classification per the national guideline in SQL.',
+					'In ~2 weeks: a backend-for-frontend, a resilient data pipeline and ~20 clinical dashboards over medical terminals. A custom Russia map, read-layer RBAC on medical data, blood-pressure classification per the national guideline in SQL.',
 				role: 'Frontend, BFF & data layer',
 				period: '2026',
 				source: 'repo',
@@ -142,59 +143,59 @@ export const en: Translations = {
 					'Docker'
 				],
 				bullets: [
-					'A B2B medical-analytics product had to stand up from scratch in ~2 weeks, so I built a pnpm monorepo: a Vite + React + MobX frontend, an Express BFF, and a shared package of Zod schemas that both sides import. The browser never sees the upstream credentials, and the same types run from DB to UI.',
-					'The medical-terminal API was unreliable and I couldn’t lose records, so I wrote my own client and an idempotent ingest: backoff over 6 attempts, a circuit breaker (8-failure threshold, 60s cooldown), 7-day windows with cursor pagination, and an incremental cron. Backfill and sync survive outages with no manual restarts.',
-					'Medical data needs more than hiding it in the UI, so I split it into separate tables and put RBAC at the read layer — a narrow role is never JOINed to the medical fields. Sensitive data is unreachable on the backend, not just hidden on the client.',
-					'There was no off-the-shelf geo engine for a raster Russia silhouette, so I wrote my own lat/lon → image-percent projection (two-corner calibration, antimeridian normalization) and a map component with proportional bubbles and drill-down — an interactive choropleth right in the dashboard.'
+					'The product had to stand up from scratch in about two weeks. I set up a pnpm monorepo: a Vite + React + MobX frontend, an Express BFF and a shared package of Zod schemas both sides import. Upstream credentials never reach the browser; the same types run from DB to UI.',
+					'The medical-terminal API was unreliable and records couldn’t be lost. Ingest is safe to re-run: backoff over six attempts, a circuit breaker with an 8-failure threshold and a 60-second cooldown, 7-day windows with cursor pagination, an incremental cron. Upstream outages need no manual restarts.',
+					'Hiding medical data in the UI isn’t enough. I split it into separate tables with RBAC at the read layer: a narrow role is simply never JOINed to the medical fields, so they never reach the client.',
+					'There was no ready geo engine for a raster Russia silhouette. I wrote a lat/lon to image-percent projection, calibrated by two corners with antimeridian normalization, and a map component with proportional bubbles and drill-down.'
 				],
-				metrics: ['~20 clinical dashboards', 'resilient ingest (circuit breaker)', 'read-layer RBAC on PHI', 'MVP in 2 weeks']
+				metrics: ['~20 clinical dashboards', 'ingest with a circuit breaker', 'read-layer RBAC on PHI', 'MVP in 2 weeks']
 			},
 			{
 				id: 'video-analytics',
 				title: 'Video analytics platform',
 				tagline:
-					'Frontend architecture from scratch for a surveillance and analytics platform on TS / React / MobX — architecture, code review, team mentoring.',
+					'Frontend for a surveillance and analytics platform, designed from scratch: TypeScript, React, MobX. Then code reviews and team mentoring.',
 				role: 'Frontend · architecture from scratch, team reviews',
 				source: 'resume',
 				confidential: true,
 				ndaLabel: 'NDA',
 				stack: ['TypeScript', 'React', 'MobX', 'WebSockets', 'Recharts'],
 				bullets: [
-					'I built the frontend of a video-analytics platform from scratch — designed the architecture on TypeScript / React / MobX, set the patterns, ran reviews and mentored the team. The team keeps building features on that base.',
-					'I built real-time dashboards on Recharts — operators see analytics live, without reloads.',
-					'Large lists were sluggish, so I virtualized them, memoized the heavy work, profiled in Chrome DevTools and cleared the memory leaks. The UI stays responsive on large datasets.'
+					'I started the frontend from scratch: architecture on TypeScript, React and MobX, the patterns set. The team keeps building features on that base; I reviewed and mentored.',
+					'Dashboards on Recharts update live, no reloads.',
+					'Large lists were sluggish. I virtualized them, memoized the heavy work, profiled in DevTools and cleaned out the memory leaks.'
 				]
 			},
 			{
 				id: 'pdf-generator',
 				title: 'PDF report generator (custom library)',
 				tagline:
-					'A custom report library from React components: renders WebGL maps and charts into PDF, with auto page numbering and headers/footers. jsPDF / react-pdf couldn’t do it — so I built my own.',
+					'A custom report library built from React components: prints WebGL maps and charts into PDF, numbers pages and adds running headers itself. Built after jsPDF and react-pdf couldn’t do it.',
 				role: 'Frontend · library author',
 				source: 'resume',
 				confidential: true,
 				ndaLabel: 'NDA',
 				stack: ['TypeScript', 'React', 'WebGL', 'Canvas', 'jsPDF'],
 				bullets: [
-					'We needed reports with maps and charts, but jsPDF and react-pdf can’t render WebGL maps or complex layout — so I wrote a library that assembles a PDF straight from React components and embeds the WebGL maps and charts. The reports look like the product UI, with no hand-built PDF layout.',
-					'For multi-page reports I added automatic page numbering and running headers and footers — print-ready documents with correct pagination.',
-					'To avoid duplicating layout, I made a single render layer: the same React components drive both screen and PDF — so the UI and the reports never drift apart.'
+					'Reports needed maps and charts, and neither jsPDF nor react-pdf can render WebGL or complex layout. My library assembles a PDF straight from React components, WebGL maps included. Reports look like the product UI.',
+					'Multi-page reports get page numbers and running headers automatically, print-ready as generated.',
+					'There is one render layer: the same React components drive both the screen and the PDF, so the UI and the reports never drift apart.'
 				]
 			},
 			{
 				id: 'kids-task-tracker',
 				title: 'Gamified kids’ task tracker',
 				tagline:
-					'A dashboard on a large touch screen + a parent PWA: two clients sharing state. Led the team building native apps on Capacitor (iOS / Android / Android TV).',
+					'A dashboard on a large touch screen plus a parent PWA, two clients sharing state. I led the team that shipped it as native apps on Capacitor.',
 				role: 'Frontend · two clients + native on Capacitor, led the native team',
 				source: 'resume',
 				confidential: true,
 				ndaLabel: 'NDA',
 				stack: ['TypeScript', 'React', 'PWA', 'Capacitor', 'WebSockets', 'Service Worker'],
 				bullets: [
-					'The product lived on two very different clients — a gamified dashboard on a big touch screen and a PWA for parents. I designed both around shared state with real-time sync, so the screen and the parent’s phone always show the same thing.',
-					'It had to ship to the stores and Android TV, so I led the team packaging the web app into native builds on Capacitor (iOS, Android, Android TV) — one codebase reaching several platforms.',
-					'I added a Service Worker for offline and auto-update — the app works without a network and updates itself.'
+					'The product lives on two very different clients: a gamified dashboard on a big touch screen and a PWA for parents. Both are built around shared state with live sync, so the screen and the parent’s phone always match.',
+					'The team I led took it to the stores and Android TV: the web app went into native builds on Capacitor for iOS, Android and Android TV.',
+					'A service worker gives it offline and auto-update: it runs without a network and updates itself.'
 				]
 			},
 			{
@@ -209,10 +210,10 @@ export const en: Translations = {
 				ndaLabel: 'NDA',
 				stack: ['React 18', 'TypeScript', 'Vite', 'WebSocket', 'Emotion', 'Framer Motion', 'Feature-Sliced'],
 				bullets: [
-					'Each tablet had to figure out on its own when a ticket was called to its window, with no relay backend — so I wrote a self-reconnecting WebSocket client that diffs queue snapshots and derives call / recall / finish events by its own window id. Per-window routing with no backend of its own.',
-					'There was a race between a fallback timer and the operator’s real “finish” event, so I wrote a state machine idle → called → serving → rating → thanks with stale-event guards and killed a duplicate-survey bug. The flow runs clean, with no double survey.',
-					'I wanted to fill the wait at the window with relevant ads and entertain slower visitors, so I built a “service → life-situation” heuristic, legally-compliant ad formats, and a mini-game that tunes its difficulty to the player’s reaction time — contextual ads plus a game even older visitors can play.',
-					'Animations on the tablet stuttered, so I moved the slide progress bar from a JS width animation to CSS keyframes scaleX — compositor-only, no layout. The bar runs smoothly, on the GPU.'
+					'Each tablet has to notice on its own that a ticket was called to its window, and there is no relay backend. A self-reconnecting WebSocket client diffs queue snapshots and derives call, recall and finish events by its own window id.',
+					'A fallback timer raced the operator’s real finish event and doubled the survey. A state machine (idle → called → serving → rating → thanks) with stale-event guards fixed it.',
+					'The wait is filled with contextual ads picked by a “service → life situation” heuristic and a mini-game that tunes difficulty to the player’s reaction time. Even older visitors play it.',
+					'Animations stuttered, so the slide progress bar moved from a JS width animation to CSS keyframes with scaleX: compositor-only, no layout, smooth on the GPU.'
 				],
 				metrics: ['WebSocket queue, no relay', 'official quality survey', 'MVP in 4 days']
 			}
@@ -236,21 +237,21 @@ export const en: Translations = {
 				role: 'Frontend Developer',
 				period: '2023 — now',
 				logo: '/logo/perfema.svg',
-				summary: 'Built products from scratch: architecture, code, reviews, mentoring interns. Maps, dashboards, analytics, native apps, a custom PDF report generator. Led the frontend team; on other products, the only frontend.'
+				summary: 'My full-time job, products built from scratch. Ran frontend teams of 2–4: reviews, mentoring, onboarding, technical calls with clients. Maps, dashboards, analytics, native apps, a custom PDF library.'
 			},
 			{
 				place: 'Edya',
 				role: 'Frontend · part-time',
 				logo: '/logo/edya.svg',
 				logoBg: true,
-				summary: 'Part-time gig: a commercial VPN web cabinet (white-label across 8 brands, a custom failover layer for blocking) and an AI super-app in Telegram (real-time generation, payments).'
+				summary: 'Part-time: a VPN customer portal at ~20k MAU (white-label across eight brands, a custom censorship-failover layer) and an AI super-app in Telegram (real-time generation, payments).'
 			},
 			{
 				place: 'Yandex',
 				role: 'Assessor Developer',
 				period: '2023',
 				logo: '/logo/yandex.svg',
-				summary: 'Labelled programming and CS material, wrote and edited reference answers for YandexGPT on IT topics, did fact-checking.'
+				summary: 'Labeled programming and CS material for YandexGPT: wrote and edited reference answers on IT topics, checked facts.'
 			}
 		],
 		education: [
@@ -260,14 +261,15 @@ export const en: Translations = {
 				period: '2024 — 2026',
 				logo: '/edu/hse.svg',
 				link: { label: 'Thesis', href: 'https://www.hse.ru/edu/vkr/1167123484' },
-				note: 'A deliberate choice: I’ve always been drawn to urbanism, and the program is tightly tied to data analytics (Python, geodata, QGIS) — essentially an IT track. It sharpened my cartography and geo-analytics, which I love in frontend too.'
+				note: 'A deliberate choice: urbanism always pulled me. The program turned out to be data analytics at its core (Python, geodata, QGIS), plus urban project management and planning law. So if you ever need a good-looking map, or a factory legally demolished under an urban-renewal scheme, I’m your guy.'
 			},
 			{
 				place: 'MISIS',
 				program: 'Bachelor’s, Information Systems & Technologies',
 				period: '2020 — 2024',
 				logo: '/edu/misis.png',
-				note: 'The foundation: algorithms, data structures, software engineering.'
+				link: { label: 'LCT 2023 (2nd place)', href: 'https://misis.ru/news/8829/' },
+				note: 'The foundation: algorithms, data structures, software engineering. Hackathon prizes: 2nd at the LCT 2023 hackathon, MTS True Tech Hack, Tsifra Fest, X-MAS Hack.'
 			}
 		]
 	},

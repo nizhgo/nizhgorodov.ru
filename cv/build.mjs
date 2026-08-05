@@ -22,7 +22,8 @@ const linkContact = (c) => {
   return esc(c);
 };
 const linkifyLinks = (s) => s.split(' · ').map((u) => aTag('https://' + u, u)).join(' · ');
-const linkifyNote = (s) => s.replace(/(hse\.ru\/edu\/vkr\/\d+)/, (m) => aTag('https://' + m, m));
+const linkifyNote = (s) =>
+  s.replace(/((?:hse\.ru\/edu\/vkr|misis\.ru\/news)\/\d+)/, (m) => aTag('https://' + m, m));
 
 const FONT_FACE = `
 @font-face { font-family:'Inter'; font-style:normal; font-weight:400; font-display:block;
@@ -44,11 +45,11 @@ const data = {
     name: 'Aleksei Nizhgorodov',
     title: 'Frontend Engineer',
     docTitle: 'Aleksei Nizhgorodov - Frontend Engineer - Resume',
-    metaLine: 'Moscow, Russia — open to relocation & remote',
+    metaLine: 'Moscow, Russia · open to relocation & remote',
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
-    labels: { summary: 'Summary', skills: 'Skills', experience: 'Experience', education: 'Education', languages: 'Languages', links: 'Links' },
+    labels: { summary: 'Summary', skills: 'Skills', experience: 'Experience', education: 'Education', languages: 'Languages', links: 'Links', funfact: 'Fun fact' },
     summary:
-      'Frontend engineer with 4 years in commercial development, focused on the hard parts: Leaflet maps, data-heavy dashboards, visualizations and WebGL. Writes custom libraries when off-the-shelf ones fall short — a PDF report engine that renders WebGL maps from React, a cartography layer that holds thousands of live markers. Has led a small frontend team and also been the sole frontend on a product. Russian native, English B2. Open to new opportunities.',
+      'Four years in commercial development. I go for the hard parts: WebSocket real-time, data-heavy dashboards, maps, WebGL. When no library does the job I write my own; the latest prints WebGL maps into PDF reports straight from React components. I’ve led small frontend teams, and on some products I was the only frontend engineer. English B2. Open to new opportunities.',
     skills: [
       ['Core', 'TypeScript, JavaScript (ES6+), HTML, CSS'],
       ['Frameworks', 'React, Svelte, Next.js, Node.js, Express'],
@@ -60,37 +61,42 @@ const data = {
     experience: [
       {
         company: 'Perfema', role: 'Frontend Developer', period: 'Apr 2023 — Present', place: 'Moscow',
-        summary: 'Build products from scratch: architecture, code, reviews, mentoring. Led the frontend team; on other products, the only frontend.',
+        summary: 'Full-time job. I build products here from scratch.',
         bullets: [
-          { lead: 'B2B occupational-health analytics', text: 'built the MVP in ~2 weeks — a pnpm monorepo (React + MobX, an Express BFF, shared Zod contracts), ~20 clinical dashboards, and an idempotent ingest (backoff, circuit breaker) that survives upstream outages; read-layer RBAC keeps medical data off the client.' },
-          { lead: 'Cartography & real-time monitoring', text: 'wrote a Leaflet / Canvas / WebGL layer that holds thousands of live markers and long GPS tracks without lag — clustering, geozones, timeline scrubbing; reused across several products.' },
-          { lead: 'Video-analytics platform', text: 'designed the frontend from scratch (TypeScript / React / MobX), set the patterns, ran code reviews and mentored the team; real-time Recharts dashboards; virtualization for large datasets.' },
-          { lead: 'Custom PDF report library', text: 'renders WebGL maps and charts straight from React components, with automatic page numbering and running headers — where jsPDF and react-pdf couldn’t.' },
-          { lead: 'Gamified kids’ tracker', text: 'two clients (a big-screen dashboard and a parent PWA) sharing real-time state; led the team packaging it into native apps on Capacitor (iOS / Android / Android TV).' },
-          { lead: 'Across products', text: 'i18n (RU / EN + RTL Arabic), CryptoPro document e-signing in the browser, Service Worker offline/auto-update, an SSR Svelte + Strapi site, CI/CD on GitLab, tests in Vitest, React Testing Library and Playwright.' }
+          { lead: 'Team lead', text: 'ran frontend teams of 2–4, did code review, mentored and onboarded newcomers. Held technical meetings and demos with clients.' },
+          { lead: 'Occupational-health analytics (B2B)', text: 'built the MVP in about two weeks, then grew it to ~20 clinical dashboards. A pnpm monorepo: React with MobX, an Express BFF, shared Zod contracts. Ingest survives upstream outages and duplicate deliveries (backoff, circuit breaker), and read-layer RBAC keeps medical data out of the browser.' },
+          { lead: 'Mapping & real-time monitoring', text: 'wrote a rendering layer on top of Leaflet with Canvas and WebGL. It holds thousands of live markers and long GPS tracks without dropping frames; clustering, geofences and a history timeline are built in. Several company products run on it now.' },
+          { lead: 'Video-analytics platform', text: 'designed the frontend from scratch (TypeScript, React, MobX) and set the patterns for the team. Live dashboards on Recharts, virtualized tables for large datasets.' },
+          { lead: 'PDF reports', text: 'wrote our own library after jsPDF and react-pdf choked on WebGL maps. It prints maps and charts from plain React components and handles page numbers and running headers by itself.' },
+          { lead: 'Kids’ task tracker', text: 'two clients, a big-screen dashboard and a PWA for parents, sharing state in real time. The team packaged it with Capacitor into native apps for iOS, Android and Android TV.' },
+          { lead: 'Odds and ends', text: 'i18n with RTL Arabic, CryptoPro document signing in the browser, offline and auto-update via a service worker, an SSR site on Svelte and Strapi, GitLab CI/CD. Tests in Vitest, React Testing Library and Playwright.' }
         ]
       },
       {
         company: 'Edya', role: 'Frontend Engineer (part-time)', period: '2025 — Present', place: 'Remote',
         links: 'edya.org · t.me/EdyaAIrobot',
         bullets: [
-          { lead: 'VPN web cabinet', text: 'designed and built the production SPA (React 19, TanStack Router, MobX), white-labeled into 8 brands from one codebase; cut the initial bundle from 1706 to 656 KB (gzip 467 to 175).' },
-          { lead: 'Censorship-resilient failover', text: 'a service worker resolves live mirrors and redirects to the first reachable one, with a static fallback — the cabinet opens even when the main domain is blocked.' },
-          { lead: 'EdyaAI — Telegram super-app', text: 'owned the real-time WebSocket generation engine (request registry, per-request state machine, auto-reconnect), the payments layer (plans, subscriptions, promo codes, live), and legacy-chat integration over a Telegram-to-iframe bridge.' }
+          { lead: 'VPN customer portal', text: 'designed and shipped the production SPA on React 19, TanStack Router and MobX, now at about 20k MAU. White-label: eight brands ship from one codebase, adding a brand is a config change. Cut the initial bundle from 1706 to 656 KB, gzip from 467 to 175.' },
+          { lead: 'Censorship circumvention', text: 'on every navigation a service worker revalidates the mirror list and moves the user off a dead domain to a live one, keeping the path and query. A static gate page on GCS picks up visits from bot links and bookmarks once a domain is blocked. Both the app bundle and the gate are obfuscated.' },
+          { lead: 'Also in the portal', text: 'sign-in via Google, email or Telegram, subscription transfer from the legacy Telegram bot, referrals, guest key activation with per-platform setup guides up to Android TV.' },
+          { lead: 'Metrics', text: 'product events, exceptions and API failures go to PostHog, sliced by brand, platform and release.' },
+          { lead: 'EdyaAI, a Telegram super-app', text: 'a Mini App with ChatGPT, Grok and DeepSeek chat plus Midjourney image generation in one place. I owned the generation engine, payments and the legacy-chat integration. Payments are live: plans, subscriptions, promo codes. The legacy Next.js part is embedded in an iframe with a full event bridge, haptics included, so users never notice the seam.' },
+          { lead: 'Generation engine', text: 'WebSocket-based, a state machine per request, automatic reconnects. Live generation progress, upscales and variations, image references, merging two pictures, rate limits with a countdown to reset.' }
         ]
       },
       {
         company: 'Yandex', role: 'Assessor-Developer', period: 'Jan — Dec 2023', place: 'Moscow',
         bullets: [
-          { lead: '', text: 'Labeled programming and CS material, wrote and edited reference answers for YandexGPT on IT topics, and did fact-checking.' }
+          { lead: '', text: 'Labeled programming and CS material for YandexGPT: wrote and edited reference answers on IT topics, checked facts.' }
         ]
       }
     ],
     education: [
       { school: 'HSE University', program: 'MSc, Digital Urbanism & City Analytics', period: '2024 — 2026', place: 'Moscow', note: 'Data analytics, Python, geodata, QGIS. Thesis: hse.ru/edu/vkr/1167123484' },
-      { school: 'NUST MISIS', program: 'BSc, Information Systems & Technologies', period: '2020 — 2024', place: 'Moscow', note: 'Algorithms, data structures, software engineering.' }
+      { school: 'NUST MISIS', program: 'BSc, Information Systems & Technologies', period: '2020 — 2024', place: 'Moscow', note: 'Algorithms, data structures, software engineering. Hackathon prizes: 2nd place at the LCT 2023 hackathon (misis.ru/news/8829), MTS True Tech Hack, Tsifra Fest, X-MAS Hack.' }
     ],
-    languages: 'Russian — Native · English — B2'
+    languages: 'Russian — Native · English — B2',
+    funfact: 'Claude or Codex? Claude. Personal records: 40M tokens in a month and 6M in a single request.'
   },
 
   ru: {
@@ -100,9 +106,9 @@ const data = {
     docTitle: 'Алексей Нижгородов - Frontend Developer - Резюме',
     metaLine: 'Москва, Россия · 24 года',
     contacts: ['alexey@nizhgorodov.ru', '+7 996 096-43-22', 'github.com/nizhgo', 'nizhgorodov.ru', 't.me/nizhgo'],
-    labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Ссылки' },
+    labels: { summary: 'О себе', skills: 'Ключевые навыки', experience: 'Опыт работы', education: 'Образование', languages: 'Знание языков', links: 'Ссылки', funfact: 'Фан-факт' },
     summary:
-      'Frontend-инженер, четвёртый год в коммерческой разработке. Больше всего работаю со сложным: карты на Leaflet, дашборды с большим объёмом данных, визуализации, WebGL. Когда готовых библиотек не хватает, пишу свои — например, библиотеку PDF-отчётов, которая рендерит WebGL-карты прямо из React. Вёл команду фронтендеров; на других проектах был единственным фронтом. Русский родной, английский B2. Открыт к предложениям.',
+      'Четвёртый год в коммерческой разработке. Берусь за сложное: реалтайм по WebSocket, дашборды с большим объёмом данных, карты, WebGL. Если готовой библиотеки нет, пишу свою. Последняя печатает WebGL-карты в PDF-отчёты прямо из React-компонентов. Вёл фронтенд-команды, на части продуктов был единственным фронтом. Английский B2. Открыт к предложениям.',
     skills: [
       ['Основное', 'TypeScript, JavaScript (ES6+), HTML, CSS'],
       ['Фреймворки', 'React, Svelte, Next.js, Node.js, Express'],
@@ -114,37 +120,42 @@ const data = {
     experience: [
       {
         company: 'Perfema', role: 'Frontend-разработчик', period: 'апр 2023 — наст. время', place: 'Москва',
-        summary: 'Делаю продукты с нуля: архитектура, код, ревью, менторинг. Вёл команду фронтендеров; на других проектах был единственным фронтом.',
+        summary: 'Основное место работы. Продукты делаю с нуля.',
         bullets: [
-          { lead: 'B2B-аналитика медосмотров', text: 'за ~2 недели поднял MVP — pnpm-монорепо (React + MobX, Express-BFF, общие Zod-контракты), ~20 клинических дашбордов и идемпотентный ingest (backoff, circuit breaker), переживающий сбои внешнего API; RBAC на уровне чтения не пускает медданные на клиент.' },
-          { lead: 'Картография и реалтайм-мониторинг', text: 'написал слой на Leaflet / Canvas / WebGL, который держит тысячи живых маркеров и длинные GPS-треки без просадок — кластеризация, геозоны, прокрутка истории по таймлайну; вынес в общую основу для нескольких продуктов.' },
-          { lead: 'Платформа видеоаналитики', text: 'спроектировал фронтенд с нуля (TypeScript / React / MobX), задал паттерны, вёл ревью и менторил команду; реалтайм-дашборды на Recharts; виртуализация на больших объёмах.' },
-          { lead: 'Своя библиотека PDF-отчётов', text: 'рендерит WebGL-карты и графики прямо из React-компонентов, с автонумерацией и сквозными хедерами — там, где jsPDF и react-pdf не справлялись.' },
-          { lead: 'Трекер задач для детей', text: 'два клиента (дашборд на большом экране и PWA для родителей) с общим реалтайм-стейтом; вёл команду, упаковывавшую его в нативные приложения на Capacitor (iOS / Android / Android TV).' },
-          { lead: 'Помимо этого', text: 'i18n (RU / EN и RTL-арабский), подпись документов через КриптоПро в браузере, Service Worker для офлайна и автообновления, SSR-сайт на Svelte + Strapi, CI/CD в GitLab, тесты на Vitest, React Testing Library и Playwright.' }
+          { lead: 'Лид фронтенда', text: 'вёл команды из 2–4 человек, ревьюил фронтенд, менторил и вводил новичков. Проводил технические встречи с заказчиками, показывал демо.' },
+          { lead: 'B2B-аналитика медосмотров', text: 'поднял MVP за две недели, потом довёл до ~20 клинических дашбордов. Внутри pnpm-монорепо: React с MobX, BFF на Express, общие Zod-контракты. Загрузка из внешнего API переживает его сбои и дубли (backoff, circuit breaker), медданные режутся по RBAC ещё на чтении и до браузера не доезжают.' },
+          { lead: 'Картография и мониторинг', text: 'написал слой поверх Leaflet на Canvas и WebGL. Тысячи живых маркеров и длинные GPS-треки без просадок, кластеризация, геозоны, историю можно мотать по таймлайну. Сейчас на нём работает несколько продуктов компании.' },
+          { lead: 'Платформа видеоаналитики', text: 'спроектировал фронтенд с нуля (TypeScript, React, MobX) и задал паттерны для команды. Дашборды обновляются вживую, графики на Recharts, длинные таблицы виртуализированы.' },
+          { lead: 'Библиотека PDF-отчётов', text: 'написал свою, когда jsPDF и react-pdf не потянули WebGL-карты. Печатает карты и графики из обычных React-компонентов, сама нумерует страницы и ставит колонтитулы.' },
+          { lead: 'Трекер задач для детей', text: 'два клиента, дашборд для большого экрана и PWA для родителей, состояние у них общее и живое. Завернули его в нативные приложения на Capacitor под iOS, Android и Android TV.' },
+          { lead: 'Из разного', text: 'i18n с RTL-арабским, подпись документов через КриптоПро прямо в браузере, офлайн и автообновление на Service Worker, SSR-сайт на Svelte и Strapi, CI/CD в GitLab. Тесты на Vitest, React Testing Library и Playwright.' }
         ]
       },
       {
         company: 'Edya', role: 'Frontend-разработчик (парттайм)', period: '2025 — наст. время', place: 'Удалённо',
         links: 'edya.org · t.me/EdyaAIrobot',
         bullets: [
-          { lead: 'Веб-кабинет VPN', text: 'спроектировал и собрал продакшен-SPA (React 19, TanStack Router, MobX), white-label на 8 брендов из одного кода; ужал стартовый бандл с 1706 до 656 КБ (gzip 467 до 175).' },
-          { lead: 'Failover под блокировки', text: 'service worker находит живые зеркала и редиректит на первое доступное, плюс статичная fallback-страница — кабинет открывается, даже когда основной домен заблокирован.' },
-          { lead: 'EdyaAI — суперапп в Telegram', text: 'отвечал за реалтайм-движок генерации по WebSocket (реестр запросов, конечный автомат на запрос, авто-реконнект), слой платежей (тарифы, подписки, промокоды, в проде) и интеграцию legacy-чата через мост между Telegram и iframe.' }
+          { lead: 'Кабинет веб-сервиса', text: 'спроектировал и написал SPA на React 19, TanStack Router и MobX, в проде, около 20 тысяч MAU. White-label: восемь брендов собираются из одной кодовой базы, новый добавляется конфигом. Стартовый бандл ужал с 1706 до 656 КБ, по gzip с 467 до 175.' },
+          { lead: 'Отказоустойчивость', text: 'service worker на каждом переходе сверяется со списком зеркал и уводит с недоступного домена на живой, не теряя путь и параметры. Отдельный статичный гейт на GCS подхватывает переходы из бота и закладок. И бандл, и гейт обфусцированы.' },
+          { lead: 'Ещё в кабинете', text: 'вход через Google, почту или Telegram, перенос подписок из старого Telegram-бота, рефералка, гостевая активация по ключу с инструкциями под каждую платформу вплоть до Android TV.' },
+          { lead: 'Метрики', text: 'продуктовые события, исключения и падения API собираются в PostHog, срезы по бренду, платформе и релизу.' },
+          { lead: 'EdyaAI, суперапп в Telegram', text: 'Mini App, где в одном окне чат с ChatGPT, Grok и DeepSeek и генерация картинок в Midjourney. Отвечал за движок генераций, платежи и интеграцию легаси-чата. Платежи в проде: тарифы, подписки, промокоды. Легаси-часть на Next.js встроена через iframe с полным прокидыванием событий Telegram вплоть до вибраций, шов для пользователя незаметен.' },
+          { lead: 'Движок генераций', text: 'поверх WebSocket, у каждого запроса свой конечный автомат и авто-реконнект. Живой прогресс генерации, апскейлы и вариации, картинки-референсы, склейка двух изображений, rate-limit с обратным отсчётом до сброса.' }
         ]
       },
       {
         company: 'Яндекс', role: 'Асессор-разработчик', period: 'январь — декабрь 2023', place: 'Москва',
         bullets: [
-          { lead: '', text: 'Размечал материалы по программированию и computer science, писал и редактировал эталонные ответы YandexGPT по IT, занимался фактчекингом.' }
+          { lead: '', text: 'Размечал материалы по программированию и computer science для YandexGPT: писал и правил эталонные ответы, проверял факты.' }
         ]
       }
     ],
     education: [
       { school: 'НИУ ВШЭ', program: 'Магистратура, Цифровая урбанистика и аналитика города', period: '2024 — 2026', place: 'Москва', note: 'Аналитика данных, Python, геоданные, QGIS. ВКР: hse.ru/edu/vkr/1167123484' },
-      { school: 'НИТУ МИСиС', program: 'Бакалавриат, Информационные системы и технологии', period: '2020 — 2024', place: 'Москва', note: 'Алгоритмы, структуры данных, инженерия ПО.' }
+      { school: 'НИТУ МИСиС', program: 'Бакалавриат, Информационные системы и технологии', period: '2020 — 2024', place: 'Москва', note: 'Алгоритмы, структуры данных, инженерия ПО. Призовые места на хакатонах: 2-е место на ЛЦТ 2023 (misis.ru/news/8829), МТС True Tech Hack, Цифра Fest, X-MAS Hack.' }
     ],
-    languages: 'Русский — родной · Английский — B2'
+    languages: 'Русский — родной · Английский — B2',
+    funfact: 'Claude или Codex? Claude. Личные рекорды: 40 млн токенов за месяц и 6 млн за один запрос.'
   }
 };
 
@@ -158,11 +169,8 @@ function render(d, pretty) {
     .map(([k, v]) => `<p class="skill"><span class="k">${esc(k)}:</span> ${esc(v)}</p>`)
     .join('');
 
-  const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
   const bullet = (b) =>
-    b.lead
-      ? `<li><span class="lead">${esc(b.lead)}.</span> ${esc(cap(b.text))}</li>`
-      : `<li>${esc(b.text)}</li>`;
+    b.lead ? `<li>${esc(b.lead)}: ${esc(b.text)}</li>` : `<li>${esc(b.text)}</li>`;
 
   const experience = d.experience
     .map((j) => {
@@ -230,7 +238,6 @@ function render(d, pretty) {
   .job-sum { color: #2a2a2a; margin: 0 0 4pt; }
   ul { margin: 3pt 0 0; padding-left: 15pt; }
   li { margin: 0 0 4pt; padding-left: 2pt; }
-  .lead { font-weight: 700; }
   .job-links { font-size: 9pt; color: ${accent}; margin: 4pt 0 0; }
   .edu-note { font-size: 9.3pt; color: #444; margin: 1pt 0 0; }
   a { color: inherit; text-decoration: none; }
@@ -252,6 +259,7 @@ function render(d, pretty) {
   ${section(d.labels.experience, experience)}
   ${section(d.labels.education, education)}
   ${section(d.labels.languages, `<p>${esc(d.languages)}</p>`)}
+  ${section(d.labels.funfact, `<p>${esc(d.funfact)}</p>`)}
 </body>
 </html>`;
 }
